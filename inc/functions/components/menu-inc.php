@@ -1,10 +1,10 @@
 <?php
 function leftmenu($mongoClient)
 {
-  $filter =  ['active' => 1, 'location' => ['dad' => 0], 'location' => ['side' => "left"], 'location' => ['type' => "menu"]];
+  $filter =  ['active' => 1, 'dad' => 0, 'type' => 'menu', 'side' => 'left'];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->Urls;
+  $mongoCollection = $mongoClient->Menu;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -15,9 +15,9 @@ function leftmenu($mongoClient)
   foreach ($resMongoQuery as $key => $value) {
 
 
-    $filter =  ['location' => ['dad' => $value['id']], 'location' => ['type' => "menu"]];
+    $filter =  ['dad' => $value['id'], 'type' => 'menu', 'side' => 'left'];
     $options = ['sort' => ['order' => 1]];
-    $mongoCollection = $mongoClient->Urls;
+    $mongoCollection = $mongoClient->Menu;
     $resMQ = $mongoCollection->find(
       $filter,
       $options
@@ -46,10 +46,10 @@ function leftmenu($mongoClient)
 function rightmenu($mongoClient)
 {
 
-  $filter =  ['active' => 1, 'location' => ['side' => "right"], 'location' => ['type' => "menu"]];
+  $filter =  ['active' => 1, 'type' => 'menu', 'side' => 'right'];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->Urls;
+  $mongoCollection = $mongoClient->Menu;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -61,16 +61,15 @@ function rightmenu($mongoClient)
 
     switch ($value['name']) {
       case "Upload":
+        if (isset($_SESSION['uId']) && $_SESSION['uId'] !== -1) {
 
-
-        echo '    <div class="setting-option rn-icon-list notification-badge">
+          echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
                   <a href="' . $value['url'] . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>'; /*<span class="badge">6</span>*/
-        echo '</a>
+          echo '</a>
                 </div>
               </div>';
-
-
+        }
         break;
       case "Search bar":
 
@@ -184,9 +183,9 @@ function accmenu($mongoClient, $googleClient, $config)
         </div>
 
         <ul class="list-inner">';
-    ['active' => 1, 'location' => ['side' => "left"], 'location' => ['type' => "menu"]];
-    $filter =  ['nav' => 'acc'];
-    $mongoCollection = $mongoClient->menus;
+
+    $filter =  ['type' => 'acc-menu'];
+    $mongoCollection = $mongoClient->Menu;
     $resMongoQueryUser = $mongoCollection->find(
 
       $filter
