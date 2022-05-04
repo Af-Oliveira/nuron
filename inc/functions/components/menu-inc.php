@@ -1,10 +1,10 @@
 <?php
 function leftmenu($mongoClient)
 {
-  $filter =  ['active' => 1, 'Dad' => 0, 'nav' => "left"];
+  $filter =  ['active' => 1, 'location' => ['dad' => 0], 'location' => ['side' => "left"], 'location' => ['type' => "menu"]];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->menus;
+  $mongoCollection = $mongoClient->Urls;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -15,9 +15,9 @@ function leftmenu($mongoClient)
   foreach ($resMongoQuery as $key => $value) {
 
 
-    $filter =  ['Dad' => $value['id']];
+    $filter =  ['location' => ['dad' => $value['id']], 'location' => ['type' => "menu"]];
     $options = ['sort' => ['order' => 1]];
-    $mongoCollection = $mongoClient->menus;
+    $mongoCollection = $mongoClient->Urls;
     $resMQ = $mongoCollection->find(
       $filter,
       $options
@@ -46,10 +46,10 @@ function leftmenu($mongoClient)
 function rightmenu($mongoClient)
 {
 
-  $filter =  ['active' => 1, 'nav' => "right"];
+  $filter =  ['active' => 1, 'location' => ['side' => "right"], 'location' => ['type' => "menu"]];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->menus;
+  $mongoCollection = $mongoClient->Urls;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -60,12 +60,12 @@ function rightmenu($mongoClient)
 
 
     switch ($value['name']) {
-      case "Activity":
+      case "Upload":
 
 
         echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="' . $value['url'] . '"><i class="feather-bell"></i>'; /*<span class="badge">6</span>*/
+                  <a href="' . $value['url'] . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>'; /*<span class="badge">6</span>*/
         echo '</a>
                 </div>
               </div>';
@@ -156,6 +156,7 @@ function accmenu($mongoClient, $googleClient, $config)
           <ul class="product-list">';
     $arrSavedAccounts = $_SESSION['arrSavedAccounts'];
     foreach ($arrSavedAccounts as $id) {
+
       $filter =  ['id' => $id];
       $mongoCollection = $mongoClient->users;
       $resMongoQueryUser = $mongoCollection->findOne(
@@ -183,7 +184,7 @@ function accmenu($mongoClient, $googleClient, $config)
         </div>
 
         <ul class="list-inner">';
-
+    ['active' => 1, 'location' => ['side' => "left"], 'location' => ['type' => "menu"]];
     $filter =  ['nav' => 'acc'];
     $mongoCollection = $mongoClient->menus;
     $resMongoQueryUser = $mongoCollection->find(
