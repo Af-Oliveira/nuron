@@ -1,10 +1,11 @@
 <?php
 function leftmenu($mongoClient)
 {
+
   $filter =  ['active' => 1, 'dad' => 0, 'type' => 'menu', 'side' => 'left'];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->Menu;
+  $mongoCollection = $mongoClient->menu;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -14,31 +15,45 @@ function leftmenu($mongoClient)
   //Start Mainmanu Nav                      
   foreach ($resMongoQuery as $key => $value) {
 
+    $filter =  ['url' => $value['url']];
+    $mongoCollection = $mongoClient->SEO;
+    $SEO_url = $mongoCollection->findOne(
+      $filter
+    );
 
     $filter =  ['dad' => $value['id'], 'type' => 'menu', 'side' => 'left'];
     $options = ['sort' => ['order' => 1]];
-    $mongoCollection = $mongoClient->Menu;
+    $mongoCollection = $mongoClient->menu;
     $resMQ = $mongoCollection->find(
       $filter,
       $options
     );
+
+
 
     $resMQ = $resMQ->toArray();
 
     if (count($resMQ) > 0) {
 
       echo '  <li class="has-droupdown has-menu-child-item">
-        <a href="' . $value['url'] . '">' . $value['name'] . '</a>
+        <a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a>
         <ul class="submenu">';
       foreach ($resMQ as $key => $value) {
+
+        $filter =  ['url' => $value['url']];
+        $mongoCollection = $mongoClient->SEO;
+        $SEO_url = $mongoCollection->findOne(
+          $filter
+        );
+
         echo '<li >
-            <a href="' . $value['url'] . '">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
+            <a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
             </li>';
       }
       echo '</ul>';
       echo '</li>';
     } else {
-      echo ' <li><a href="' . $value['url'] . '">' . $value['name'] . '</a></li>';
+      echo ' <li><a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a></li>';
     }
   }
 }
@@ -49,7 +64,7 @@ function rightmenu($mongoClient)
   $filter =  ['active' => 1, 'type' => 'menu', 'side' => 'right'];
   $options = ['sort' => ['order' => 1]];
 
-  $mongoCollection = $mongoClient->Menu;
+  $mongoCollection = $mongoClient->menu;
 
   $resMongoQuery = $mongoCollection->find(
     $filter,
@@ -58,6 +73,11 @@ function rightmenu($mongoClient)
 
   foreach ($resMongoQuery as $key => $value) {
 
+    $filter =  ['url' => $value['url']];
+    $mongoCollection = $mongoClient->SEO;
+    $SEO_url = $mongoCollection->findOne(
+      $filter
+    );
 
     switch ($value['name']) {
       case "Upload":
@@ -65,7 +85,7 @@ function rightmenu($mongoClient)
 
           echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="' . $value['url'] . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>'; /*<span class="badge">6</span>*/
+                  <a href="' . $SEO_url['id_UrlF'] . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>';
           echo '</a>
                 </div>
               </div>';
@@ -75,7 +95,7 @@ function rightmenu($mongoClient)
 
 
         echo '    <div class="setting-option d-none d-lg-block">
-   <form class="search-form-wrapper" action="' . $value['url'] . '" method="GET">
+   <form class="search-form-wrapper" action=" " method="GET">
      <input type="search" placeholder="Search Here" aria-label="Search">
      <div class="search-icon">
        <button><i class="feather-search"></i></button>
@@ -87,7 +107,7 @@ function rightmenu($mongoClient)
    <div class="icon-box search-mobile-icon">
      <button><i class="feather-search"></i></button>
    </div>
-   <form id="header-search-1" action="' . $value['url'] . '" method="GET" class="large-mobile-blog-search">
+   <form id="header-search-1" action=" " method="GET" class="large-mobile-blog-search">
      <div class="rn-search-mobile form-group">
        <button type="submit" class="search-button"><i class="feather-search"></i></button>
        <input type="text" placeholder="Search ...">
@@ -134,7 +154,7 @@ function accmenu($mongoClient, $googleClient, $config)
       );
 
       echo '<div class="setting-option rn-icon-list user-account">
-      <div class="icon-box"><a href="author.php">';
+      <div class="icon-box"><a>';
       if ($resMongoQueryUser['avatar'] == "") {
         echo '<img src="assets/images/slider/banner-06.png" alt="Images">';
       } else {
@@ -185,16 +205,24 @@ function accmenu($mongoClient, $googleClient, $config)
         <ul class="list-inner">';
 
     $filter =  ['type' => 'acc-menu'];
-    $mongoCollection = $mongoClient->Menu;
+    $mongoCollection = $mongoClient->menu;
     $resMongoQueryUser = $mongoCollection->find(
 
       $filter
     );
 
+
     foreach ($resMongoQueryUser as $key => $value) {
-      echo '  <li><a href="' . $value['url'] . '">' . $value['name'] . '</a></li> ';
+      $filter =  ['url' => $value['url']];
+
+      $mongoCollection = $mongoClient->SEO;
+      $SEO_url = $mongoCollection->findOne(
+        $filter
+      );
+      clog($SEO_url['id_UrlF']);
+      echo '  <li><a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a></li> ';
     };
-    echo '  <li><a href="logout.php">log out</a></li>
+    echo '  
         </ul>
 
       </div>

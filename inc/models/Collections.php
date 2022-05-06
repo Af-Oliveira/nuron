@@ -1,9 +1,9 @@
 <?php
 $arrDados = array(
 
-    'collection' => 'Colletions',
+    'collection' => 'colletions',
     'order' => 'id',
-    'label' => 'Colletions',
+    'label' => 'colletions',
 
     'fields' => array(
         'id' => array(

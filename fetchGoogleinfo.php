@@ -27,6 +27,7 @@ if (isset($_GET['code'])) {
     if (!count($resMongoQuery)) {
         $mongoCollection->insertOne([
             'id' => $google_account_info['id'],
+            'name' => $google_account_info['givenName'] . ' ' . $google_account_info['familyName'],
             'usernameF' => $google_account_info['givenName'],
             'usernameL' => $google_account_info['familyName'],
             'email' => $google_account_info['email'],

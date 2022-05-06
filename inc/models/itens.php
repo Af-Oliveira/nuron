@@ -64,7 +64,7 @@ $arrDados = array(
                 'max' => '4',
             ),
             'select_colletion' => array(
-                'collection' => 'Catgories',
+                'collection' => 'categories',
                 'field' => 'label',
                 'filter' => array('active' => 1),
                 'to_save' => 'id',
@@ -80,7 +80,7 @@ $arrDados = array(
             'label' => 'Does this item belong to a collection?',
             'type' => 'multiselect',
             'select_colletion' => array(
-                'collection' => 'Collection',
+                'collection' => 'collection',
                 'field' => 'name',
                 'filter' => array('user' => $_SESSION['uId']),
                 'to_save' => 'id',
