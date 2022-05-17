@@ -15,11 +15,7 @@ function leftmenu($mongoClient)
   //Start Mainmanu Nav                      
   foreach ($resMongoQuery as $key => $value) {
 
-    $filter =  ['url' => $value['url']];
-    $mongoCollection = $mongoClient->SEO;
-    $SEO_url = $mongoCollection->findOne(
-      $filter
-    );
+
 
     $filter =  ['dad' => $value['id'], 'type' => 'menu', 'side' => 'left'];
     $options = ['sort' => ['order' => 1]];
@@ -36,31 +32,27 @@ function leftmenu($mongoClient)
     if (count($resMQ) > 0) {
 
       echo '  <li class="has-droupdown has-menu-child-item">
-        <a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a>
+        <a href="' . $value['name'] . '">' . $value['name'] . '</a>
         <ul class="submenu">';
+
       foreach ($resMQ as $key => $value) {
 
-        $filter =  ['url' => $value['url']];
-        $mongoCollection = $mongoClient->SEO;
-        $SEO_url = $mongoCollection->findOne(
-          $filter
-        );
+
 
         echo '<li >
-            <a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
+            <a href=" ' . $value['url'] . '  ">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
             </li>';
       }
       echo '</ul>';
       echo '</li>';
     } else {
-      echo ' <li><a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a></li>';
+      echo ' <li><a href="  ' . $value['url']  . '   ">' . $value['name'] . '</a></li>';
     }
   }
 }
 
-function rightmenu($mongoClient)
+function rightmenu($mongoClient, $googleClient, $config)
 {
-
   $filter =  ['active' => 1, 'type' => 'menu', 'side' => 'right'];
   $options = ['sort' => ['order' => 1]];
 
@@ -71,79 +63,95 @@ function rightmenu($mongoClient)
     $options
   );
 
+
+  echo '  <div class="header-right">
+  <div class="setting-option d-none d-lg-block">
+      <form class="search-form-wrapper" action="#">
+          <input type="search" placeholder="Search Here" aria-label="Search">
+          <div class="search-icon">
+              <button><i class="feather-search"></i></button>
+          </div>
+      </form>
+  </div>
+  <div class="setting-option rn-icon-list d-block d-lg-none">
+      <div class="icon-box search-mobile-icon">
+          <button><i class="feather-search"></i></button>
+      </div>
+      <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
+          <div class="rn-search-mobile form-group">
+              <button type="submit" class="search-button"><i class="feather-search"></i></button>
+              <input type="text" placeholder="Search ...">
+          </div>
+      </form>
+  </div>';
+
   foreach ($resMongoQuery as $key => $value) {
 
-    $filter =  ['url' => $value['url']];
-    $mongoCollection = $mongoClient->SEO;
-    $SEO_url = $mongoCollection->findOne(
-      $filter
-    );
 
-    switch ($value['name']) {
-      case "Upload":
-        if (isset($_SESSION['uId']) && $_SESSION['uId'] !== -1) {
 
-          echo '    <div class="setting-option rn-icon-list notification-badge">
+    if (isset($_SESSION['uId']) && $_SESSION['uId'] !== -1) {
+
+      echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="' . $SEO_url['id_UrlF'] . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>';
-          echo '</a>
-                </div>
+                  <a href="   ' . $value['url']  . '  "><i class="' . $value['icon'] . '" style="scale: 1.3;width: inherit;height: 50%;"></i>';
+      echo '</a>
+                 </div>
               </div>';
-        }
-        break;
-      case "Search bar":
-
-
-        echo '    <div class="setting-option d-none d-lg-block">
-   <form class="search-form-wrapper" action=" " method="GET">
-     <input type="search" placeholder="Search Here" aria-label="Search">
-     <div class="search-icon">
-       <button><i class="feather-search"></i></button>
-     </div>
-   </form>
- </div>
-
- <div class="setting-option rn-icon-list d-block d-lg-none">
-   <div class="icon-box search-mobile-icon">
-     <button><i class="feather-search"></i></button>
-   </div>
-   <form id="header-search-1" action=" " method="GET" class="large-mobile-blog-search">
-     <div class="rn-search-mobile form-group">
-       <button type="submit" class="search-button"><i class="feather-search"></i></button>
-       <input type="text" placeholder="Search ...">
-     </div>
-   </form>
- </div>';
-
-
-        break;
     }
   }
+
+  echo accmenu($mongoClient, $googleClient, $config);
+
+
+  echo ' <div class="setting-option mobile-menu-bar d-block d-xl-none">
+      <div class="hamberger">
+          <button class="hamberger-button">
+              <i class="feather-menu"></i>
+          </button>
+      </div>
+  </div>
+
+  <div id="my_switcher" class="my_switcher setting-option">
+      <ul>
+          <li>
+              <a href="javascript: void(0);" data-theme="light" class="setColor light">
+                  <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+              </a>
+          </li>
+          <li>
+              <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
+                  <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>';
 }
 
 function accmenu($mongoClient, $googleClient, $config)
 {
+  if (isset($_SESSION['uId'])) {
+    $idLog = $_SESSION['uId'];
+  }
 
-  $idLog = isset($_SESSION['uId']) ? $_SESSION['uId'] : -1;
   if (!count($_SESSION['arrSavedAccounts'])) {
-    echo '
-    <div class="setting-option rn-icon-list user-account">
+    echo '<div class="setting-option rn-icon-list user-account">
     <div class="icon-box">
-      <a href="' . $googleClient->createAuthUrl() . '">
-      <img src="assets/images/icons/boy-avater.png" alt="Images"></a>
-      </div>
-      </div>';
+    <a href="' . $googleClient->createAuthUrl() . '">
+    <img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+</div>
+</div>';
   } else {
     if ($idLog == -1) {
       echo '
       <div class="setting-option rn-icon-list user-account">
       <div class="icon-box">
         <a href="' . $googleClient->createAuthUrl() . '">
-        <img src="assets/images/icons/boy-avater.png" alt="Images"></a>
-      </div>
-      ';
+        <img src="assets/images/icons/boy-avater.png" alt="Images"></a>';
+
       $nome = 'Guest';
     } else {
+
       $id = $_SESSION['uId'];
       $filter =  ['id' => $id];
 
@@ -154,11 +162,11 @@ function accmenu($mongoClient, $googleClient, $config)
       );
 
       echo '<div class="setting-option rn-icon-list user-account">
-      <div class="icon-box"><a>';
+      <div class="icon-box">';
       if ($resMongoQueryUser['avatar'] == "") {
-        echo '<img src="assets/images/slider/banner-06.png" alt="Images">';
+        echo '<a><img src="assets/images/slider/banner-06.png" alt="Images"></a>';
       } else {
-        echo '<img src="upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images">';
+        echo '<a><img src="upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images"></a>';
       }
       $nome = $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'];
     }
@@ -166,13 +174,13 @@ function accmenu($mongoClient, $googleClient, $config)
 
     echo '
     
-      </a><div class="rn-dropdown">
-        <div class="rn-inner-top">
-          <h4 class="title">' . $nome . '</h4>
-          <span>Saved accounts</span>
-        </div>
-        <div class="rn-product-inner">
-          <ul class="product-list">';
+    <div class="rn-dropdown">
+      <div class="rn-inner-top">
+        <h4 class="title">' . $nome . '</h4>
+        <span>Saved accounts</span>
+      </div>
+      <div class="rn-product-inner">
+        <ul class="product-list">';
     $arrSavedAccounts = $_SESSION['arrSavedAccounts'];
     foreach ($arrSavedAccounts as $id) {
 
@@ -182,28 +190,26 @@ function accmenu($mongoClient, $googleClient, $config)
         $filter
       );
       echo '<li class="single-product-list">
-            <div class="thumbnail">';
+          <div class="thumbnail">';
       if ($resMongoQueryUser['avatar'] == "") {
         echo '<a href="#"><img src="assets/images/slider/banner-06.png"></a>';
       } else {
         echo '<a href="#"><img src="upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" style="width: 50px;border-radius: 100%;object-fit: cover;max-height: 50px;"></a>';
       }
       echo '</div>
-            <div class="content">
-                <h6 class="title"><a style="' . ($idLog == $id ? ' color: #00a3ff;' : '') . '" href="' . $config['urls']['site'] . '/inc/handlers/ChangeAccount.php?ID=' . $id . '">' . $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'] . '</a></h6>
-            </div>
-            <div class="button"></div>
-        </li>';
+          <div class="content">
+              <h6 class="title"><a style="' . ($idLog == $id ? ' color: #00a3ff;' : '') . '" href="' . $config['urls']['site'] . '/inc/handlers/ChangeAccount.php?ID=' . $id . '">' . $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'] . '</a></h6>
+          </div>
+          <div class="button"></div>
+      </li>';
     }
     echo '</ul>
-        </div>
+     </div>
+      <div class="add-fund-button mt--20 pb--20">
+        <a id="logout" href="logout.php?add=1" class="btn btn-primary-alta w-100">Add a new account</a>
+      </div>
 
-        <div class="add-fund-button mt--20 pb--20">
-          <a id="logout" href="logout.php?add=1" class="btn btn-primary-alta w-100">Add a new account</a>
-        </div>
-
-        <ul class="list-inner">';
-
+      <ul class="list-inner">';
     $filter =  ['type' => 'acc-menu'];
     $mongoCollection = $mongoClient->menu;
     $resMongoQueryUser = $mongoCollection->find(
@@ -213,21 +219,17 @@ function accmenu($mongoClient, $googleClient, $config)
 
 
     foreach ($resMongoQueryUser as $key => $value) {
-      $filter =  ['url' => $value['url']];
 
-      $mongoCollection = $mongoClient->SEO;
-      $SEO_url = $mongoCollection->findOne(
-        $filter
-      );
-      clog($SEO_url['id_UrlF']);
-      echo '  <li><a href="' . $SEO_url['id_UrlF'] . '">' . $value['name'] . '</a></li> ';
+
+      echo '  <li><a href="     ">' . $value['name'] . '</a></li> ';
     };
-    echo '  
-        </ul>
+    echo ' 
+         
+      </ul>
 
-      </div>
     </div>
-  </div>';
+  </div>
+</div>';
   }
 }
 
@@ -254,46 +256,20 @@ function menu($mongoClient, $googleClient, $config)
 
 
   echo '  </ul>
-              </ul>
-              <!-- End Mainmanu Nav -->
+           
+             
             </nav>
           </div>
-        </div>
-        <div class="header-right">';
+        </div>';
 
 
 
-  echo rightmenu($mongoClient);
-  echo accmenu($mongoClient, $googleClient, $config);
+
+  echo rightmenu($mongoClient, $googleClient, $config);
 
 
 
-  echo '  <div class="setting-option mobile-menu-bar d-block d-xl-none">
-            <div class="hamberger">
-              <button class="hamberger-button">
-                <i class="feather-menu"></i>
-              </button>
-            </div>
-          </div>
-
-          <div id="my_switcher" class="my_switcher setting-option">
-            <ul>
-              <li>
-                <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                  <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
-                </a>
-              </li>
-              <li>
-                <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                  <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
-                </a>
-              </li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
+  echo '    </div>
     </div>
   </header>
 
