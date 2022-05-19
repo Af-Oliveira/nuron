@@ -110,6 +110,7 @@ function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
     align-items: center;
     justify-content: center;">
     <div class="col-lg-4" id="filesinputs">
+
     </div>
     <div class="col-lg-8" id="normalinputs">
     </div>
@@ -120,7 +121,8 @@ function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
         }
     }
     ?>
-    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+    </div>
     <div class="col-lg-8">
         <div class="input-box">
             <button class="btn btn-primary btn-large w-100" id="btnSubmit">
@@ -132,6 +134,13 @@ function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
 
 <script>
     window.onload = function() {
+        if (arrMyFiles.size == 0) {
+            const cenagamer = ` <div class="slider-thumbnail">
+            <img src="assets/images/slider/slider-1.png" alt="Slider Images" />
+          </div>`;
+            $('#filesinputs').append(cenagamer);
+        }
+
         // ----- Init MyTags -----
         arrMyTagifys.forEach((value, key) => {
             let inputElm = document.querySelector(`input[name=${key}_value]`);

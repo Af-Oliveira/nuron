@@ -1,5 +1,5 @@
 <?php
-function leftmenu($mongoClient)
+function leftmenu($mongoClient, $config)
 {
 
   $filter =  ['active' => 1, 'dad' => 0, 'type' => 'menu', 'side' => 'left'];
@@ -40,13 +40,13 @@ function leftmenu($mongoClient)
 
 
         echo '<li >
-            <a href=" ' . $value['url'] . '  ">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
+            <a href=" ' . getUrlFriendly($value['url'], $config, $mongoClient) . '  ">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
             </li>';
       }
       echo '</ul>';
       echo '</li>';
     } else {
-      echo ' <li><a href="  ' . $value['url']  . '   ">' . $value['name'] . '</a></li>';
+      echo ' <li><a href="  ' . getUrlFriendly($value['url'], $config, $mongoClient)  . '   ">' . $value['name'] . '</a></li>';
     }
   }
 }
@@ -93,7 +93,7 @@ function rightmenu($mongoClient, $googleClient, $config)
 
       echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="   ' . $value['url']  . '  "><i class="' . $value['icon'] . '" style="scale: 1.3;width: inherit;height: 50%;"></i>';
+                  <a href="   ' . getUrlFriendly($value['url'], $config, $mongoClient) . '  "><i class="' . $value['icon'] . '" style="scale: 1.3;width: inherit;height: 50%;"></i>';
       echo '</a>
                  </div>
               </div>';
@@ -221,7 +221,7 @@ function accmenu($mongoClient, $googleClient, $config)
     foreach ($resMongoQueryUser as $key => $value) {
 
 
-      echo '  <li><a href="     ">' . $value['name'] . '</a></li> ';
+      echo '  <li><a href="  ' . getUrlFriendly($value['url'], $config, $mongoClient)   . '   ">' . $value['name'] . '</a></li> ';
     };
     echo ' 
          
@@ -252,7 +252,7 @@ function menu($mongoClient, $googleClient, $config)
               <!-- Start Mainmanu Nav -->
               <ul class="mainmenu">';
 
-  echo leftmenu($mongoClient);
+  echo leftmenu($mongoClient, $config);
 
 
   echo '  </ul>
@@ -291,7 +291,7 @@ function menu($mongoClient, $googleClient, $config)
     
         <ul class="mainmenu">';
 
-  echo leftmenu($mongoClient);
+  echo leftmenu($mongoClient, $config);
 
 
   echo ' </ul>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Creators || Nuron - NFT Marketplace Template</title>
+    <title>About || Nuron - NFT Marketplace Template</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +12,31 @@
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['dirs']['site'] ?>/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
-    <!-- start header area -->
+
     <!-- Start Header -->
     <header class="rn-header haeder-default header--sticky">
         <div class="container">
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -188,7 +188,7 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div class="rn-inner-top">
                                         <h4 class="title"><a href="product-details.html">Christopher William</a></h4>
@@ -198,7 +198,7 @@
                                         <ul class="product-list">
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -208,7 +208,7 @@
                                             </li>
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -245,12 +245,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
@@ -267,8 +267,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -389,363 +389,268 @@
             </nav>
         </div>
     </div>
-    <!-- ENd Header Area -->
-    <div class="rn-creator-title-area rn-section-gapTop">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <h2 class="title mb--0">Our Best Creators</h2>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-                    <div class="shortby-default text-start text-sm-end">
-                        <label class="filter-leble">SHOT BY:</label>
-                        <select>
-                            <option data-display="Top Rated">Top Rated</option>
-                            <option value="1">Best Seller</option>
-                            <option value="2">Recent Added</option>
-                            <option value="3">Varified</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 mt--30 creator-list-wrapper">
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Brodband</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Marks</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2200,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">JOne Lee</h6>
-                                </a>
-                                <span class="count-number">
-                                    $900,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="300" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-4.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Malinga</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2400,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Favis</h6>
-                                </a>
-                                <span class="count-number">
-                                    $290,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="400" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-6.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Fakir</h6>
-                                </a>
-                                <span class="count-number">
-                                    $299,00,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="450" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-7.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Sajib</h6>
-                                </a>
-                                <span class="count-number">
-                                    $1100,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="500" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-9.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Mikel</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-8.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Kolik</h6>
-                                </a>
-                                <span class="count-number">
-                                    $9900,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="600" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">LAkiba</h6>
-                                </a>
-                                <span class="count-number">
-                                    $652,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="650" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-6.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Murkis</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="700" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Mr.Faks</h6>
-                                </a>
-                                <span class="count-number">
-                                    $5900,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="750" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-9.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Ranbir</h6>
-                                </a>
-                                <span class="count-number">
-                                    $2500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="800" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-11.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Dabvira</h6>
-                                </a>
-                                <span class="count-number">
-                                    $26600,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="850" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Jaki SAh</h6>
-                                </a>
-                                <span class="count-number">
-                                    $6500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-                <!-- start single top-seller -->
-                <div class="creator-single col-lg-3 col-md-4 col-sm-6" data-sal="slide-up" data-sal-delay="900" data-sal-duration="800">
-                    <div class="top-seller-inner-one explore">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-10.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Torpedo</h6>
-                                </a>
-                                <span class="count-number">
-                                    $8500,000
-                                </span>
-                            </div>
-                        </div>
-                        <a class="over-link" href="author.html"></a>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-            </div>
+    <!-- About banner area -->
+    <div class="rn-about-banner-area rn-section-gapTop">
+        <div class="container mb--30">
             <div class="row">
-                <div class="col-lg-12" data-sal="slide-up" data-sal-delay="950" data-sal-duration="800">
-                    <nav class="pagination-wrapper" aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+                <div class="col-12">
+                    <h2 class="title about-title-m" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">Direct Teams. <br>For Your Dadicated Dreams</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid about-fluidimg ">
+            <div class="row">
+                <div class="img-wrapper">
+                    <div class="bg_image--22 bg_image">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="h--100">
+                        <div class="rn-about-card mt_dec--50 widge-wrapper rbt-sticky-top-adjust">
+                            <div class="inner">
+                                <h2 class="title" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                    Why We Do This
+                                </h2>
+                                <p class="about-disc" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                    NFTs are virtual tokens that represent ownership of something inherently distinct and
+                                    scarce, whether it be a physical or digital item, such as artwork, a soundtrack, a
+                                    collectible, an in-game item or real estate. Unlike regular cryptocurrencies like
+                                    bitcoin or fiat money like the U.S.
+                                </p>
+                                <a href="blog.html" class="btn btn-primary-alta btn-large sal-animate mt--20" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">See Our Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rn-about-card transparent-bg">
+                        <div class="inner">
+                            <h3 class="title" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                Helping You <br>Grow In Every Stage.
+                            </h3>
+                            <p class="about-disc mb--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                NFTs are virtual tokens that represent ownership of something inherently distinct and
+                                scarce, whether it be a physical or digital item, such as artwork, a soundtrack, a
+                                collectible, an in-game item or real estate. Unlike regular cryptocurrencies like
+                                bitcoin or fiat money like the U.S.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About banner area End -->
+
+    <div class="rn-about-Quote-area rn-section-gapTop">
+        <div class="container">
+            <div class="row g-5 d-flex align-items-center">
+                <div class="col-lg-6">
+                    <div class="rn-about-title-wrapper">
+                        <h3 class="title" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">Create, Sell well & Collect your Wonderful NFTs at Nuron Very Fast</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rn-about-wrapper" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                        <p>The NFTs is a one-trick pony that climbed the ladders of success in recent years. The growth
+                            of NFTs is tremendous, and according to Pymnts.com, the total sales volume of NFTs has
+                            nearly crossed $2.5 billion in the last six months of . Surprisingly, the total sales
+                            volume of NFTs was $13.7 million in 2020. On comparing both the values,</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- rn stastic area -->
+    <div class="rn-statistick-area rn-section-gapTop">
+        <div class="container">
+            <div class="row mb--30">
+                <div class="col-12 text-center">
+                    <h3>Nuron Statistics</h3>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="offset-lg-2 col-lg-4 col-md-6">
+                    <div class="single-counter-up text-center">
+                        <h3 class="counter"><span class="odometer" data-count="309">00</span>
+                        </h3>
+                        <div class="botton-title">Nuron All NFT's</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-counter-up text-center">
+                        <h3 class="counter"><span class="odometer" data-count="309">00</span>
+                        </h3>
+                        <div class="botton-title">All Creators</div>
+                    </div>
+                </div>
+                <div class="offset-lg-2 col-lg-4 col-md-6">
+                    <div class="single-counter-up text-center">
+                        <h3 class="counter"><span class="odometer" data-count="309">00</span>
+                        </h3>
+                        <div class="botton-title">Nuron Earning</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-counter-up text-center">
+                        <h3 class="counter"><span class="odometer" data-count="309">00</span>
+                        </h3>
+                        <div class="botton-title">Level One Seller</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rn stastic area -->
+
+    <!-- call to action area -->
+    <div class="rn-callto-action rn-section-gapTop">
+        <div class="container-fluid about-fluidimg-cta">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bg_image--6 bg_image bg-image-border" data-black-overlay="7">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="call-to-action-wrapper">
+                                    <h3 data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">Discover
+                                        rare digital art <br>
+                                        and collect NFTs</h3>
+                                    <p data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">The NFTs is a one-trick pony that climbed the recent years. The growth of NFTs is
+                                        tremendous, and according to Pymnts.com, the total sales volume </p>
+                                    <div class="callto-action-btn-wrapper" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                        <a href="create.html" class="btn btn-primary btn-large">Create</a>
+                                        <a href="contact.html" class="btn btn-primary-alta btn-large">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- call to action area End -->
+
+    <!-- Start BLog Area  -->
+    <div class="rn-blog-area rn-section-gapTop">
+        <div class="container">
+            <div class="row mb--50 align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <h3 class="title mb--0" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Our Recent Blog</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
+                    <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <a class="btn-transparent" href="#">VIEW ALL<i data-feather="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <!-- start single blog -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="category-info">
+                                    <div class="category-list">
+                                        <a href="blog-details.html">Development</a>
+                                    </div>
+                                    <div class="meta">
+                                        <span><i class="feather-clock"></i> 2 hour read</span>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="blog-details.html">The services provide for design <i class="feather-arrow-up-right"></i></a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single blog -->
+                <!-- start single blog -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="category-info">
+                                    <div class="category-list">
+                                        <a href="blog-details.html">Design</a>
+                                    </div>
+                                    <div class="meta">
+                                        <span><i class="feather-clock"></i> 5 min read</span>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="blog-details.html">More important feature for designer<i class="feather-arrow-up-right"></i></a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single blog -->
+                <!-- start single blog -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-sal="slide-up" data-sal-duration="800" data-sal-delay="250">
+                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-04.jpg" alt="Personal Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="category-info">
+                                    <div class="category-list">
+                                        <a href="blog-details.html">Marketing</a>
+                                    </div>
+                                    <div class="meta">
+                                        <span><i class="feather-clock"></i> 10 min read</span>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="blog-details.html">Inavalide purpose classes & motivation.<i class="feather-arrow-up-right"></i></a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single blog -->
+                <!-- start single blog -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
+                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <a href="blog-details.html">
+                                    <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-05.jpg" alt="Personal Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="category-info">
+                                    <div class="category-list">
+                                        <a href="blog-details.html">NFT's</a>
+                                    </div>
+                                    <div class="meta">
+                                        <span><i class="feather-clock"></i> 1 min read</span>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="blog-details.html">Canada is a great fact for NFT's<i class="feather-arrow-up-right"></i></a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single blog -->
+            </div>
+        </div>
+    </div>
+    <!-- End BLog Area  -->
 
     <!-- Start Footer Area -->
     <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
@@ -755,8 +660,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -814,7 +719,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -826,7 +731,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -838,7 +743,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -892,33 +797,34 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/count-down.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/backtoTop.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/scrolltrigger.js"></script>
-    <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="assets/js/vendor/savePopup.js"></script>
+
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/particles.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/count-down.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/isotop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/odometer.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
     <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="assets/js/vendor/web3.min.js"></script>
-    <script src="assets/js/vendor/maralis.js"></script>
-    <script src="assets/js/vendor/nft.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/maralis.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/nft.js"></script>
 </body>
 
 </html>

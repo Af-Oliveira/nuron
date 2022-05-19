@@ -1,7 +1,5 @@
 <?php
 // create Client Request to access Google API
-global $googleClient;
-
 $googleClient = new Google_Client();
 $googleClient->setClientId($config['goolgeApi']['clientID']);
 $googleClient->setClientSecret($config['goolgeApi']['clientSecret']);

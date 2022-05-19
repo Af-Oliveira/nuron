@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Collection || Nuron - NFT Marketplace Template</title>
+    <title>Blog Details || Nuron - NFT Marketplace Template</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +12,30 @@
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['dirs']['site'] ?>/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
-
     <!-- Start Header -->
     <header class="rn-header haeder-default header--sticky">
         <div class="container">
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -188,7 +187,7 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div class="rn-inner-top">
                                         <h4 class="title"><a href="product-details.html">Christopher William</a></h4>
@@ -198,7 +197,7 @@
                                         <ul class="product-list">
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -208,7 +207,7 @@
                                             </li>
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -245,12 +244,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
@@ -267,8 +266,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -394,13 +393,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
-                    <h5 class="title text-center text-md-start">Our Collection</h5>
+                    <h5 class="title text-center text-md-start">Blog Details</h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
                         <li class="item"><a href="index.html">Home</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
-                        <li class="item current">Collection</li>
+                        <li class="item current">Blog Details</li>
                     </ul>
                 </div>
             </div>
@@ -408,217 +407,433 @@
     </div>
     <!-- end page title area -->
 
-    <!-- collection area Start -->
-    <div class="rn-collection-area rn-section-gapTop">
+    <!-- blog details area start -->
+    <div class="rn-blog-area rn-blog-details-default rn-section-gapTop">
         <div class="container">
-            <div class="row g-5">
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Cubic Trad</h6>
-                                <span class="items">27 Items</span>
+            <div class="row g-6">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="rn-blog-listen">
+                        <div class="blog-content-top">
+                            <h2 class="title">Digital Marketo to Their New Office.</h2>
+                            <span class="date">2 Aug, </span>
+                        </div>
+                        <div class="bd-thumbnail">
+                            <div class="large-img mb--30">
+                                <img class="w-100" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/lg/blog-01.jpg" alt="Blog Images">
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-12.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Diamond Dog</h6>
-                                <span class="items">20 Items</span>
+                        <div class="news-details">
+
+                            <p>Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                                facer
+                                possim assum.
+                                Typi non
+                                habent claritatem insitam; est usus legentis in iis qui facit eorum
+                                claritatem.
+                                Investigationes
+                                demonstraverunt
+                                lectores legere me lius quod ii legunt saepius. Claritas est etiam processus
+                                dynamicus, qui
+                                sequitur
+                                mutationem consuetudium lectorum.</p>
+                            <h4>Nobis eleifend option conguenes.</h4>
+                            <p>Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed
+                                posuere
+                                massa nunc quis
+                                dui.
+                                Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa
+                                nisi.
+                                Curabitur sit
+                                amet
+                                suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc
+                                imperdiet risus
+                                leo,
+                                in rutrum erat dignissim id.</p>
+                            <p>Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis.
+                                Class aptent
+                                taciti sociosqu
+                                ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae
+                                nisi
+                                tortor. Morbi
+                                leo
+                                nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit
+                                bibendum. Morbi
+                                nec
+                                efficitur ex.</p>
+                            <h4>Mauris tempor, orci id pellentesque.</h4>
+                            <p>Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla
+                                dapibus dignissim.
+                                Pellentesque
+                                quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem
+                                rhoncus dolor, a
+                                facilisis
+                                neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa
+                                tristique.
+                                Nullam in
+                                aliquam
+                                diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed
+                                efficitur
+                                sollicitudin
+                                auctor.
+                                Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum
+                                et.</p>
+                        </div>
+                        <div class="comments-wrapper pt--40">
+                            <div class="comments-area">
+                                <div class="trydo-blog-comment">
+                                    <h5 class="comment-title mb--40">9 replies on “Have You Heard?
+                                        Agency Is Your Best
+                                        Bet To Grow”</h5>
+                                    <!-- Start Coment List  -->
+                                    <ul class="comment-list">
+
+                                        <!-- Start Single Comment  -->
+                                        <li class="comment parent">
+                                            <div class="single-comment">
+                                                <div class="comment-author comment-img">
+                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                    <div class="m-b-20">
+                                                        <div class="commenter">Parent</div>
+                                                        <div class="time-spent"> August 20, at 8:44
+                                                            pm</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>A component that allows for easy creation of menu
+                                                        items, quickly
+                                                        creating paragraphs of “Lorem Ipsum” and
+                                                        pictures with custom
+                                                        sizes.</p>
+                                                </div>
+                                                <div class="reply-edit">
+                                                    <div class="reply">
+                                                        <a class="comment-reply-link" href="#">
+                                                            <i class="rbt feather-corner-down-right"></i>
+                                                            Reply
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="children">
+                                                <li class="comment byuser ">
+                                                    <div class="single-comment">
+                                                        <div class="comment-author comment-img">
+                                                            <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                            <div class="m-b-20">
+                                                                <div class="commenter">Admin Comment
+                                                                </div>
+                                                                <div class="time-spent"> August 20,
+                                                                    at 8:44 pm
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            <p>A component that allows for easy creation
+                                                                of menu items,
+                                                                quickly creating paragraphs of “Lorem
+                                                                Ipsum” and
+                                                                pictures with custom sizes.</p>
+                                                        </div>
+                                                        <div class="reply-edit">
+                                                            <div class="reply">
+                                                                <a class="comment-reply-link" href="#">
+                                                                    <i class="rbt feather-corner-down-right"></i>
+                                                                    Reply
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Single Comment  -->
+
+                                        <!-- Start Single Comment  -->
+                                        <li class="comment parent">
+                                            <div class="single-comment">
+                                                <div class="comment-author comment-img">
+                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                    <div class="m-b-20">
+                                                        <div class="commenter">Craig E. Judge</div>
+                                                        <div class="time-spent"> August 20, at 8:44
+                                                            pm</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>A component that allows for easy creation of menu
+                                                        items, quickly
+                                                        creating paragraphs of “Lorem Ipsum” and
+                                                        pictures with custom
+                                                        sizes.</p>
+                                                </div>
+                                                <div class="reply-edit">
+                                                    <div class="reply">
+                                                        <a class="comment-reply-link" href="#">
+                                                            <i class="rbt feather-corner-down-right"></i>
+                                                            Reply
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="children">
+                                                <li class="comment">
+                                                    <div class="single-comment">
+                                                        <div class="comment-author comment-img">
+                                                            <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                            <div class="m-b-20">
+                                                                <div class="commenter"><a href="#">Child
+                                                                        Comment</a>
+                                                                </div>
+                                                                <div class="time-spent"> August 20,
+                                                                    at 8:44 pm
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            <p>A component that allows for easy creation
+                                                                of menu items,
+                                                                quickly creating paragraphs of “Lorem
+                                                                Ipsum” and
+                                                                pictures with custom sizes.</p>
+                                                        </div>
+                                                        <div class="reply-edit">
+                                                            <div class="reply">
+                                                                <a class="comment-reply-link" href="#">
+                                                                    <i class="rbt feather-corner-down-right"></i>
+                                                                    Reply
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="children">
+                                                        <li class="comment">
+                                                            <div class="single-comment">
+                                                                <div class="comment-author comment-img">
+                                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                                    <div class="m-b-20">
+                                                                        <div class="commenter">
+                                                                            <a href="#">Child
+                                                                                Comment</a>
+                                                                        </div>
+                                                                        <div class="time-spent"> August
+                                                                            20, at 8:44
+                                                                            pm</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="comment-text">
+                                                                    <p>A component that allows for easy
+                                                                        creation of menu
+                                                                        items,
+                                                                        quickly creating paragraphs of
+                                                                        “Lorem Ipsum” and
+                                                                        pictures with custom sizes.</p>
+                                                                </div>
+                                                                <div class="reply-edit">
+                                                                    <div class="reply">
+                                                                        <a class="comment-reply-link" href="#">
+                                                                            <i class="rbt feather-corner-down-right"></i>
+                                                                            Reply
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- End Single Comment  -->
+
+
+                                    </ul>
+                                    <!-- End Coment List  -->
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-13.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Morgan11</h6>
-                                <span class="items">15 Items</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details." class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-14.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Orthogon#720</h6>
-                                <span class="items">10 Items</span>
+
+                        <!-- comment form area Start -->
+
+                        <!-- Start Contact Form Area  -->
+                        <div class="rn-comment-form pt--60">
+                            <div class="inner">
+                                <div class="section-title">
+                                    <span class="subtitle">Have a Comment?</span>
+                                    <h2 class="title">Leave a Reply</h2>
+                                </div>
+                                <form class="mt--40" action="#">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-12">
+                                            <div class="rnform-group"><input type="text" placeholder="Name"></div>
+                                            <div class="rnform-group"><input type="email" placeholder="Email"></div>
+                                            <div class="rnform-group"><input type="text" placeholder="Website"></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-12">
+                                            <div class="rnform-group"><textarea placeholder="Comment"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="blog-btn">
+                                                <a class="btn btn-primary-alta btn-large w-100" href="#"><span>SEND
+                                                        MESSAGE</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </a>
+                        <!-- End Contact Form Area  -->
+
+                        <!-- comment form area End -->
+                        <div class="row g-5 pt--60">
+                            <div class="col-lg-12">
+                                <h3 class="title">Related Post</h3>
+                            </div>
+                            <!-- start single blog -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                                    <div class="inner">
+                                        <div class="thumbnail">
+                                            <a href="blog-details.html">
+                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div class="category-info">
+                                                <div class="category-list">
+                                                    <a href="blog-details.html">Development</a>
+                                                </div>
+                                                <div class="meta">
+                                                    <span><i class="feather-clock"></i> 2 hour read</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="title"><a href="blog-details.html">The services provide for
+                                                    design <i class="feather-arrow-up-right"></i></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end single blog -->
+                            <!-- start single blog -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                                    <div class="inner">
+                                        <div class="thumbnail">
+                                            <a href="blog-details.html">
+                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div class="category-info">
+                                                <div class="category-list">
+                                                    <a href="blog-details.html">Design</a>
+                                                </div>
+                                                <div class="meta">
+                                                    <span><i class="feather-clock"></i> 5 min read</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="title"><a href="blog-details.html">More important feature for
+                                                    designer<i class="feather-arrow-up-right"></i></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end single blog -->
+                            <!-- start single blog -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                                    <div class="inner">
+                                        <div class="thumbnail">
+                                            <a href="blog-details.html">
+                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-04.jpg" alt="Personal Portfolio Images">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div class="category-info">
+                                                <div class="category-list">
+                                                    <a href="blog-details.html">Marketing</a>
+                                                </div>
+                                                <div class="meta">
+                                                    <span><i class="feather-clock"></i> 10 min read</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="title"><a href="blog-details.html">Inavalide purpose classes &
+                                                    motivation.<i class="feather-arrow-up-right"></i></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end single blog -->
+                        </div>
+                    </div>
                 </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="400" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-15.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Trad Mard</h6>
-                                <span class="items">35 Items</span>
+
+                <div class="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
+                    <aside class="rwt-sidebar">
+
+                        <div class="rbt-single-widget widget_categories">
+                            <h3 class="title">Categories</h3>
+                            <div class="inner">
+                                <ul class="category-list ">
+                                    <li><a href="#"><span class="left-content">Development</span><span class="count-text">300</span></a></li>
+                                    <li><a href="#"><span class="left-content">Company</span><span class="count-text">275</span></a></li>
+                                    <li><a href="#"><span class="left-content">Marketing</span><span class="count-text">625</span></a></li>
+                                    <li><a href="#"><span class="left-content">UX
+                                                Design</span><span class="count-text">556</span></a></li>
+                                    <li><a href="#"><span class="left-content">Business</span><span class="count-text">247</span></a></li>
+                                    <li><a href="#"><span class="left-content">App
+                                                Development</span><span class="count-text">457</span></a></li>
+                                    <li><a href="#"><span class="left-content">Application</span><span class="count-text">423</span></a></li>
+                                    <li><a href="#"><span class="left-content">Art</span><span class="count-text">235</span></a></li>
+                                </ul>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="450" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-04.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-12.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Dog Eligator</h6>
-                                <span class="items">82 Items</span>
+
+                        <div class="rbt-single-widget widget_recent_entries mt--40">
+                            <h3 class="title">Recent Posts</h3>
+                            <div class="inner">
+                                <ul>
+                                    <li><a class="d-block" href="#">Best Corporate Tips You Will
+                                            Read This Year.</a><span class="cate">Development</span></li>
+                                    <li><a class="d-block" href="#">Should Fixing Corporate Take
+                                            100 Steps.</a><span class="cate">UX Design</span></li>
+                                    <li><a class="d-block" href="#">The Next 100 Things To
+                                            Immediately Do About.</a><span class="cate">Development</span></li>
+                                    <li><a class="d-block" href="#">Top 5 Lessons About
+                                            Corporate
+                                            To Learn Before.</a><span class="cate">Marketing</span></li>
+                                </ul>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="500" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-13.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Monas ten</h6>
-                                <span class="items">10 Items</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-                <!-- start single collention -->
-                <div data-sal="slide-up" data-sal-delay="550" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details." class="rn-collection-inner-one">
-                        <div class="collection-wrapper">
-                            <div class="collection-big-thumbnail">
-                                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collenction-small-thumbnail">
-                                <img src="assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile">
-                                <img src="assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-profile">
-                                <img src="assets/images/client/client-14.png" alt="Nft_Profile">
-                            </div>
-                            <div class="collection-deg">
-                                <h6 class="title">Thememove</h6>
-                                <span class="items">82 Items</span>
+
+
+                        <div class="rbt-single-widget widget_tag_cloud mt--40">
+                            <h3 class="title">Tags</h3>
+                            <div class="inner mt--20">
+                                <div class="tagcloud">
+                                    <a href="#">Corporate</a>
+                                    <a href="#">Agency</a>
+                                    <a href="#">Creative</a>
+                                    <a href="#">Design</a>
+                                    <a href="#">Minimal</a>
+                                    <a href="#">Company</a>
+                                    <a href="#">Development</a>
+                                    <a href="#">App Landing</a>
+                                    <a href="#">Startup</a>
+                                    <a href="#">App</a>
+                                    <a href="#">Business</a>
+                                    <a href="#">Software</a>
+                                    <a href="#">Landing</a>
+                                    <a href="#">Art</a>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <!-- End single collention -->
-            </div>
-            <div class="row">
-                <div class="col-lg-12" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
-                    <nav class="pagination-wrapper" aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+                    </aside>
                 </div>
             </div>
         </div>
     </div>
-    <!-- collection area End -->
+    <!-- blog details area end -->
 
-
-
-
-
-    <!-- Start Footer Area -->
     <!-- Start Footer Area -->
     <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
         <div class="container">
@@ -627,8 +842,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -686,7 +901,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -698,7 +913,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -710,7 +925,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -725,7 +940,6 @@
             </div>
         </div>
     </div>
-    <!-- End Footer Area -->
     <!-- End Footer Area -->
     <!-- Start Footer Area -->
     <div class="copy-right-one ptb--20 bg-color--1">
@@ -765,33 +979,33 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/count-down.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/backtoTop.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/scrolltrigger.js"></script>
-    <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="assets/js/vendor/savePopup.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/particles.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/count-down.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/isotop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/odometer.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
     <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="assets/js/vendor/web3.min.js"></script>
-    <script src="assets/js/vendor/maralis.js"></script>
-    <script src="assets/js/vendor/nft.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/maralis.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/nft.js"></script>
 </body>
 
 </html>

@@ -41,10 +41,12 @@ $config = [
 ];
 
 //? Database & Utils
+global $googleClient;
 include_once $config['dirs']['auth'] . '\google.auth.php';
+global $mongoClient;
 include_once $config['dirs']['db'] . '\mongo.conn.php';
-include_once $config['dirs']['includes'] . '\FunctionsHandler.php';
 
+include_once $config['dirs']['includes'] . '\FunctionsHandler.php';
 if (!isset($_SESSION['arrSavedAccounts'])) {
     $_SESSION['arrSavedAccounts'] = array();
 }

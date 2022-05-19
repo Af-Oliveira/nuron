@@ -16,30 +16,30 @@
         <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
         <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['dirs']['site'] ?>/assets/images/favicon.png">
         <!-- CSS 
     ============================================ -->
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/slick.css">
-        <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-        <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-        <link rel="stylesheet" href="assets/css/plugins/feature.css">
-        <link rel="stylesheet" href="assets/css/plugins/filepond-plugin-image-preview.css">
-        <link rel="stylesheet" href="assets/css/plugins/filepond.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick-theme.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/nice-select.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/feature.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/filepond-plugin-image-preview.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/filepond.css">
 
 
-        <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/odometer.css">
 
         <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap-select.css" />
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap-select.css" />
         <script src="https://unpkg.com/@yaireo/tagify"></script>
         <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
-        <script src="assets/js/vendor/jquery.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.js"></script>
         <!-- Style css -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/style.css">
 
 
 
@@ -256,13 +256,13 @@
                     <div class="modal-body">
                         <div class="product-style-one no-overlay">
                             <div class="card-thumbnail">
-                                <a href="product-details.html"><img src="assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio"></a>
+                                <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio"></a>
                             </div>
                             <div class="product-share-wrapper">
                                 <div class="profile-share">
-                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-1.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile"></a>
+                                    <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile"></a>
                                     <a class="more-author-text" href="#">9+ Place Bit.</a>
                                 </div>
                                 <div class="share-btn share-btn-activation dropdown">
@@ -303,8 +303,8 @@
                         <div class="widget-content-wrapper">
                             <div class="footer-left">
                                 <div class="logo-thumbnail logo-custom-css">
-                                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                    <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                                 </div>
                                 <p class="rn-footer-describe">
                                     Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -362,7 +362,7 @@
                                 <li class="recent-post">
                                     <div class="thumbnail">
                                         <a href="product-details.html">
-                                            <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                            <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                         </a>
                                     </div>
                                     <div class="content">
@@ -374,7 +374,7 @@
                                 <li class="recent-post">
                                     <div class="thumbnail">
                                         <a href="product-details.html">
-                                            <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                            <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                         </a>
                                     </div>
                                     <div class="content">
@@ -386,7 +386,7 @@
                                 <li class="recent-post">
                                     <div class="thumbnail">
                                         <a href="product-details.html">
-                                            <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                            <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                         </a>
                                     </div>
                                     <div class="content">
@@ -441,45 +441,45 @@
         <!-- End Top To Bottom Area  -->
         <!-- JS ============================================ -->
 
-        <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-        <script src="assets/js/vendor/jquery-ui.js"></script>
-        <script src="assets/js/vendor/modernizer.min.js"></script>
-        <script src="assets/js/vendor/feather.min.js"></script>
-        <script src="assets/js/vendor/slick.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <script src="assets/js/vendor/sal.min.js"></script>
-        <script src="assets/js/vendor/particles.js"></script>
-        <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-        <script src="assets/js/vendor/js.cookie.js"></script>
-        <script src="assets/js/vendor/count-down.js"></script>
-        <script src="assets/js/vendor/isotop.js"></script>
-        <script src="assets/js/vendor/imageloaded.js"></script>
-        <script src="assets/js/vendor/backtoTop.js"></script>
-        <script src="assets/js/vendor/odometer.js"></script>
-        <script src="assets/js/vendor/jquery-appear.js"></script>
-        <script src="assets/js/vendor/scrolltrigger.js"></script>
-        <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-        <script src="assets/js/vendor/savePopup.js"></script>
-        <script src="assets/js/vendor/bundle.min.js"></script>
-        <script src="assets/js/vendor/nft.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/particles.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/count-down.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/isotop.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/odometer.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/savePopup.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bundle.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/nft.js"></script>
 
-        <script src="assets/js/vendor/filepond.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/filepond.js"></script>
 
-        <script src="assets/js/vendor/filepond-plugin-image-preview.js"></script>
-        <script src="assets/js/vendor/FilePondPluginFileValidateType.js"></script>
-        <script src="assets/js/vendor/axios.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/filepond-plugin-image-preview.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/FilePondPluginFileValidateType.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/axios.js"></script>
 
 
-        <script src="assets/js/vendor/jquery.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <!-- main JS -->
-        <script src="assets/js/main.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/main.js"></script>
 
         <!-- Meta Mask  -->
-        <script src="assets/js/vendor/web3.min.js"></script>
-        <script src="assets/js/vendor/maralis.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+        <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/maralis.js"></script>
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
 

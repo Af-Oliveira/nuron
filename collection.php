@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Activity || Nuron - NFT Marketplace Template</title>
+    <title>Collection || Nuron - NFT Marketplace Template</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,30 +12,31 @@
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['dirs']['site'] ?>/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
+
     <!-- Start Header -->
     <header class="rn-header haeder-default header--sticky">
         <div class="container">
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -187,7 +188,7 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div class="rn-inner-top">
                                         <h4 class="title"><a href="product-details.html">Christopher William</a></h4>
@@ -197,7 +198,7 @@
                                         <ul class="product-list">
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -207,7 +208,7 @@
                                             </li>
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -244,12 +245,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
@@ -266,8 +267,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -388,285 +389,236 @@
             </nav>
         </div>
     </div>
-    <div class="rn-activity-area rn-section-gapTop">
+    <!-- start page title area -->
+    <div class="rn-breadcrumb-inner ptb--30">
         <div class="container">
-            <div class="row mb--30">
-                <h3 class="title">All following Acivity</h3>
-            </div>
-            <div class="row g-6 activity-direction">
-                <div class="col-lg-8 mb_dec--15">
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-01.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Diamond Dog</h6>
-                                    </a>
-                                    <p>10 editions listed by Bits for <span>2.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>2:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">John Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="message-circle"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-02.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">New Diamond Dog</h6>
-                                    </a>
-                                    <p>10 editions listed by Bits for <span>2.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>12:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">Mark Jone</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="user-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-03.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Shopping Car</h6>
-                                    </a>
-                                    <p>Last editions listed by Bits for <span>3.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>1:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">Mark Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-04.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Nuron Scare</h6>
-                                    </a>
-                                    <p>listed by Bits for <span>6.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>9:30 PM on 19th jan, 2001</span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">Moshiur Joo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="user-minus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-05.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Sufining saffer</h6>
-                                    </a>
-                                    <p>New editions listed by Bits for <span>9.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>2:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">John Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="thumbs-up"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-06.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Diamond Dog</h6>
-                                    </a>
-                                    <p>10 editions listed by Bits for <span>2.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>2:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">John Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="shopping-cart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-01.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Cat Food</h6>
-                                    </a>
-                                    <p>New Discover listed by Bits for <span>2.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>2:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">John Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-                    <!-- single activity -->
-                    <div class="single-activity-wrapper">
-                        <div class="inner">
-                            <div class="read-content">
-                                <div class="thumbnail">
-                                    <a href="product-details.html"><img src="assets/images/activity/activity-02.jpg" alt="Nft_Profile"></a>
-                                </div>
-                                <div class="content">
-                                    <a href="product-details.html">
-                                        <h6 class="title">Sun Afford</h6>
-                                    </a>
-                                    <p>10 editions listed by Bits for <span>2.50 ETH</span> each</p>
-                                    <div class="time-maintane">
-                                        <div class="time data">
-                                            <i data-feather="clock"></i>
-                                            <span>2:30 PM on 19th June, </span>
-                                        </div>
-                                        <div class="user-area data">
-                                            <i data-feather="user"></i>
-                                            <a href="#">John Lee</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="icone-area">
-                                <i data-feather="shopping-cart"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single activity -->
-
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <h5 class="title text-center text-md-start">Our Collection</h5>
                 </div>
-                <div class="col-lg-4">
-                    <div class="filter-wrapper">
-                        <div class="widge-wrapper rbt-sticky-top-adjust">
-                            <div class="inner">
-                                <h3>Market filter</h3>
-                                <div class="sing-filter">
-                                    <button>Purchases</button>
-                                    <button>Sales</button>
-                                    <button>Followers</button>
-                                    <button>Following</button>
-                                    <button>Reserved</button>
-                                    <button>Live Auction</button>
-                                </div>
-                            </div>
-                            <div class="inner">
-                                <h3>Filter by users</h3>
-                                <div class="sing-filter">
-                                    <button>Love</button>
-                                    <button>Saved</button>
-                                    <button>Support us</button>
-                                    <button>Report</button>
-                                    <button>Vedio</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <ul class="breadcrumb-list">
+                        <li class="item"><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="feather-chevron-right"></i></li>
+                        <li class="item current">Collection</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end page title area -->
+
+    <!-- collection area Start -->
+    <div class="rn-collection-area rn-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-15.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Cubic Trad</h6>
+                                <span class="items">27 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-12.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Diamond Dog</h6>
+                                <span class="items">20 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-03.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-13.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Morgan11</h6>
+                                <span class="items">15 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details." class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-14.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Orthogon#720</h6>
+                                <span class="items">10 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="400" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-15.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Trad Mard</h6>
+                                <span class="items">35 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="450" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-04.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-12.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Dog Eligator</h6>
+                                <span class="items">82 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="500" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-13.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Monas ten</h6>
+                                <span class="items">10 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="550" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                    <a href="product-details." class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-profile">
+                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/client/client-14.png" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">Thememove</h6>
+                                <span class="items">82 Items</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
+                    <nav class="pagination-wrapper" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- collection area End -->
+
+
+
+
+
+    <!-- Start Footer Area -->
     <!-- Start Footer Area -->
     <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
         <div class="container">
@@ -675,8 +627,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -734,7 +686,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -746,7 +698,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -758,7 +710,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -773,6 +725,7 @@
             </div>
         </div>
     </div>
+    <!-- End Footer Area -->
     <!-- End Footer Area -->
     <!-- Start Footer Area -->
     <div class="copy-right-one ptb--20 bg-color--1">
@@ -812,33 +765,33 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/count-down.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/backtoTop.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/scrolltrigger.js"></script>
-    <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="assets/js/vendor/savePopup.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/particles.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/count-down.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/isotop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/odometer.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
     <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="assets/js/vendor/web3.min.js"></script>
-    <script src="assets/js/vendor/maralis.js"></script>
-    <script src="assets/js/vendor/nft.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/maralis.js"></script>
+    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/nft.js"></script>
 </body>
 
 </html>
