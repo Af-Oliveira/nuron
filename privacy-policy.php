@@ -12,19 +12,19 @@
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['urls']['site'] ?>/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
@@ -34,8 +34,8 @@
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -187,7 +187,7 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div class="rn-inner-top">
                                         <h4 class="title"><a href="product-details.html">Christopher William</a></h4>
@@ -197,7 +197,7 @@
                                         <ul class="product-list">
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -207,7 +207,7 @@
                                             </li>
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -244,12 +244,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="<?php echo $config['urls']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="<?php echo $config['urls']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
@@ -266,8 +266,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -463,9 +463,9 @@
                         </ol>
                         <h4>Collect personal information</h4>
                         <ol>
-                            <li>Fungibility is the ability of an asset to be interchanged with other individual assets
-                                of the same kind; it implies equal value between the assets. If you own a fungible asset
-                                you can readily interchange it for another of a similar kind. Fungible assets simplify
+                            <li>Fungibility is the ability of an asset to be interchanged with other individual <?php echo $config['urls']['site'] ?>/assets
+                                of the same kind; it implies equal value between the <?php echo $config['urls']['site'] ?>/assets. If you own a fungible asset
+                                you can readily interchange it for another of a similar kind. Fungible <?php echo $config['urls']['site'] ?>/assets simplify
                                 the exchange and trade processes, and the best example would be (you guessed it) money.
 
                             </li>
@@ -503,8 +503,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -562,7 +562,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -574,7 +574,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -586,7 +586,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -640,33 +640,33 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/count-down.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/backtoTop.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/scrolltrigger.js"></script>
-    <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="assets/js/vendor/savePopup.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/particles.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/count-down.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/isotop.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/odometer.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
     <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="assets/js/vendor/web3.min.js"></script>
-    <script src="assets/js/vendor/maralis.js"></script>
-    <script src="assets/js/vendor/nft.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
 </body>
 
 </html>

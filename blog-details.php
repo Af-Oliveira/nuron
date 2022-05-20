@@ -1,3 +1,6 @@
+<?php
+include 'inc/config.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +15,19 @@
     <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['dirs']['site'] ?>/assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['urls']['site'] ?>/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="<?php echo $config['dirs']['site'] ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css">
 </head>
 
 <body class="template-color-1 nft-body-connect">
@@ -34,8 +37,8 @@
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                        <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                        <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                     </div>
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -187,7 +190,7 @@
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
                             <div class="icon-box">
-                                <a href="author.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
+                                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/boy-avater.png" alt="Images"></a>
                                 <div class="rn-dropdown">
                                     <div class="rn-inner-top">
                                         <h4 class="title"><a href="product-details.html">Christopher William</a></h4>
@@ -197,7 +200,7 @@
                                         <ul class="product-list">
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -207,7 +210,7 @@
                                             </li>
                                             <li class="single-product-list">
                                                 <div class="thumbnail">
-                                                    <a href="product-details.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
+                                                    <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Nft Product Images"></a>
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="title"><a href="product-details.html">Balance</a></h6>
@@ -244,12 +247,12 @@
                         <ul>
                             <li>
                                 <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                    <img class="sun-image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
+                                    <img class="sun-image" src="<?php echo $config['urls']['site'] ?>/assets/images/icons/sun-01.svg" alt="Sun images">
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                    <img class="Victor Image" src="<?php echo $config['dirs']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
+                                    <img class="Victor Image" src="<?php echo $config['urls']['site'] ?>/assets/images/icons/vector.svg" alt="Vector Images">
                                 </a>
                             </li>
                         </ul>
@@ -266,8 +269,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                    <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -419,7 +422,7 @@
                         </div>
                         <div class="bd-thumbnail">
                             <div class="large-img mb--30">
-                                <img class="w-100" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/lg/blog-01.jpg" alt="Blog Images">
+                                <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/lg/blog-01.jpg" alt="Blog Images">
                             </div>
                         </div>
                         <div class="news-details">
@@ -491,7 +494,7 @@
                                         <li class="comment parent">
                                             <div class="single-comment">
                                                 <div class="comment-author comment-img">
-                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                    <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
                                                     <div class="m-b-20">
                                                         <div class="commenter">Parent</div>
                                                         <div class="time-spent"> August 20, at 8:44
@@ -518,7 +521,7 @@
                                                 <li class="comment byuser ">
                                                     <div class="single-comment">
                                                         <div class="comment-author comment-img">
-                                                            <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                            <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
                                                             <div class="m-b-20">
                                                                 <div class="commenter">Admin Comment
                                                                 </div>
@@ -552,7 +555,7 @@
                                         <li class="comment parent">
                                             <div class="single-comment">
                                                 <div class="comment-author comment-img">
-                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                    <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
                                                     <div class="m-b-20">
                                                         <div class="commenter">Craig E. Judge</div>
                                                         <div class="time-spent"> August 20, at 8:44
@@ -579,7 +582,7 @@
                                                 <li class="comment">
                                                     <div class="single-comment">
                                                         <div class="comment-author comment-img">
-                                                            <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                            <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
                                                             <div class="m-b-20">
                                                                 <div class="commenter"><a href="#">Child
                                                                         Comment</a>
@@ -609,7 +612,7 @@
                                                         <li class="comment">
                                                             <div class="single-comment">
                                                                 <div class="comment-author comment-img">
-                                                                    <img class="comment-avatar" src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
+                                                                    <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
                                                                     <div class="m-b-20">
                                                                         <div class="commenter">
                                                                             <a href="#">Child
@@ -694,7 +697,7 @@
                                     <div class="inner">
                                         <div class="thumbnail">
                                             <a href="blog-details.html">
-                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
+                                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -719,7 +722,7 @@
                                     <div class="inner">
                                         <div class="thumbnail">
                                             <a href="blog-details.html">
-                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
+                                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -744,7 +747,7 @@
                                     <div class="inner">
                                         <div class="thumbnail">
                                             <a href="blog-details.html">
-                                                <img src="<?php echo $config['dirs']['site'] ?>/assets/images/blog/blog-04.jpg" alt="Personal Portfolio Images">
+                                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-04.jpg" alt="Personal Portfolio Images">
                                             </a>
                                         </div>
                                         <div class="content">
@@ -842,8 +845,8 @@
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
                             <div class="logo-thumbnail logo-custom-css">
-                                <a class="logo-light" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['dirs']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                                <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+                                <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best Nuron Artists.
@@ -901,7 +904,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -913,7 +916,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -925,7 +928,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="product-details.html">
-                                        <img src="<?php echo $config['dirs']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -979,33 +982,33 @@
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/feather.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/slick.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/sal.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/particles.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/count-down.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/isotop.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/odometer.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/savePopup.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/particles.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/count-down.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/isotop.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/odometer.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
     <!-- main JS -->
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/main.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/main.js"></script>
     <!-- Meta Mask  -->
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/web3.min.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/maralis.js"></script>
-    <script src="<?php echo $config['dirs']['site'] ?>/assets/js/vendor/nft.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
+    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
 </body>
 
 </html>

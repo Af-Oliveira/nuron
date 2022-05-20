@@ -16,19 +16,19 @@ include 'inc/config.inc.php';
   <!-- 0 == light, 1 == dark -->
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['urls']['site'] ?>/assets/images/favicon.png" />
   <!-- CSS 
     ============================================ -->
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/vendor/slick.css" />
-  <link rel="stylesheet" href="assets/css/vendor/slick-theme.css" />
-  <link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
-  <link rel="stylesheet" href="assets/css/plugins/feature.css" />
-  <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css" />
-  <link rel="stylesheet" href="assets/css/vendor/odometer.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/slick-theme.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/nice-select.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/feature.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/plugins/jquery-ui.min.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/vendor/odometer.css" />
 
   <!-- Style css -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css" />
 </head>
 
 <body class="template-color-1 nft-body-connect">
@@ -58,7 +58,7 @@ include 'inc/config.inc.php';
         </div>
         <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-1">
           <div class="slider-thumbnail">
-            <img src="assets/images/slider/slider-1.png" alt="Slider Images" />
+            <img src="<?php echo $config['urls']['site'] ?>/assets/images/slider/slider-1.png" alt="Slider Images" />
           </div>
         </div>
       </div>
@@ -73,21 +73,21 @@ include 'inc/config.inc.php';
             <div class="slider slider-activation-banner-3">
               <div class="slider-thumbnail thumbnail-overlay">
                 <a href="product-details.html">
-                  <img class="w-100" src="assets/images/banner/h-three-banner-01.jpg" alt="NFT_portfolio" /></a>
+                  <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/h-three-banner-01.jpg" alt="NFT_portfolio" /></a>
                 <div class="read-wrapper">
                   <h5><a href="product-details.html">HasLivbe</a></h5>
                   <span>Md. Master</span>
                 </div>
               </div>
               <div class="slider-thumbnail thumbnail-overlay">
-                <a href="product-details.html"><img class="w-100" src="assets/images/banner/h-three-banner-02.jpg" alt="NFT_portfolio" /></a>
+                <a href="product-details.html"><img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/h-three-banner-02.jpg" alt="NFT_portfolio" /></a>
                 <div class="read-wrapper">
                   <h5><a href="product-details.html">Ladicon Mos</a></h5>
                   <span>John Lee</span>
                 </div>
               </div>
               <div class="slider-thumbnail thumbnail-overlay">
-                <a href="product-details.html"><img class="w-100" src="assets/images/banner/h-three-banner-03.jpg" alt="NFT_portfolio" /></a>
+                <a href="product-details.html"><img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/h-three-banner-03.jpg" alt="NFT_portfolio" /></a>
                 <div class="read-wrapper">
                   <h5><a href="product-details.html">Masters</a></h5>
                   <span>Keenlee</span>
@@ -103,7 +103,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-01.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-01.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -116,7 +116,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-02.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-02.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -129,7 +129,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-03.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-03.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -142,7 +142,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-04.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-04.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -155,7 +155,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-05.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-05.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -168,7 +168,7 @@ include 'inc/config.inc.php';
               <div class="slide-small-wrapper">
                 <div class="thumbnail thumbnail-overlay">
                   <a href="product-details.html">
-                    <img class="w-100" src="assets/images/banner/banner-sm-06.jpg" alt="Nft_Profile" />
+                    <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/banner/banner-sm-06.jpg" alt="Nft_Profile" />
                   </a>
                 </div>
                 <div class="read-wrapper">
@@ -201,7 +201,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2022-11-09">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -223,9 +223,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Mark JOrdan"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Mark"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Jordan"><img src="assets/images/client/client-5.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Mark JOrdan"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Mark"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Jordan"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-5.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">20+ Place Bit.</a>
                   </div>
                   <div class="share-btn share-btn-activation dropdown">
@@ -264,7 +264,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2022-10-09">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -286,9 +286,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Farik Shaikh"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Shaikh"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Farik"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Farik Shaikh"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Shaikh"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Farik"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">15+ Place Bit.</a>
                   </div>
 
@@ -328,7 +328,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2023-12-09">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -350,9 +350,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Mona Lisa"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Lisa"><img src="assets/images/client/client-4.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Mona"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Mona Lisa"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Lisa"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-4.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Mona"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">12+ Place Bit.</a>
                   </div>
                   <div class="share-btn share-btn-activation dropdown">
@@ -391,7 +391,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2024-10-08">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -413,9 +413,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Falak Sabbir"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Sabbir"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Falak"><img src="assets/images/client/client-11.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Falak Sabbir"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Sabbir"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Falak"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-11.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">16+ Place Bit.</a>
                   </div>
                   <div class="share-btn share-btn-activation dropdown">
@@ -454,7 +454,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-06.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-06.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2023-11-08">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -476,9 +476,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Oram Kasin"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Kasin"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Oram"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Oram Kasin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Kasin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Oram"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">10+ Place Bit.</a>
                   </div>
                   <div class="share-btn share-btn-activation dropdown">
@@ -516,7 +516,7 @@ include 'inc/config.inc.php';
             <div class="single-slide-product">
               <div class="product-style-one">
                 <div class="card-thumbnail">
-                  <a href="product-details.html"><img src="assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
+                  <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
                   <div class="countdown" data-date="2023-11-08">
                     <div class="countdown-container days">
                       <span class="countdown-value">87</span>
@@ -538,9 +538,9 @@ include 'inc/config.inc.php';
                 </div>
                 <div class="product-share-wrapper">
                   <div class="profile-share">
-                    <a href="author.html" class="avatar" data-tooltip="Oram Kasin"><img src="assets/images/client/client-10.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Kasin"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
-                    <a href="author.html" class="avatar" data-tooltip="Oram"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Oram Kasin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-10.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Kasin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                    <a href="author.html" class="avatar" data-tooltip="Oram"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
                     <a class="more-author-text" href="#">11+ Place Bit.</a>
                   </div>
                   <div class="share-btn share-btn-activation dropdown">
@@ -597,7 +597,7 @@ include 'inc/config.inc.php';
           <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="rn-service-one color-shape-7">
             <div class="inner">
               <div class="icon">
-                <img src="assets/images/icons/shape-7.png" alt="Shape" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/shape-7.png" alt="Shape" />
               </div>
               <div class="subtitle">Step-01</div>
               <div class="content">
@@ -618,7 +618,7 @@ include 'inc/config.inc.php';
           <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="rn-service-one color-shape-1">
             <div class="inner">
               <div class="icon">
-                <img src="assets/images/icons/shape-1.png" alt="Shape" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/shape-1.png" alt="Shape" />
               </div>
               <div class="subtitle">Step-02</div>
               <div class="content">
@@ -639,7 +639,7 @@ include 'inc/config.inc.php';
           <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="rn-service-one color-shape-5">
             <div class="inner">
               <div class="icon">
-                <img src="assets/images/icons/shape-5.png" alt="Shape" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/shape-5.png" alt="Shape" />
               </div>
               <div class="subtitle">Step-03</div>
               <div class="content">
@@ -660,7 +660,7 @@ include 'inc/config.inc.php';
           <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" class="rn-service-one color-shape-6">
             <div class="inner">
               <div class="icon">
-                <img src="assets/images/icons/shape-6.png" alt="Shape" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/icons/shape-6.png" alt="Shape" />
               </div>
               <div class="subtitle">Step-04</div>
               <div class="content">
@@ -700,13 +700,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone Due"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Nisat Tara"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone Due"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Nisat Tara"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">9+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -745,13 +745,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-4.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Nira Ara"><img src="assets/images/client/client-5.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Fatima Afrafy"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-4.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Nira Ara"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-5.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Fatima Afrafy"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">10+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -790,13 +790,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Janin Ara"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Atif Islam"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Janin Ara"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Atif Islam"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">10+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -835,13 +835,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-5.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-5.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">8+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -880,13 +880,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-7.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-7.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">15+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1016,7 +1016,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1034,7 +1034,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1052,7 +1052,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1070,7 +1070,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-4.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-4.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1088,7 +1088,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-5.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-5.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1106,7 +1106,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1124,7 +1124,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-7.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-7.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1142,7 +1142,7 @@ include 'inc/config.inc.php';
           <div class="top-seller-inner-one explore">
             <div class="top-seller-wrapper">
               <div class="thumbnail varified">
-                <a href="author.html"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
               </div>
               <div class="top-seller-content">
                 <a href="author.html">
@@ -1246,13 +1246,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">9+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1290,13 +1290,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="mr. Davei"><img src="assets/images/client/client-4.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Mrs.Laumi"><img src="assets/images/client/client-5.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Shanon"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="mr. Davei"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-4.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Mrs.Laumi"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-5.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Shanon"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">11+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1334,13 +1334,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="mr. Jone"><img src="assets/images/client/client-7.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Laumi"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Tom"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="mr. Jone"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-7.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Laumi"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Tom"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">12+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1378,7 +1378,7 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-04.jpg" alt="NFT_portfolio" /></a>
               <div class="countdown" data-date="2022-11-09">
                 <div class="countdown-container days">
                   <span class="countdown-value">87</span>
@@ -1401,9 +1401,9 @@ include 'inc/config.inc.php';
 
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="mr. Davei"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Mrs.Laumi"><img src="assets/images/client/client-10.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Shanon"><img src="assets/images/client/client-11.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="mr. Davei"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Mrs.Laumi"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-10.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Shanon"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-11.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">13+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1441,13 +1441,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-05.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Terasa"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Sakib"><img src="assets/images/client/client-7.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Miraj"><img src="assets/images/client/client-3.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Terasa"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Sakib"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-7.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Miraj"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-3.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">15+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1486,13 +1486,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="400" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-06.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-06.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Moris"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jsufia"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Mordan"><img src="assets/images/client/client-2.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Moris"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jsufia"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Mordan"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-2.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">9+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1530,7 +1530,7 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="450" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-07.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-07.jpg" alt="NFT_portfolio" /></a>
               <div class="countdown" data-date="2022-12-09">
                 <div class="countdown-container days">
                   <span class="countdown-value">35</span>
@@ -1552,9 +1552,9 @@ include 'inc/config.inc.php';
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Thinm"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jubin"><img src="assets/images/client/client-10.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Nautial"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Thinm"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jubin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-10.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Nautial"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">14+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1592,13 +1592,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="500" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-10.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Tabriz"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Juskin"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Money"><img src="assets/images/client/client-9.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Tabriz"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Juskin"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Money"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-9.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">14+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1635,13 +1635,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="550" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-09.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-09.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Morokko"><img src="assets/images/client/client-6.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Levnon"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Trim sawdi"><img src="assets/images/client/client-10.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Morokko"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-6.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Levnon"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Trim sawdi"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-10.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">12+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1678,13 +1678,13 @@ include 'inc/config.inc.php';
         <div data-sal="slide-up" data-sal-delay="600" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-style-one no-overlay">
             <div class="card-thumbnail">
-              <a href="product-details.html"><img src="assets/images/portfolio/portfolio-11.jpg" alt="NFT_portfolio" /></a>
+              <a href="product-details.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-11.jpg" alt="NFT_portfolio" /></a>
             </div>
             <div class="product-share-wrapper">
               <div class="profile-share">
-                <a href="author.html" class="avatar" data-tooltip="Mark David"><img src="assets/images/client/client-1.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Sunil Satti"><img src="assets/images/client/client-8.png" alt="Nft_Profile" /></a>
-                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="assets/images/client/client-7.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Mark David"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Sunil Satti"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-8.png" alt="Nft_Profile" /></a>
+                <a href="author.html" class="avatar" data-tooltip="Jone lee"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-7.png" alt="Nft_Profile" /></a>
                 <a class="more-author-text" href="#">5+ Place Bit.</a>
               </div>
               <div class="share-btn share-btn-activation dropdown">
@@ -1744,15 +1744,15 @@ include 'inc/config.inc.php';
           <a href="product-details.html" class="rn-collection-inner-one">
             <div class="collection-wrapper">
               <div class="collection-big-thumbnail">
-                <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile" />
               </div>
               <div class="collenction-small-thumbnail">
-                <img src="assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-01.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-02.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-03.jpg" alt="Nft_Profile" />
               </div>
               <div class="collection-profile">
-                <img src="assets/images/client/client-15.png" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-15.png" alt="Nft_Profile" />
               </div>
               <div class="collection-deg">
                 <h6 class="title">Cubic Trad</h6>
@@ -1767,15 +1767,15 @@ include 'inc/config.inc.php';
           <a href="product-details.html" class="rn-collection-inner-one">
             <div class="collection-wrapper">
               <div class="collection-big-thumbnail">
-                <img src="assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile" />
               </div>
               <div class="collenction-small-thumbnail">
-                <img src="assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-04.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-05.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-06.jpg" alt="Nft_Profile" />
               </div>
               <div class="collection-profile">
-                <img src="assets/images/client/client-12.png" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-12.png" alt="Nft_Profile" />
               </div>
               <div class="collection-deg">
                 <h6 class="title">Diamond Dog</h6>
@@ -1790,15 +1790,15 @@ include 'inc/config.inc.php';
           <a href="product-details.html" class="rn-collection-inner-one">
             <div class="collection-wrapper">
               <div class="collection-big-thumbnail">
-                <img src="assets/images/collection/collection-lg-03.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-lg-03.jpg" alt="Nft_Profile" />
               </div>
               <div class="collenction-small-thumbnail">
-                <img src="assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-07.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-08.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-09.jpg" alt="Nft_Profile" />
               </div>
               <div class="collection-profile">
-                <img src="assets/images/client/client-13.png" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-13.png" alt="Nft_Profile" />
               </div>
               <div class="collection-deg">
                 <h6 class="title">Morgan11</h6>
@@ -1813,15 +1813,15 @@ include 'inc/config.inc.php';
           <a href="product-details.html" class="rn-collection-inner-one">
             <div class="collection-wrapper">
               <div class="collection-big-thumbnail">
-                <img src="assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-lg-05.jpg" alt="Nft_Profile" />
               </div>
               <div class="collenction-small-thumbnail">
-                <img src="assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile" />
-                <img src="assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-10.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-11.jpg" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/collection/collection-sm-12.jpg" alt="Nft_Profile" />
               </div>
               <div class="collection-profile">
-                <img src="assets/images/client/client-14.png" alt="Nft_Profile" />
+                <img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-14.png" alt="Nft_Profile" />
               </div>
               <div class="collection-deg">
                 <h6 class="title">Orthogon#720</h6>
@@ -1906,8 +1906,8 @@ include 'inc/config.inc.php';
           <div class="widget-content-wrapper">
             <div class="footer-left">
               <div class="logo-thumbnail logo-custom-css">
-                <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo" /></a>
-                <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
+                <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo" /></a>
+                <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
               </div>
               <p class="rn-footer-describe">
                 Created with the collaboration of over 60 of the world's best
@@ -1968,7 +1968,7 @@ include 'inc/config.inc.php';
               <li class="recent-post">
                 <div class="thumbnail">
                   <a href="product-details.html">
-                    <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images" />
+                    <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images" />
                   </a>
                 </div>
                 <div class="content">
@@ -1982,7 +1982,7 @@ include 'inc/config.inc.php';
               <li class="recent-post">
                 <div class="thumbnail">
                   <a href="product-details.html">
-                    <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images" />
+                    <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images" />
                   </a>
                 </div>
                 <div class="content">
@@ -1996,7 +1996,7 @@ include 'inc/config.inc.php';
               <li class="recent-post">
                 <div class="thumbnail">
                   <a href="product-details.html">
-                    <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images" />
+                    <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images" />
                   </a>
                 </div>
                 <div class="content">
@@ -2062,33 +2062,33 @@ include 'inc/config.inc.php';
   </div>
   <!-- End Top To Bottom Area  -->
   <!-- JS ============================================ -->
-  <script src="assets/js/vendor/jquery.js"></script>
-  <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-  <script src="assets/js/vendor/jquery-ui.js"></script>
-  <script src="assets/js/vendor/modernizer.min.js"></script>
-  <script src="assets/js/vendor/feather.min.js"></script>
-  <script src="assets/js/vendor/slick.min.js"></script>
-  <script src="assets/js/vendor/bootstrap.min.js"></script>
-  <script src="assets/js/vendor/sal.min.js"></script>
-  <script src="assets/js/vendor/particles.js"></script>
-  <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-  <script src="assets/js/vendor/js.cookie.js"></script>
-  <script src="assets/js/vendor/count-down.js"></script>
-  <script src="assets/js/vendor/isotop.js"></script>
-  <script src="assets/js/vendor/imageloaded.js"></script>
-  <script src="assets/js/vendor/backtoTop.js"></script>
-  <script src="assets/js/vendor/odometer.js"></script>
-  <script src="assets/js/vendor/jquery-appear.js"></script>
-  <script src="assets/js/vendor/scrolltrigger.js"></script>
-  <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-  <script src="assets/js/vendor/savePopup.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/particles.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/count-down.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/isotop.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/odometer.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/savePopup.js"></script>
 
   <!-- main JS -->
-  <script src="assets/js/main.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/main.js"></script>
   <!-- Meta Mask  -->
-  <script src="assets/js/vendor/web3.min.js"></script>
-  <script src="assets/js/vendor/maralis.js"></script>
-  <script src="assets/js/vendor/nft.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
+  <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
 
   <script></script>
 </body>
