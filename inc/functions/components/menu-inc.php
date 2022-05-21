@@ -115,12 +115,12 @@ function rightmenu($mongoClient, $googleClient, $config)
       <ul>
           <li>
               <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                  <img class="sun-image" src="assets/images/icons/sun-01.svg" alt="Sun images">
+                  <img class="sun-image" src="' . $config['urls']['site'] . '/assets/images/icons/sun-01.svg" alt="Sun images">
               </a>
           </li>
           <li>
               <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                  <img class="Victor Image" src="assets/images/icons/vector.svg" alt="Vector Images">
+                  <img class="Victor Image" src="' . $config['urls']['site'] . '/assets/images/icons/vector.svg" alt="Vector Images">
               </a>
           </li>
       </ul>
@@ -138,7 +138,7 @@ function accmenu($mongoClient, $googleClient, $config)
     echo '<div class="setting-option rn-icon-list user-account">
     <div class="icon-box">
     <a href="' . $googleClient->createAuthUrl() . '">
-    <img src="assets/images/icons/boy-avater.png" alt="Images"></a>
+    <img src="' . $config['urls']['site'] . '/assets/images/icons/boy-avater.png" alt="Images"></a>
 </div>
 </div>';
   } else {
@@ -147,7 +147,7 @@ function accmenu($mongoClient, $googleClient, $config)
       <div class="setting-option rn-icon-list user-account">
       <div class="icon-box">
         <a href="' . $googleClient->createAuthUrl() . '">
-        <img src="assets/images/icons/boy-avater.png" alt="Images"></a>';
+        <img src="' . $config['urls']['site'] . '/assets/images/icons/boy-avater.png" alt="Images"></a>';
 
       $nome = 'Guest';
     } else {
@@ -163,11 +163,9 @@ function accmenu($mongoClient, $googleClient, $config)
 
       echo '<div class="setting-option rn-icon-list user-account">
       <div class="icon-box">';
-      if ($resMongoQueryUser['avatar'] == "") {
-        echo '<a><img src="assets/images/slider/banner-06.png" alt="Images"></a>';
-      } else {
-        echo '<a><img src="upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images"></a>';
-      }
+
+      echo '<a><img src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images"></a>';
+
       $nome = $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'];
     }
 
@@ -191,11 +189,9 @@ function accmenu($mongoClient, $googleClient, $config)
       );
       echo '<li class="single-product-list">
           <div class="thumbnail">';
-      if ($resMongoQueryUser['avatar'] == "") {
-        echo '<a href="#"><img src="assets/images/slider/banner-06.png"></a>';
-      } else {
-        echo '<a href="#"><img src="upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" style="width: 50px;border-radius: 100%;object-fit: cover;max-height: 50px;"></a>';
-      }
+
+      echo '<a href="#"><img src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" style="width: 50px;border-radius: 100%;object-fit: cover;max-height: 50px;"></a>';
+
       echo '</div>
           <div class="content">
               <h6 class="title"><a style="' . ($idLog == $id ? ' color: #00a3ff;' : '') . '" href="' . $config['urls']['site'] . '/inc/handlers/ChangeAccount.php?ID=' . $id . '">' . $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'] . '</a></h6>
@@ -244,8 +240,8 @@ function menu($mongoClient, $googleClient, $config)
       <div class="header-inner">
         <div class="header-left" style="flex-basis: 250%;">
           <div class="logo-thumbnail logo-custom-css">
-            <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
-            <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+            <a class="logo-light" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+            <a class="logo-dark" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
           </div>
           <div class="mainmenu-wrapper">
             <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
@@ -278,8 +274,8 @@ function menu($mongoClient, $googleClient, $config)
     <div class="inner">
       <div class="header-top">
         <div class="logo logo-custom-css">
-          <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo" /></a>
-          <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
+          <a class="logo-light" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-white.png" alt="nft-logo" /></a>
+          <a class="logo-dark" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-dark.png" alt="nft-logo" /></a>
         </div>
         <div class="close-menu">
           <button class="close-button">

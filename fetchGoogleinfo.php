@@ -33,12 +33,32 @@ if (isset($_GET['code'])) {
             'email' => $google_account_info['email'],
             'role' => 'User',
             'biography' => '',
-            'banner' => '',
-            'avatar' => '',
+            'banner' => 'bg-image-9.jpg',
+            'avatar' => 'banner-06.png',
             'gender' => '',
-            'Dad' => ''
+            'Dad' => '',
+            'Following' => array()
         ]);
     }
+    $bannerdir = $config['dirs']['site'] . '/assets/images/default/bg-image-9.jpg';
+    $avatardir = $config['dirs']['site'] . '/assets/images/default/banner-06.png';
+
+    $uploaddirB = $config['dirs']['site'] . '/upload/profiles/' . $google_account_info['id'] . '/banners';
+    if (!is_dir($uploaddirB)) {
+
+        echo 'a pasta n existe';
+        mkdir($uploaddirB, 0777, true);
+    }
+    $uploaddirA = $config['dirs']['site'] . '/upload/profiles/' . $google_account_info['id'] . '/avatars';
+    if (!is_dir($uploaddirA)) {
+
+        echo 'a pasta n existe';
+        mkdir($uploaddirA, 0777, true);
+    };
+
+    copy($bannerdir, $uploaddirB . '/bg-image-9.jpg');
+    copy($avatardir, $uploaddirA . '/banner-06.png');
+
 
     if (!in_array($_SESSION['uId'], $_SESSION['arrSavedAccounts'])) {
         array_push($_SESSION['arrSavedAccounts'], $_SESSION['uId']);

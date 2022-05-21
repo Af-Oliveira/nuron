@@ -19,7 +19,7 @@ $arrDados = array(
             'label' => 'Images',
             'type' => 'file',
             'filedetail' => array(
-                'Mnumber' => 4,
+                'Mnumber' => 3,
                 'type' => array('image/*'),
                 'folder' => 'profiles/' . $_SESSION['uId'] . '/itens',
             ),
@@ -110,7 +110,12 @@ $arrDados = array(
 
         'user' => array(
             'type' => 'hidden',
-            'value' => $_SESSION['uId'],
+            'value' => '' . $_SESSION['uId'] . '',
+            'insert' => 1,
+        ),
+        'date' => array(
+            'type' => 'hidden',
+            'value' => '' . time() . '',
             'insert' => 1,
         ),
     )

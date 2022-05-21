@@ -96,11 +96,9 @@ $user = $mongoCollection->findOne(
                         <?php
 
 
-                        if ($user['avatar'] != "") {
-                          echo ' <img id="rbtinput1" src="upload/profiles/' . $_SESSION['uId'] . '/avatars/' . $user['avatar'] . '" alt="Profile-NFT" />';
-                        } else {
-                          echo ' <img id="rbtinput1" src="' . $config['urls']['site'] . '/assets/images/slider/banner-06.png" />';
-                        }
+
+                        echo ' <img id="rbtinput1" src="' . $config['urls']['site'] . '/upload/profiles/' . $_SESSION['uId'] . '/avatars/' . $user['avatar'] . '" alt="Profile-NFT" />';
+
 
                         ?>
                       </div>
@@ -119,11 +117,10 @@ $user = $mongoCollection->findOne(
                       <div class="profile-image mb--30">
                         <h6 class="title" style="font-size:15px">Change Your Cover Photo</h6>
                         <?php
-                        if ($user['banner'] != "") {
-                          echo ' <img id="rbtinput2" src="upload/profiles/' . $_SESSION['uId'] . '/banners/' . $user['banner'] . '" alt="Profile-NFT" />';
-                        } else {
-                          echo ' <img id="rbtinput2" src="' . $config['urls']['site'] . '/assets/images/bg/bg-image-9.jpg"/>';
-                        }
+
+                        echo ' <img id="rbtinput2" src="' . $config['urls']['site'] . '/upload/profiles/' . $_SESSION['uId'] . '/banners/' . $user['banner'] . '" alt="Profile-NFT" />';
+
+
                         ?>
                       </div>
                       <div class="button-area">

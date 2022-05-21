@@ -5,9 +5,13 @@ include '../../models/' . $collection . '.php';
 
 $iten = array();
 $mongoCollection = $mongoClient->$collection;
+
+clog($_POST, true);
+
 foreach ($arrDados['fields'] as $k => $v) {
     if ($v['insert']) {
         $value = $_POST[$k];
+
         if (isJson($value)) {
             $value = json_decode($value);
         }

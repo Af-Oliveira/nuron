@@ -84,6 +84,7 @@ function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
                     </div>';
             break;
         case 'hidden':
+
             $strReturn .= '<input type="hidden" name="' . $fieldName . '" id="' . $fieldName . '" value="' . $dataField['value'] . '">';
             break;
     }

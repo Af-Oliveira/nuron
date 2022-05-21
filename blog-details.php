@@ -425,6 +425,7 @@ include 'inc/config.inc.php';
                                 <img class="w-100" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/lg/blog-01.jpg" alt="Blog Images">
                             </div>
                         </div>
+
                         <div class="news-details">
 
                             <p>Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat

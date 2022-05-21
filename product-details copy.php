@@ -70,6 +70,7 @@ include 'inc/config.inc.php';
               </div>
 
               <div class="tab-content rn-pd-content" id="v-pills-tabContent">
+
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                   <div class="rn-pd-thumbnail">
                     <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/lg/portfolio-01.jpg" alt="Nft_Profile" />
@@ -85,6 +86,7 @@ include 'inc/config.inc.php';
                     <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/lg/portfolio-03.jpg" alt="Nft_Profile" />
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

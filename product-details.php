@@ -1,5 +1,27 @@
 <?php
 include 'inc/config.inc.php';
+
+$vars = isset($params) ?  $params : $_GET;
+
+$author = $vars['author'];
+$name = $vars['name'];
+$id = $vars['id'];
+
+$filter =  ['id' => $id];
+$mongoCollection = $mongoClient->itens;
+$resMongoQueryUser = $mongoCollection->findOne(
+  $filter
+);
+$data = $resMongoQueryUser;
+$slide_big = ['v-pills-home-tab', 'v-pills-profile-tab', 'v-pills-messages-tab'];
+$slide_small = ['v-pills-home', 'v-pills-profile', 'v-pills-messages'];
+
+$filter =  ['id' => $data['user']];
+$mongoCollection = $mongoClient->users;
+$resMongoQueryUser = $mongoCollection->findOne(
+  $filter
+);
+$artist = $resMongoQueryUser;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +50,25 @@ include 'inc/config.inc.php';
 
   <!-- Style css -->
   <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css">
+
 </head>
 
 <body class="template-color-1 nft-body-connect">
+  <span style="display:none" id="ID"><?= $artist['id'] ?></span>
+  <span style="display:none" id="art_ID"><?= $data['id'] ?></span>
+  <style>
+    .blueColor {
+      color: blue;
+    }
+
+    .blueColor2 {
+      background: blue !important;
+    }
+  </style>
+
+
+
+
   <!-- Start Header -->
   <?php
   echo menu($mongoClient, $googleClient, $config)
@@ -52,49 +90,50 @@ include 'inc/config.inc.php';
               <div class="large-img mb--30">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="product-tab-wrapper rbt-sticky-top-adjust">
-                    <div class="pd-tab-inner">
-                      <div class="bd-thumbnail">
-                        <div class="large-img mb--30">
-                          <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                              <span class="rn-pd-sm-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/sm/portfolio-01.jpg" alt="Nft_Profile" />
-                              </span>
-                            </button>
-                            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                              <span class="rn-pd-sm-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/sm/portfolio-02.jpg" alt="Nft_Profile" />
-                              </span>
-                            </button>
-                            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                              <span class="rn-pd-sm-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/sm/portfolio-03.jpg" alt="Nft_Profile" />
-                              </span>
-                            </button>
-                          </div>
-                        </div>
+                    <div class="pd-tab-inner" style="align-items: center;
+                    justify-content: center;">
+
+                      <div style="margin-top: auto;display:flex;align-items: center;
+                    justify-content: center;" class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                        <?php
+                        $count = 0;
+                        foreach ($data['images'] as $key => $value) {
+                          echo '    <button class="nav-link';
+                          echo ($count == 0) ? '  active ' : '';
+                          echo '" active" id="' . $slide_big[$key] . '" data-bs-toggle="pill" data-bs-target="#' . $slide_small[$key] . '" type="button" role="tab" aria-controls="' . $slide_small[$key] . '" aria-selected="true">
+                          <span class="rn-pd-sm-thumbnail " >
+                            <img style="width: 134px;
+                            height: 134px;
+                            object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $data['user'] . '/itens/' . $value . '" alt="Nft_Profile" />
+                          </span>
+                        </button>';
+                          $count++;
+                        }
+                        ?>
                       </div>
-                      <div class="bd-thumbnail">
-                        <div class="large-img mb--30">
-                          <div class="tab-content rn-pd-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                              <div class="rn-pd-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/lg/portfolio-01.jpg" alt="Nft_Profile" />
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                              <div class="rn-pd-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/lg/portfolio-02.jpg" alt="Nft_Profile" />
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                              <div class="rn-pd-thumbnail">
-                                <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/lg/portfolio-03.jpg" alt="Nft_Profile" />
-                              </div>
-                            </div>
+
+                      <div class="tab-content rn-pd-content" id="v-pills-tabContent">
+                        <?php
+                        $count = 0;
+                        foreach ($data['images'] as $key => $value) {
+
+
+                          echo '    <div class="tab-pane fade ';
+                          echo ($count == 0) ? ' show active' : '';
+                          echo '" id="' . $slide_small[$key] . '" role="tabpanel" aria-labelledby="' . $slide_big[$key] . '">
+                          <div class="rn-pd-thumbnail" style="display:flex;align-items: center;
+                          justify-content: center;">
+                            <img  style="width: 462px;
+                            height: 462px;
+                            object-fit: contain;" src="' . $config['urls']['site'] . '/upload/profiles/' . $data['user'] . '/itens/' . $value . '" alt="Nft_Profile" />
                           </div>
-                        </div>
+                        </div>';
+                          $count++;
+                        }
+                        ?>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -103,14 +142,28 @@ include 'inc/config.inc.php';
 
             <div class="rn-pd-content-area">
               <div class="pd-title-area">
-                <h4 class="title">The Amazing Game</h4>
+                <h4 class="title"><?= $data['name'] ?></h4>
                 <div class="pd-react-area">
 
                   <!--likes-->
-                  <div class="heart-count">
-                    <i data-feather="heart"></i>
-                    <span>33</span>
-                  </div>
+                  <a href="#" id="like">
+
+                    <?php
+                    $likes = count((array)$data['likes']);
+
+                    if (in_array($_SESSION['uId'], (array) $data['likes'])) {
+                      echo '    <div class="heart-count name blueColor2"id="btnlike">
+                        <i data-feather="heart"></i>
+                        <span id="Nlikes" class="name" >' . $likes . '</span> </div>';
+                    } else {
+                      echo ' <div class="heart-count name "id="btnlike">
+                        <i data-feather="heart"></i><span id="Nlikes"  class="name">' . $likes . '</span> </div> ';
+                    }
+                    ?>
+
+
+
+                  </a>
 
                   <!--share and report-->
                   <div class="count">
@@ -132,6 +185,8 @@ include 'inc/config.inc.php';
                     </div>
                   </div>
 
+
+
                 </div>
               </div>
               <!--date-->
@@ -142,19 +197,44 @@ include 'inc/config.inc.php';
                 <div class="catagory">
                   <div class="top-seller-inner-one" style="display: flex;">
                     <div class="top-seller-wrapper pe-4">
-                      <div class="thumbnail">
-                        <a href="#"><img src="<?php echo $config['urls']['site'] ?>/assets/images/client/client-1.png" alt="Nft_Profile" /></a>
+                      <div class="thumbnail" style="max-width: 70px;">
+                        <?php
+                        echo '<a href="' . getUrlFriendly('author.php?id=' . $artist['id'], $config, $mongoClient) . '"><img src="' . $config['urls']['site'] . '/upload/profiles/' . $artist['id'] . '\avatars/' . $artist['avatar'] . '" alt="Nft_Profile" /></a>';
+                        ?>
+
                       </div>
 
                     </div>
-                    <div class="top-seller-wrapper">
+                    <div class="top-seller-wrapper" style="display: table-row;">
                       <div class="top-seller-content">
-                        <a href="#">
-                          <h6 class="name">By Brodband</h6>
+                        <?php
+                        echo '<a href="' . getUrlFriendly('author.php?id=' . $artist['id'], $config, $mongoClient) . '">';
+                        ?>
+                        <h6 class="name">By <?= $artist['name'] ?></h6>
                         </a>
-                        <a href="ASD">
-                          <h6 class="name" style=" font-size:small">+ WATCH</h6>
+                      </div>
+                      <div class="top-seller-content">
+
+                        <a href="#" id="Watch">
+                          <?php
+                          $filter =  ['id' => $_SESSION['uId']];
+                          $mongoCollection = $mongoClient->users;
+                          $resMongoQueryUser = $mongoCollection->findOne(
+                            $filter
+                          );
+                          $user = $resMongoQueryUser;
+
+                          if (in_array($artist['id'], (array) $user['Following'])) {
+                            echo '<h6 id="btnWatch" class="name blueColor" style="padding-top: 10px; font-size:small">+ WATCH</h6>';
+                          } else {
+                            echo '<h6 id="btnWatch" class="name" style="padding-top: 10px; font-size:small">+ WATCH</h6>';
+                          }
+                          ?>
+
+
                         </a>
+
+
                       </div>
                     </div>
 
@@ -173,15 +253,10 @@ include 'inc/config.inc.php';
 
                       <div class="mt-2">
                         <div class="top-seller-wrapper">
-                          <h7 class="title" style="font-weight: bold;font-size:18px">Image details:</h7>
+                          <h7 class="title" style="font-weight: bold;font-size:18px">Upload date:</h7> <strong><?= formatTimeStamp($data['date']) ?></strong>
                         </div>
                       </div>
 
-                      <div class="mt-2">
-                        <div class="top-seller-wrapper">
-                          <h7 class="title" style="font-weight: bold;font-size:18px">Upload data:</h7>
-                        </div>
-                      </div>
                       <div class="mt-2">
                         <div class="top-seller-wrapper">
                           <h7 class="title" style="font-weight: bold;font-size:18px">Number of Views:</h7>
@@ -202,32 +277,86 @@ include 'inc/config.inc.php';
         </div>
 
         <div class="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
-
-
           <aside class="rwt-sidebar">
-
-
 
             <div class="rbt-single-widget widget_tag_cloud mt--40">
               <h3 class="title">Tags</h3>
               <div class="inner mt--20">
                 <div class="tagcloud">
-                  <a href="#">Corporate</a>
-                  <a href="#">Agency</a>
-                  <a href="#">Creative</a>
-                  <a href="#">Design</a>
-                  <a href="#">Minimal</a>
-                  <a href="#">Company</a>
-                  <a href="#">Development</a>
-                  <a href="#">App Landing</a>
-                  <a href="#">Startup</a>
-                  <a href="#">App</a>
 
+                  <?php
+                  foreach ($data['tags-regular'] as $key => $value) {
+                    echo '<a href="esplore.php?types=0&tags=' . $value . '">' . $value . '</a>';
+                  }
+                  ?>
                 </div>
               </div>
             </div>
           </aside>
 
+          <?php
+          $filter =  ['user' => (string) $artist['id']];
+          $mongoCollection = $mongoClient->itens;
+          $resMongoQueryUser = $mongoCollection->find(
+            $filter
+          );
+          $itens = $resMongoQueryUser->toArray();
+
+          $index = array_search($data['id'], array_column($itens, 'id'));
+          unset($itens[$index]);
+
+          $itensGamers = array();
+          foreach ($itens as $key => $value) {
+            $itensGamers[] = $value;
+          }
+
+          $itens = $itensGamers;
+
+          if (count($itens) >= 1) {
+            echo '<div class="col-xl-12 col-lg-12 col-md-12 col-12 pt-5 pb-5">
+            <aside class="rwt-sidebar">
+              <div class="rbt-single-widget widget_tag_cloud mt--40">
+            
+                <div class="content">
+
+                  <h4 class="title"><a >More by: ' . $artist['name'] . ' <i class="feather-arrow-up-right"></i></a></h4>
+                </div>';
+
+            $max = count($itens) - 1;
+            $min = 0;
+            $randNumbers = array();
+
+            for ($i = 0; $i < (count($itens) == 1 ? 1 : 2); $i++) {
+              $rand = rand($min, $max);
+              while (in_array($rand, $randNumbers) == true) {
+                $rand = rand($min, $max);
+              }
+              array_push($randNumbers, $rand);
+            }
+
+            foreach ($randNumbers as $key => $value) {
+              clog($value);
+              echo '
+         <div class="inner pt-5">
+         <div class="thumbnail">
+           <a href="' .  getUrlFriendly('product-details.php?author=' . $artist['name'] . '&id=' . $itens[$value]['id'] . '&name=' . $itens[$value]['name'], $config, $mongoClient) . '" style="display: flex;
+         align-items: center;
+             justify-content: center;">
+             <img style="width: 100%;
+height: 140px;
+object-fit: cover;
+border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $artist['id'] . '/itens/' . $itens[$value]['images'][0] . '" alt="Personal Portfolio Images">
+           </a>
+         </div>
+
+       </div>';
+            }
+            echo ' </div>
+       </aside>
+     </div>';
+          }
+
+          ?>
         </div>
       </div>
     </div>
@@ -659,6 +788,48 @@ include 'inc/config.inc.php';
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
+
+
+    <script>
+      $("#Watch").on("click", function(e) {
+        e.preventDefault();
+        data = $("#ID").html();
+
+
+        const btnWatch = document.getElementById("btnWatch");
+        if (btnWatch.classList.contains("blueColor")) {
+          btnWatch.classList.remove("blueColor");
+        } else {
+          btnWatch.classList.add("blueColor");
+        }
+
+        $.ajax({
+          url: `inc/handlers/Subcription.php?WatchID=${data}`,
+          type: "GET",
+        });
+      });
+
+      $("#like").on("click", function(e) {
+        e.preventDefault();
+        data = $("#art_ID").html();
+        Nl = $("#Nlikes").html();
+        const Nlikes = document.getElementById("Nlikes");
+        const btnlike = document.getElementById("btnlike");
+        if (btnlike.classList.contains("blueColor2")) {
+          btnlike.classList.remove("blueColor2");
+
+          Nlikes.textContent = (+Nl) - 1;
+        } else {
+          btnlike.classList.add("blueColor2");
+          Nlikes.textContent = (+Nl) + 1;
+        }
+
+        $.ajax({
+          url: `inc/handlers/like.php?likeID=${data}`,
+          type: "GET",
+        });
+      });
+    </script>
 </body>
 
 </html>
