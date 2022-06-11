@@ -45,7 +45,7 @@ include 'inc/config.inc.php';
       <div class="row row-reverce-sm align-items-center">
         <div class="col-lg-5 col-md-6 col-sm-12 mt_sm--50">
           <h2 class="title" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-            Discover Digital Art, Collect and Sell Your Specific NFTs.
+            Collect, Discover Digital Art and Explore Your favourite artists.
           </h2>
           <p class="slide-disc" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
             Partner with one of the world’s largest retailers to showcase your

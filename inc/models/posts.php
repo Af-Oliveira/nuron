@@ -1,9 +1,9 @@
 <?php
 $arrDados = array(
 
-    'collection' => 'colletions',
+    'collection' => 'posts',
     'order' => 'id',
-    'label' => 'colletions',
+    'label' => 'posts',
 
     'fields' => array(
         'id' => array(
@@ -15,8 +15,21 @@ $arrDados = array(
             'value' => uniqid(),
         ),
 
-        'name' => array(
-            'label' => 'Insert the name of your collection',
+        'images' => array(
+            'label' => 'Images',
+            'type' => 'file',
+            'filedetail' => array(
+                'Mnumber' => 3,
+                'type' => array('image/*'),
+                'folder' => 'profiles/' . $_SESSION['uId'] . '/itens',
+            ),
+            'key' => 0,
+            'insert' => 1,
+            'edit' => 1,
+        ),
+
+        'title' => array(
+            'label' => 'Insert the tittle of post',
             'type' => 'textbox',
             'key' => 0,
             'insert' => 1,
@@ -32,7 +45,7 @@ $arrDados = array(
         ),
 
         'private' => array(
-            'label' => 'Is this collection private?',
+            'label' => 'Is this Post private?',
             'type' => 'active',
             'key' => 0,
             'insert' => 1,

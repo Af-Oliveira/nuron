@@ -1,8 +1,8 @@
 <?php
-function leftmenu($mongoClient, $config)
+function leftmenu($mongoClient, $config, $dad = "0")
 {
 
-  $filter =  ['active' => 1, 'dad' => 0, 'type' => 'menu', 'side' => 'left'];
+  $filter =  ['active' => 1, 'dad' => $dad, 'type' => 'menu', 'side' => 'left'];
   $options = ['sort' => ['order' => 1]];
 
   $mongoCollection = $mongoClient->menu;
@@ -15,8 +15,6 @@ function leftmenu($mongoClient, $config)
   //Start Mainmanu Nav                      
   foreach ($resMongoQuery as $key => $value) {
 
-
-
     $filter =  ['dad' => $value['id'], 'type' => 'menu', 'side' => 'left'];
     $options = ['sort' => ['order' => 1]];
     $mongoCollection = $mongoClient->menu;
@@ -24,9 +22,6 @@ function leftmenu($mongoClient, $config)
       $filter,
       $options
     );
-
-
-
     $resMQ = $resMQ->toArray();
 
     if (count($resMQ) > 0) {
@@ -35,14 +30,9 @@ function leftmenu($mongoClient, $config)
         <a href="' . $value['name'] . '">' . $value['name'] . '</a>
         <ul class="submenu">';
 
-      foreach ($resMQ as $key => $value) {
 
+      leftmenu($mongoClient, $config, $value['id']);
 
-
-        echo '<li >
-            <a href=" ' . getUrlFriendly($value['url'], $config, $mongoClient) . '  ">' . $value['name'] . '<i class="feather-fast-forward"></i></a>
-            </li>';
-      }
       echo '</ul>';
       echo '</li>';
     } else {
@@ -73,6 +63,7 @@ function rightmenu($mongoClient, $googleClient, $config)
           </div>
       </form>
   </div>
+
   <div class="setting-option rn-icon-list d-block d-lg-none">
       <div class="icon-box search-mobile-icon">
           <button><i class="feather-search"></i></button>
@@ -109,23 +100,7 @@ function rightmenu($mongoClient, $googleClient, $config)
               <i class="feather-menu"></i>
           </button>
       </div>
-  </div>
-
-  <div id="my_switcher" class="my_switcher setting-option">
-      <ul>
-          <li>
-              <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                  <img class="sun-image" src="' . $config['urls']['site'] . '/assets/images/icons/sun-01.svg" alt="Sun images">
-              </a>
-          </li>
-          <li>
-              <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                  <img class="Victor Image" src="' . $config['urls']['site'] . '/assets/images/icons/vector.svg" alt="Vector Images">
-              </a>
-          </li>
-      </ul>
-  </div>
-</div>';
+  </div>';
 }
 
 function accmenu($mongoClient, $googleClient, $config)
@@ -202,7 +177,7 @@ function accmenu($mongoClient, $googleClient, $config)
     echo '</ul>
      </div>
       <div class="add-fund-button mt--20 pb--20">
-        <a id="logout" href="logout.php?add=1" class="btn btn-primary-alta w-100">Add a new account</a>
+        <a id="logout" href="' . $config['urls']['site'] . '/logout.php?add=1" class="btn btn-primary-alta w-100">Add a new account</a>
       </div>
 
       <ul class="list-inner">';
@@ -240,8 +215,8 @@ function menu($mongoClient, $googleClient, $config)
       <div class="header-inner">
         <div class="header-left" style="flex-basis: 250%;">
           <div class="logo-thumbnail logo-custom-css">
-            <a class="logo-light" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-            <a class="logo-dark" href="index.php"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+            <a class="logo-light" href="' . getUrlFriendly("index.php", $config, $mongoClient) . '"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-white.png" alt="nft-logo"></a>
+            <a class="logo-dark" href="' . getUrlFriendly("index.php", $config, $mongoClient) . '"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
           </div>
           <div class="mainmenu-wrapper">
             <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">

@@ -20,6 +20,7 @@ if (isset($_GET['add'])) {
     session_destroy();
     @session_start();
     $_SESSION['arrSavedAccounts'] = $arrSavedAccounts;
+    $_SESSION['uId'] = -1;
 ?>
     <script>
         window.onload = function() {

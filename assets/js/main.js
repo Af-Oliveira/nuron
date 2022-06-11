@@ -961,27 +961,51 @@ $("#submitPI").on("submit", function (e) {
   });
 });
 
-function getMongoData(collection, filter) {
-  var dataFromMongo;
-  $.ajax({
-    url: `inc/handlers/getMongoData.php?name=${collection}&filter=${filter}`,
-    type: "GET",
-    dataType: "json",
-    success: function (data) {
-      dataFromMongo = data;
-    },
-  });
-  return dataFromMongo;
-}
-
-async function getMongoData(collection, filter = "null") {
-  console.log(collection, filter);
+async function getMongoData(collection, filter = "{}", config) {
   const data = await axios.get(
-    "inc/handlers/getMongoData.php?name=" +
+    `${config}/inc/handlers/getMongoData.php?name=` +
       collection +
       "&filter=" +
       encodeURIComponent(filter)
   );
-  console.log(data.data);
+
   return data.data;
+}
+
+function formatTimeStamp(timeStamp) {
+  const timeStampInMS = convertUnixToMS(timeStamp);
+  const date = new Date(timeStampInMS);
+
+  const ano = date.getUTCFullYear(); // 2011
+  const mes = date.getUTCMonth(); // 5
+  const dia = date.getUTCDate(); // 14
+
+  return {
+    dia,
+    mes,
+    ano,
+  };
+}
+
+function convertUnixToMS(time) {
+  return time * 1000;
+}
+
+function getMes(mes) {
+  const meses = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  return meses[mes];
 }

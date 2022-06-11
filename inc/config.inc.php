@@ -50,3 +50,6 @@ include_once $config['dirs']['includes'] . '\FunctionsHandler.php';
 if (!isset($_SESSION['arrSavedAccounts'])) {
     $_SESSION['arrSavedAccounts'] = array();
 }
+if (!isset($_SESSION['uId'])) {
+    $_SESSION['uId'] = -1;
+}

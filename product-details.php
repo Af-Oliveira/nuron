@@ -7,12 +7,16 @@ $author = $vars['author'];
 $name = $vars['name'];
 $id = $vars['id'];
 
+
 $filter =  ['id' => $id];
 $mongoCollection = $mongoClient->itens;
 $resMongoQueryUser = $mongoCollection->findOne(
   $filter
 );
 $data = $resMongoQueryUser;
+
+
+
 $slide_big = ['v-pills-home-tab', 'v-pills-profile-tab', 'v-pills-messages-tab'];
 $slide_small = ['v-pills-home', 'v-pills-profile', 'v-pills-messages'];
 
@@ -22,6 +26,7 @@ $resMongoQueryUser = $mongoCollection->findOne(
   $filter
 );
 $artist = $resMongoQueryUser;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +61,7 @@ $artist = $resMongoQueryUser;
 <body class="template-color-1 nft-body-connect">
   <span style="display:none" id="ID"><?= $artist['id'] ?></span>
   <span style="display:none" id="art_ID"><?= $data['id'] ?></span>
+  <span style="display:none" id="user_ID"><?= $_SESSION['uId'] ?></span>
   <style>
     .blueColor {
       color: blue;
@@ -63,6 +69,289 @@ $artist = $resMongoQueryUser;
 
     .blueColor2 {
       background: blue !important;
+    }
+
+    .BtnR:hover {
+      background-color: rgb(47, 191, 206) !important;
+    }
+
+    .like-dislike-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: right;
+    }
+
+    .R {
+      text-align: right !important;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    button>* {
+      pointer-events: none;
+    }
+
+    button {
+
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      font-size: 14px;
+      padding: 4px 8px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    button:hover,
+    button:focus,
+    button:active {
+      cursor: pointer;
+
+    }
+
+    .comment-thread {
+      width: 100%;
+
+      margin: auto;
+
+
+      border: 1px solid transparent;
+      /* Removes margin collapse */
+    }
+
+    .m-0 {
+      margin: 0;
+    }
+
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    /* Comment */
+
+    .comment {
+      position: relative;
+      margin: 20px auto;
+    }
+
+    .comment-heading {
+      background: #3C475E;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      height: 63px;
+      font-size: 14px;
+    }
+
+    .comment-voting {
+      width: 20px;
+      height: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .comment-voting button {
+      display: block;
+      width: 100%;
+      height: 50%;
+      padding: 0;
+      border: 0;
+      font-size: 10px;
+    }
+
+    .comment-info {
+      color: rgba(0, 0, 0, 0.5);
+      margin-left: 10px;
+    }
+
+    .comment-author {
+      color: rgb(255 255 255 / 85%);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .comment-author:hover {
+      text-decoration: underline;
+    }
+
+    .replies {
+      margin-left: 20px;
+    }
+
+    /* Adjustments for the comment border links */
+
+    .comment-border-link {
+      display: block;
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 12px;
+      height: calc(100% - 63px);
+      border-left: 9px solid transparent;
+      border-right: 4px solid transparent;
+      background-color: rgb(255 255 255 / 10%);
+      background-clip: padding-box;
+      padding-left: 7px;
+    }
+
+    .comment-border-link:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .comment-body {
+      border-radius: 7px;
+      background: #212E48;
+      padding: 0 20px;
+      padding-left: 28px;
+      padding-bottom: 15px;
+      margin-top: -10px;
+      padding-top: 15px;
+    }
+
+    .replies {
+      margin-left: 28px;
+    }
+
+    /* Adjustments for toggleable comments */
+
+    details.comment summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    details.comment summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.comment:not([open]) .comment-heading {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .comment-heading::after {
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      align-self: center;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.55);
+    }
+
+    details.comment[open] .comment-heading::after {
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: -30px;
+      content: "Click to hide";
+    }
+
+    details.comment:not([open]) .comment-heading::after {
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: -30px;
+      content: "Click to show";
+    }
+
+    /* Adjustment for Internet Explorer */
+
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+
+      /* Resets cursor, and removes prompt text on Internet Explorer */
+      .comment-heading {
+        cursor: default;
+      }
+
+      details.comment[open] .comment-heading::after,
+      details.comment:not([open]) .comment-heading::after {
+        content: " ";
+      }
+    }
+
+    /* Styling the reply to comment form */
+
+    .reply-form textarea {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .smallB {
+      width: 10em;
+      height: 10em;
+    }
+
+    .bigB {
+      flex-basis: 80%;
+      height: 38em !important;
+      width: 38em;
+      padding-left: 0px;
+      margin-right: -10px;
+    }
+
+    @media (max-width: 770px) {
+
+      .smallB {
+        width: 6.5em;
+        height: 6.5em;
+      }
+
+      .bigB {
+        flex-basis: 80%;
+        height: 25em !important;
+        width: 38em;
+        padding-left: 0px;
+        margin-right: -10px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .smallB {
+        width: 6.5em;
+        height: 6.5em;
+      }
+
+      .bigB {
+        flex-basis: 80%;
+        height: 20em !important;
+        width: 38em;
+        margin-bottom: 10px !important;
+        margin-right: -10px !important;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .smallB {
+        width: 5.5em;
+        height: 5.5em;
+      }
+
+      .bigB {
+        flex-basis: 80%;
+        height: 15em !important;
+        width: 38em;
+        margin-bottom: 10px !important;
+        margin-right: -10px !important;
+      }
     }
   </style>
 
@@ -81,12 +370,7 @@ $artist = $resMongoQueryUser;
       <div class="row g-6">
         <div class="col-xl-8 col-lg-8">
           <div class="rn-blog-listen">
-
-
             <div class="bd-thumbnail">
-
-
-
               <div class="large-img mb--30">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="product-tab-wrapper rbt-sticky-top-adjust">
@@ -94,17 +378,19 @@ $artist = $resMongoQueryUser;
                     justify-content: center;">
 
                       <div style="margin-top: auto;display:flex;align-items: center;
-                    justify-content: center;" class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    justify-content: center;padding-right: 0px;" class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                         <?php
                         $count = 0;
                         foreach ($data['images'] as $key => $value) {
                           echo '    <button class="nav-link';
                           echo ($count == 0) ? '  active ' : '';
-                          echo '" active" id="' . $slide_big[$key] . '" data-bs-toggle="pill" data-bs-target="#' . $slide_small[$key] . '" type="button" role="tab" aria-controls="' . $slide_small[$key] . '" aria-selected="true">
-                          <span class="rn-pd-sm-thumbnail " >
-                            <img style="width: 134px;
-                            height: 134px;
+                          echo ' " id="' . $slide_big[$key] . '" data-bs-toggle="pill" data-bs-target="#' . $slide_small[$key] . '" type="button" role="tab" aria-controls="' . $slide_small[$key] . '" aria-selected="true">
+                          <span class="rn-pd-sm-thumbnail smallB " >
+                            <img style="
+                          width: 100%;
+                          height: 100%;
+
                             object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $data['user'] . '/itens/' . $value . '" alt="Nft_Profile" />
                           </span>
                         </button>';
@@ -113,19 +399,22 @@ $artist = $resMongoQueryUser;
                         ?>
                       </div>
 
-                      <div class="tab-content rn-pd-content" id="v-pills-tabContent">
+                      <div class="tab-content rn-pd-content bigB" id="v-pills-tabContent">
                         <?php
                         $count = 0;
                         foreach ($data['images'] as $key => $value) {
 
 
-                          echo '    <div class="tab-pane fade ';
+                          echo '    <div class="tab-pane fade  ';
                           echo ($count == 0) ? ' show active' : '';
-                          echo '" id="' . $slide_small[$key] . '" role="tabpanel" aria-labelledby="' . $slide_big[$key] . '">
-                          <div class="rn-pd-thumbnail" style="display:flex;align-items: center;
-                          justify-content: center;">
-                            <img  style="width: 462px;
-                            height: 462px;
+                          echo '" id="' . $slide_small[$key] . '" role="tabpanel" aria-labelledby="' . $slide_big[$key] . '" >
+                          <div class="rn-pd-thumbnail" style="display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          height: 100%;
+                          width: 100%;">
+                            <img  style="width: 100%;
+                            height: 100%;
                             object-fit: contain;" src="' . $config['urls']['site'] . '/upload/profiles/' . $data['user'] . '/itens/' . $value . '" alt="Nft_Profile" />
                           </div>
                         </div>';
@@ -141,56 +430,32 @@ $artist = $resMongoQueryUser;
             </div>
 
             <div class="rn-pd-content-area">
-              <div class="pd-title-area">
+              <div class="pd-title-area" style="display: flex;">
                 <h4 class="title"><?= $data['name'] ?></h4>
                 <div class="pd-react-area">
 
                   <!--likes-->
-                  <a href="#" id="like">
+                  <?php
+                  if ($_SESSION['uId'] != -1) {
+                    echo ' <a href="#" id="heart" class="ps-3">';
 
-                    <?php
                     $likes = count((array)$data['likes']);
 
                     if (in_array($_SESSION['uId'], (array) $data['likes'])) {
-                      echo '    <div class="heart-count name blueColor2"id="btnlike">
+                      echo '    <div class="heart-count name blueColor2"id="btnheart">
                         <i data-feather="heart"></i>
-                        <span id="Nlikes" class="name" >' . $likes . '</span> </div>';
+                        <span id="Nheart" class="name" >' . $likes . '</span> </div>';
                     } else {
-                      echo ' <div class="heart-count name "id="btnlike">
-                        <i data-feather="heart"></i><span id="Nlikes"  class="name">' . $likes . '</span> </div> ';
+                      echo ' <div class="heart-count name "id="btnheart">
+                        <i data-feather="heart"></i><span id="Nheart"  class="name">' . $likes . '</span> </div> ';
                     }
-                    ?>
 
-
-
-                  </a>
-
-                  <!--share and report-->
-                  <div class="count">
-                    <div class="share-btn share-btn-activation dropdown">
-                      <button class="icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
-                        </svg>
-                      </button>
-
-                      <div class="share-btn-setting dropdown-menu dropdown-menu-end">
-                        <button type="button" class="btn-setting-text share-text" data-bs-toggle="modal" data-bs-target="#shareModal">
-                          Share
-                        </button>
-                        <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
-                          Report
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
+                    echo '  </a>';
+                  }
+                  ?>
 
                 </div>
               </div>
-              <!--date-->
-
 
               <div class="catagory-collection">
 
@@ -214,9 +479,10 @@ $artist = $resMongoQueryUser;
                         </a>
                       </div>
                       <div class="top-seller-content">
+                        <?php
+                        if ($_SESSION['uId'] != -1) {
+                          echo ' <a href="#" id="Watch">';
 
-                        <a href="#" id="Watch">
-                          <?php
                           $filter =  ['id' => $_SESSION['uId']];
                           $mongoCollection = $mongoClient->users;
                           $resMongoQueryUser = $mongoCollection->findOne(
@@ -229,11 +495,10 @@ $artist = $resMongoQueryUser;
                           } else {
                             echo '<h6 id="btnWatch" class="name" style="padding-top: 10px; font-size:small">+ WATCH</h6>';
                           }
-                          ?>
 
-
-                        </a>
-
+                          echo ' </a>';
+                        }
+                        ?>
 
                       </div>
                     </div>
@@ -286,7 +551,7 @@ $artist = $resMongoQueryUser;
 
                   <?php
                   foreach ($data['tags-regular'] as $key => $value) {
-                    echo '<a href="esplore.php?types=0&tags=' . $value . '">' . $value . '</a>';
+                    echo '<a href=" ' . getUrlFriendly('explore.php?type=-1&tag=' . $value, $config, $mongoClient) . '" >' . $value . '</a>';
                   }
                   ?>
                 </div>
@@ -319,7 +584,7 @@ $artist = $resMongoQueryUser;
             
                 <div class="content">
 
-                  <h4 class="title"><a >More by: ' . $artist['name'] . ' <i class="feather-arrow-up-right"></i></a></h4>
+                  <h3 class="title">More by: ' . $artist['name'] . ' <i class="feather-arrow-up-right"></i></h3>
                 </div>';
 
             $max = count($itens) - 1;
@@ -335,17 +600,13 @@ $artist = $resMongoQueryUser;
             }
 
             foreach ($randNumbers as $key => $value) {
-              clog($value);
               echo '
          <div class="inner pt-5">
          <div class="thumbnail">
            <a href="' .  getUrlFriendly('product-details.php?author=' . $artist['name'] . '&id=' . $itens[$value]['id'] . '&name=' . $itens[$value]['name'], $config, $mongoClient) . '" style="display: flex;
          align-items: center;
              justify-content: center;">
-             <img style="width: 100%;
-height: 140px;
-object-fit: cover;
-border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $artist['id'] . '/itens/' . $itens[$value]['images'][0] . '" alt="Personal Portfolio Images">
+             <img style="width: 100%; height: 140px; object-fit: cover; border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $artist['id'] . '/itens/' . $itens[$value]['images'][0] . '" alt="Personal Portfolio Images">
            </a>
          </div>
 
@@ -361,7 +622,8 @@ border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $a
       </div>
     </div>
   </div>
-  <div class="rn-blog-area rn-blog-details-default rn-section-gapTop" style="background-color:rgb(16, 19, 25);padding: top 46px;">
+
+  <div class="rn-blog-area rn-blog-details-default rn-section-gapTop" style="background-color:rgb(16, 19, 25);padding-top: 25px;">
     <div class="container">
       <div class="row g-6">
 
@@ -369,101 +631,26 @@ border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $a
 
           <div class="rn-blog-listen">
 
-
-
-
             <div class="news-details">
-              <h4>Nobis eleifend option conguenes.</h4>
-              <p>Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
-                facer
-                possim assum.
-                Typi non
-                habent claritatem insitam; est usus legentis in iis qui facit eorum
-                claritatem.
-                Investigationes
-                demonstraverunt
-                lectores legere me lius quod ii legunt saepius. Claritas est etiam processus
-                dynamicus, qui
-                sequitur
-                mutationem consuetudium lectorum.</p>
-              imperdiet purus, in ornare odio. Quisque odio felis, vestibulum
-              et.</p>
+              <p>
+                <?= $data['description'] ?>
+              </p>
             </div>
+
+
+
             <div class="comments-wrapper pt--40">
               <div class="comments-area">
                 <div class="trydo-blog-comment">
-                  <h5 class="comment-title mb--40">9 replies on “Have You Heard?
-                    Agency Is Your Best
-                    Bet To Grow”</h5>
+
                   <!-- Start Coment List  -->
-                  <ul class="comment-list">
 
-                    <!-- Start Single Comment  -->
-                    <li class="comment parent">
-                      <div class="single-comment">
-                        <div class="comment-author comment-img">
-                          <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
-                          <div class="m-b-20">
-                            <div class="commenter">Parent</div>
-                            <div class="time-spent"> August 20, at 8:44
-                              pm</div>
-                          </div>
-                        </div>
-                        <div class="comment-text">
-                          <p>A component that allows for easy creation of menu
-                            items, quickly
-                            creating paragraphs of “Lorem Ipsum” and
-                            pictures with custom
-                            sizes.</p>
-                        </div>
-                        <div class="reply-edit">
-                          <div class="reply">
-                            <a class="comment-reply-link" href="#">
-                              <i class="rbt feather-corner-down-right"></i>
-                              Reply
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="children">
-                        <li class="comment byuser ">
-                          <div class="single-comment">
-                            <div class="comment-author comment-img">
-                              <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
-                              <div class="m-b-20">
-                                <div class="commenter">Admin Comment
-                                </div>
-                                <div class="time-spent"> August 20,
-                                  at 8:44 pm
-                                </div>
-                              </div>
-                            </div>
-                            <div class="comment-text">
-                              <p>A component that allows for easy creation
-                                of menu items,
-                                quickly creating paragraphs of “Lorem
-                                Ipsum” and
-                                pictures with custom sizes.</p>
-                            </div>
-                            <div class="reply-edit">
-                              <div class="reply">
-                                <a class="comment-reply-link" href="#">
-                                  <i class="rbt feather-corner-down-right"></i>
-                                  Reply
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <!-- End Single Comment  -->
+                  <div class="comment-thread" id="C-container">
 
 
-                    <!-- End Single Comment  -->
 
+                  </div>
 
-                  </ul>
                   <!-- End Coment List  -->
                 </div>
               </div>
@@ -472,112 +659,36 @@ border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $a
             <!-- comment form area Start -->
 
             <!-- Start Contact Form Area  -->
-            <div class="rn-comment-form pt--60">
-              <div class="inner">
-                <div class="section-title">
-                  <span class="subtitle">Have a Comment?</span>
-                  <h2 class="title">Leave a Reply</h2>
-                </div>
-                <form class="mt--40" action="#">
+            <?php
+            if ($_SESSION['uId'] != -1) {
+              echo '<div class="rn-comment-form pt--60">
+<div class="inner">
+  <div class="section-title">
+    <span class="subtitle">Have a Comment?</span>
+    <h2 class="title">Leave a Reply</h2>
+  </div>
+  <form onSubmit="sendComment(' . $id = uniqid() . '); return false;" class="mt--40" name="formsC">
+    <div class="col-lg-12 col-md-12 col-12">
+      <div class="rnform-group"><textarea id="comment-' . $id . '-R" name="comment" placeholder="Leave a Comment"></textarea>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="blog-btn">
+        <button type="submit" class="btn btn-primary-alta btn-large w-100">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>';
+            }
+            ?>
 
-                  <div class="col-lg-12 col-md-12 col-12">
-                    <div class="rnform-group"><textarea placeholder="Comment"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="blog-btn">
-                      <a class="btn btn-primary-alta btn-large w-100" href="#"><span>SEND
-                          MESSAGE</span></a>
-                    </div>
-                  </div>
-              </div>
-              </form>
-            </div>
+
           </div>
           <!-- End Contact Form Area  -->
 
           <!-- comment form area End -->
-          <div class="row g-5 pt--60">
-            <div class="col-lg-12">
-              <h3 class="title">Related Post</h3>
-            </div>
-            <!-- start single blog -->
-            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-              <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                <div class="inner">
-                  <div class="thumbnail">
-                    <a href="blog-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <div class="category-info">
-                      <div class="category-list">
-                        <a href="blog-details.html">Development</a>
-                      </div>
-                      <div class="meta">
-                        <span><i class="feather-clock"></i> 2 hour read</span>
-                      </div>
-                    </div>
-                    <h4 class="title"><a href="blog-details.html">The services provide for
-                        design <i class="feather-arrow-up-right"></i></a></h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end single blog -->
-            <!-- start single blog -->
-            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-              <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                <div class="inner">
-                  <div class="thumbnail">
-                    <a href="blog-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <div class="category-info">
-                      <div class="category-list">
-                        <a href="blog-details.html">Design</a>
-                      </div>
-                      <div class="meta">
-                        <span><i class="feather-clock"></i> 5 min read</span>
-                      </div>
-                    </div>
-                    <h4 class="title"><a href="blog-details.html">More important feature for
-                        designer<i class="feather-arrow-up-right"></i></a></h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end single blog -->
-            <!-- start single blog -->
-            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-              <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                <div class="inner">
-                  <div class="thumbnail">
-                    <a href="blog-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/blog/blog-04.jpg" alt="Personal Portfolio Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <div class="category-info">
-                      <div class="category-list">
-                        <a href="blog-details.html">Marketing</a>
-                      </div>
-                      <div class="meta">
-                        <span><i class="feather-clock"></i> 10 min read</span>
-                      </div>
-                    </div>
-                    <h4 class="title"><a href="blog-details.html">Inavalide purpose classes &
-                        motivation.<i class="feather-arrow-up-right"></i></a></h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end single blog -->
 
-          </div>
         </div>
 
 
@@ -588,248 +699,343 @@ border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $a
             <div class="rbt-single-widget widget_categories">
               <h3 class="title">Categories</h3>
               <div class="inner">
+
+
+
+
                 <ul class="category-list ">
-                  <li><a href="#"><span class="left-content">Development</span><span class="count-text">300</span></a></li>
-                  <li><a href="#"><span class="left-content">Company</span><span class="count-text">275</span></a></li>
-                  <li><a href="#"><span class="left-content">Marketing</span><span class="count-text">625</span></a></li>
-                  <li><a href="#"><span class="left-content">UX
-                        Design</span><span class="count-text">556</span></a></li>
-                  <li><a href="#"><span class="left-content">Business</span><span class="count-text">247</span></a></li>
-                  <li><a href="#"><span class="left-content">App
-                        Development</span><span class="count-text">457</span></a></li>
-                  <li><a href="#"><span class="left-content">Application</span><span class="count-text">423</span></a></li>
-                  <li><a href="#"><span class="left-content">Art</span><span class="count-text">235</span></a></li>
+                  <?php
+                  foreach ($data['catgories'] as $key => $value) {
+                    $filter =  ['catgories' => $value];
+                    $mongoCollection = $mongoClient->itens;
+                    $resMongoQueryitem = $mongoCollection->find(
+                      $filter
+                    );
+                    $itens = $resMongoQueryitem->toArray();
+                    $filter =  ['id' => $value];
+                    $mongoCollection = $mongoClient->categories;
+                    $resMongoQuerycat = $mongoCollection->findOne(
+                      $filter
+                    );
+                    $catgories = $resMongoQuerycat['label'];
+                    echo '    <li><a href=" ' . getUrlFriendly('explore.php?type=' . $value . '&tag=-1', $config, $mongoClient) . '"><span class="left-content">' . $catgories . '</span><span class="count-text">' . count($itens) . '</span></a></li>';
+                  }
+                  ?>
+
                 </ul>
               </div>
             </div>
-
-
-
-
-
           </aside>
-        </div>
 
-      </div>
-    </div>
+          <div class="row g-5 pt--60">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+              <div class="rbt-single-widget widget_categories">
+                <h3 class="title">Categories</h3>
 
 
-    <!-- blog details area end -->
+                <div class="inner">
+                  <div class="row g-6">
 
-    <!-- Start Footer Area -->
-    <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
-      <div class="container">
-        <div class="row gx-5">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="widget-content-wrapper">
-              <div class="footer-left">
-                <div class="logo-thumbnail logo-custom-css">
-                  <a class="logo-light" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-                  <a class="logo-dark" href="index.html"><img src="<?php echo $config['urls']['site'] ?>/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
+                    <?php
+                    //do a cicle to get the tags in the item
+                    $tags = array();
+                    foreach ($data['tags-regular'] as $key => $value) {
+                      $tags[] = $value;
+                    }
+
+                    //do a cicle to get the catgories in the item
+                    $categories = array();
+                    foreach ($data['catgories'] as $key => $value) {
+
+                      $categories[] = $value;
+                    }
+                    $relate = array();
+
+                    $allPosts = $mongoClient->itens->find();
+                    $allPosts = $allPosts->toArray();
+                    foreach ($allPosts as $key => $value) {
+                      $isToPass = false;
+                      foreach ($value['tags-regular'] as $key => $tag) {
+                        if (in_array($tag, $tags) == true) {
+                          $isToPass = true;
+                        }
+                      }
+
+                      foreach ($value['catgories'] as $key => $cat) {
+                        if (in_array($cat, $categories) == true) {
+                          $isToPass = true;
+                        }
+                      }
+
+
+                      if ($value['user'] == $data['user']) {
+                        $isToPass = false;
+                      }
+
+                      clog($isToPass);
+                      if ($isToPass) {
+                        $relate[] = $value;
+                      }
+                    }
+                    $relate = array_slice($relate, 0, 5);
+
+                    foreach ($relate as $key => $item) {
+                      echo '
+                      <div class="col-6 col-lg-6 col-md-6 col-sm-6 col-6" style="padding-top: 20px;padding-bottom: 20px;">
+                        <div class="inner">
+                          <div class="thumbnail">
+                            <a href="' . getUrlFriendly('product-details.php?author=' . $item['user'] . '&id=' .  $item['id'] . '&name=' . $item['name'], $config, $mongoClient) . '">
+                            <img style="width: 168px; height: 140px; object-fit: cover; border-radius: 7px;" src="' . $config['urls']['site'] . '/upload/profiles/' . $item['user'] . '/itens/' . $item['images'][0] . '" alt="Personal Portfolio Images">
+                            </a>
+                            </div>
+                          </div>
+                          </div>';
+                    }
+                    ?>
+                  </div>
                 </div>
-                <p class="rn-footer-describe">
-                  Created with the collaboration of over 60 of the world's best Nuron Artists.
-                </p>
               </div>
-              <div class="widget-bottom mt--40 pt--40">
-                <h6 class="title">Get The Latest Nuron Updates </h6>
-                <div class="input-group">
-                  <input type="text" class="form-control bg-color--2" placeholder="Your username" aria-label="Recipient's username">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary-alta btn-outline-secondary" type="button">Subscribe</button>
-                  </div>
-                </div>
-                <div class="newsletter-dsc">
-                  <p>Email is safe. We don't spam.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--40">
-            <div class="footer-widget widget-quicklink">
-              <h6 class="widget-title">Nuron</h6>
-              <ul class="footer-list-one">
-                <li class="single-list"><a href="#">Protocol Explore</a></li>
-                <li class="single-list"><a href="#">System Token</a></li>
-                <li class="single-list"><a href="#">Otimize Time</a></li>
-                <li class="single-list"><a href="#">Visual Checking</a></li>
-                <li class="single-list"><a href="#">Fadeup System</a></li>
-                <li class="single-list"><a href="#">Activity Log</a></li>
-                <li class="single-list"><a href="#">System Auto Since</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
-            <div class="footer-widget widget-information">
-              <h6 class="widget-title">Information</h6>
-              <ul class="footer-list-one">
-                <li class="single-list"><a href="#">Market Explore</a></li>
-                <li class="single-list"><a href="#">Ready Token</a></li>
-                <li class="single-list"><a href="#">Main Option</a></li>
-                <li class="single-list"><a href="#">Product Checking</a></li>
-                <li class="single-list"><a href="blog.html">Blog Grid</a></li>
-                <li class="single-list"><a href="about.html">About Us</a></li>
-                <li class="single-list"><a href="#">Fix Bug </a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
-            <div class="footer-widget">
-              <h6 class="widget-title">Recent Sold Out</h6>
-              <ul class="footer-recent-post">
-                <li class="recent-post">
-                  <div class="thumbnail">
-                    <a href="product-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <h6 class="title"><a href="product-details.html">#21 The Wonder</a></h6>
-                    <p>Highest bid 1/20</p>
-                    <span class="price">0.244wETH</span>
-                  </div>
-                </li>
-                <li class="recent-post">
-                  <div class="thumbnail">
-                    <a href="product-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <h6 class="title"><a href="product-details.html">Diamond Dog</a></h6>
-                    <p>Highest bid 1/20</p>
-                    <span class="price">0.022wETH</span>
-                  </div>
-                </li>
-                <li class="recent-post">
-                  <div class="thumbnail">
-                    <a href="product-details.html">
-                      <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
-                    </a>
-                  </div>
-                  <div class="content">
-                    <h6 class="title"><a href="product-details.html">Morgan11</a></h6>
-                    <p>Highest bid 1/20</p>
-                    <span class="price">0.892wETH</span>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Footer Area -->
-    <!-- Start Footer Area -->
-    <div class="copy-right-one ptb--20 bg-color--1">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <div class="copyright-left">
-              <span>©2022 Nuron, Inc. All rights reserved.</span>
-              <ul class="privacy">
-                <li><a href="terms-condition.html">Terms</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <div class="copyright-right">
-              <ul class="social-copyright">
-                <li><a href="#"><i data-feather="facebook"></i></a></li>
-                <li><a href="#"><i data-feather="twitter"></i></a></li>
-                <li><a href="#"><i data-feather="instagram"></i></a></li>
-                <li><a href="#"><i data-feather="linkedin"></i></a></li>
-                <li><a href="#"><i data-feather="mail"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+
+      <!-- blog details area end -->
+
+      <!-- Start Footer Area -->
+
+      <!-- End Footer Area -->
+      <div class="mouse-cursor cursor-outer"></div>
+      <div class="mouse-cursor cursor-inner"></div>
+      <!-- Start Top To Bottom Area  -->
+      <div class="rn-progress-parent">
+        <svg class="rn-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
       </div>
-    </div>
-    <!-- End Footer Area -->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
-    <!-- Start Top To Bottom Area  -->
-    <div class="rn-progress-parent">
-      <svg class="rn-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-    </div>
-    <!-- End Top To Bottom Area  -->
-    <!-- JS ============================================ -->
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/feather.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/slick.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/sal.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/particles.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/count-down.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/isotop.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/odometer.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/savePopup.js"></script>
-
-    <!-- main JS -->
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/main.js"></script>
-    <!-- Meta Mask  -->
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
-    <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
+      <!-- End Top To Bottom Area  -->
+      <!-- JS ============================================ -->
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.nice-select.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-ui.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/modernizer.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/feather.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/slick.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/bootstrap.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/sal.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/particles.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.style.swicher.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/js.cookie.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/count-down.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/isotop.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/imageloaded.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/backtoTop.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/odometer.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery-appear.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/scrolltrigger.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/jquery.custom-file-input.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/savePopup.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/axios.js"></script>
+      <!-- main JS -->
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/main.js"></script>
+      <!-- Meta Mask  -->
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
+      <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
 
 
-    <script>
-      $("#Watch").on("click", function(e) {
-        e.preventDefault();
-        data = $("#ID").html();
-
-
-        const btnWatch = document.getElementById("btnWatch");
-        if (btnWatch.classList.contains("blueColor")) {
-          btnWatch.classList.remove("blueColor");
-        } else {
-          btnWatch.classList.add("blueColor");
+      <script>
+        async function writeComments() {
+          const id_itens = $("#art_ID").html();
+          const htmlComments = await axios.get(
+            `<?= $config['urls']['site'] ?>/inc/handlers/Comments/writeComments.php?id_itens=${id_itens}`,
+          );
+          const htmlStr = htmlComments.data;
+          $('#C-container').html(htmlStr);
+          return;
         }
 
-        $.ajax({
-          url: `inc/handlers/Subcription.php?WatchID=${data}`,
-          type: "GET",
-        });
-      });
+        function sendComment(idC, reply = "0") {
+          const id_user = $("#user_ID").html();
+          const id_itens = $("#art_ID").html();
 
-      $("#like").on("click", function(e) {
-        e.preventDefault();
-        data = $("#art_ID").html();
-        Nl = $("#Nlikes").html();
-        const Nlikes = document.getElementById("Nlikes");
-        const btnlike = document.getElementById("btnlike");
-        if (btnlike.classList.contains("blueColor2")) {
-          btnlike.classList.remove("blueColor2");
+          const comment = $(`#comment-${idC}-R`).val();
 
-          Nlikes.textContent = (+Nl) - 1;
-        } else {
-          btnlike.classList.add("blueColor2");
-          Nlikes.textContent = (+Nl) + 1;
+          const config = '<?= $config['urls']['site'] ?>';
+          $.ajax({
+            url: `${config}/inc/handlers/Comments/AddComments.php?idC=${idC}&Comment=${comment}&id_user=${id_user}&id_itens=${id_itens}&replyid=${reply}`,
+            type: "GET",
+            success: async () => {
+              await writeComments();
+            },
+          });
         }
 
-        $.ajax({
-          url: `inc/handlers/like.php?likeID=${data}`,
-          type: "GET",
+        function EditComment(idC) {
+
+          const Comment = $(`#comment-${idC}-E`).val();
+
+          const config = '<?= $config['urls']['site'] ?>';
+          $.ajax({
+            url: `${config}/inc/handlers/Comments/EditComments.php?idC=${idC}&Comment=${Comment}`,
+            type: "GET",
+            success: async () => {
+              await writeComments();
+            },
+          });
+        }
+
+        function deleteComment(idC) {
+          console.log("ola");
+          const config = '<?= $config['urls']['site'] ?>';
+          $.ajax({
+            url: `${config}/inc/handlers/Comments/DeleteComment.php?idC=${idC}`,
+            type: "GET",
+            success: async () => {
+              await writeComments();
+            },
+          });
+        }
+
+        function sendlike(idc) {
+          try {
+            const config = '<?= $config['urls']['site'] ?>';
+            const likeBTN = document.getElementById(`btn-like-${idc}`);
+
+            if (likeBTN.classList.contains("btnLike")) {
+
+              const spanL = document.getElementById(`l-${idc}`)
+              const NL = spanL.textContent;
+
+              if (likeBTN.classList.contains("blueColor2")) {
+                likeBTN.classList.remove("blueColor2");
+                spanL.textContent = (+NL) - 1;
+              } else {
+                likeBTN.classList.add("blueColor2");
+                spanL.textContent = (+NL) + 1;
+              }
+
+              $.ajax({
+                url: `${config}/inc/handlers/Comments/AddLike.php?likeid=${idc}`,
+                type: "GET",
+                success: (data) => {
+
+
+
+                },
+              });
+            }
+          } catch (err) {
+            console.error(err);
+            return false;
+          }
+        }
+
+        $("#Watch").on("click", function(e) {
+          e.preventDefault();
+          const data = $("#ID").html();
+          const config = '<?= $config['urls']['site'] ?>';
+          const id = $("#user_ID").html();
+          const btnWatch = document.getElementById("btnWatch");
+          if (btnWatch.classList.contains("blueColor")) {
+            btnWatch.classList.remove("blueColor");
+          } else {
+            btnWatch.classList.add("blueColor");
+          }
+
+          $.ajax({
+            url: `<?= $config['urls']['site'] ?>/inc/handlers/Subcription.php?WatchID=${data}&user_id=${id}`,
+            type: "GET",
+          });
         });
-      });
-    </script>
+
+
+
+
+        $("#heart").on("click", function(e) {
+          e.preventDefault();
+          const data = $("#art_ID").html();
+          const id = $("#user_ID").html();
+          const Nh = $("#Nheart").html();
+          const config = '<?= $config['urls']['site'] ?>';
+          const Nheart = document.getElementById("Nheart");
+          const btnheart = document.getElementById("btnheart");
+          if (btnheart.classList.contains("blueColor2")) {
+            btnheart.classList.remove("blueColor2");
+
+            Nheart.textContent = (+Nh) - 1;
+          } else {
+            btnheart.classList.add("blueColor2");
+            Nheart.textContent = (+Nh) + 1;
+          }
+
+          $.ajax({
+            url: `<?= $config['urls']['site'] ?>/inc/handlers/AddHeart.php?likeID=${data}&user_id=${id}`,
+            type: "GET",
+          });
+        });
+
+        document.addEventListener(
+          "click",
+          function(event) {
+
+
+            const target = event.target;
+            const id = target.commentId = event.target.id;
+            let replyForm;
+
+            if (target.matches(`[data-toggle='reply-form-${id}']`)) {
+              replyForm = document.getElementById(`R-${id}`);
+              var editForm = $(`#E-${id}`);
+              if (editForm.hasClass("d-none")) {} else {
+                editForm.addClass("d-none");
+              }
+              replyForm.classList.toggle("d-none");
+            }
+          },
+          false
+        );
+
+        document.addEventListener(
+          "click",
+          function(event) {
+
+
+
+            const target = event.target;
+            const id = target.commentId = event.target.id;
+            let editForm;
+
+            if (target.matches(`[data-toggle='edit-form-${id}']`)) {
+              console.log("ola");
+              var comment = $(`#desc-${id}`).html();
+              $(`#comment-${id}-E`).val(comment);
+              editForm = document.getElementById(`E-${id}`);
+
+              var replyForm = $(`#R-${id}`);
+              if (replyForm.hasClass("d-none")) {
+
+              } else {
+                replyForm.addClass("d-none");
+              }
+              editForm.classList.toggle("d-none");
+
+            }
+
+
+          },
+          false
+        );
+
+
+        window.onload = async () => {
+          await writeComments();
+
+        }
+      </script>
+
+
 </body>
 
 </html>

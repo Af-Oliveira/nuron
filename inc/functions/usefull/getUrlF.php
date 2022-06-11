@@ -20,7 +20,10 @@ function getUrlFriendly($url, $cfg, $mongoClient)
         $urlFriendly = $result[0]['UrlF'];
         foreach ($params as $key => $parm) {
             if (str_contains($urlFriendly, '{' . $key . '}')) {
+
+
                 $urlFriendly = str_replace('{' . $key . '}', $parm, $urlFriendly);
+
                 unset($params[$key]);
             }
         }

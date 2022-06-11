@@ -36,7 +36,7 @@ $arrDados = array(
             'edit' => 1,
         ),
 
-        'discription' => array(
+        'description' => array(
             'label' => 'Insert the discription of your item',
             'type' => 'textarea',
             'key' => 0,

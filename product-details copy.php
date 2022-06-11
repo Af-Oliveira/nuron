@@ -1,5 +1,5 @@
 <?php
-$id = $params['id'];
+
 include 'inc/config.inc.php';
 
 ?>
@@ -31,6 +31,205 @@ include 'inc/config.inc.php';
 
   <!-- Style css -->
   <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css" />
+  <style>
+    HTML CSS JSResult Skip Results Iframe EDIT ON
+    /* 
+    Body, button, comment-thread, and utilities
+
+    Notes:
+        - This section sets some basic styles. You can ignore this part and 
+        go directly to the comment styles.
+*/
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+
+    button {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      font-size: 14px;
+      padding: 4px 8px;
+      color: rgba(0, 0, 0, 0.85);
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    button:hover,
+    button:focus,
+    button:active {
+      cursor: pointer;
+      background-color: #ecf0f1;
+    }
+
+    .comment-thread {
+      width: 700px;
+      max-width: 100%;
+      margin: auto;
+      padding: 0 30px;
+      background-color: #fff;
+      border: 1px solid transparent;
+      /* Removes margin collapse */
+    }
+
+    .m-0 {
+      margin: 0;
+    }
+
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    /* Comment */
+
+    .comment {
+      position: relative;
+      margin: 20px auto;
+    }
+
+    .comment-heading {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      font-size: 14px;
+    }
+
+    .comment-voting {
+      width: 20px;
+      height: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .comment-voting button {
+      display: block;
+      width: 100%;
+      height: 50%;
+      padding: 0;
+      border: 0;
+      font-size: 10px;
+    }
+
+    .comment-info {
+      color: rgba(0, 0, 0, 0.5);
+      margin-left: 10px;
+    }
+
+    .comment-author {
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .comment-author:hover {
+      text-decoration: underline;
+    }
+
+    .replies {
+      margin-left: 20px;
+    }
+
+    /* Adjustments for the comment border links */
+
+    .comment-border-link {
+      display: block;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 12px;
+      height: calc(100% - 50px);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      background-color: rgba(0, 0, 0, 0.1);
+      background-clip: padding-box;
+    }
+
+    .comment-border-link:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .comment-body {
+      padding: 0 20px;
+      padding-left: 28px;
+    }
+
+    .replies {
+      margin-left: 28px;
+    }
+
+    /* Adjustments for toggleable comments */
+
+    details.comment summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    details.comment summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.comment:not([open]) .comment-heading {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .comment-heading::after {
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      align-self: center;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.55);
+    }
+
+    details.comment[open] .comment-heading::after {
+      content: "Click to hide";
+    }
+
+    details.comment:not([open]) .comment-heading::after {
+      content: "Click to show";
+    }
+
+    /* Adjustment for Internet Explorer */
+
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+
+      /* Resets cursor, and removes prompt text on Internet Explorer */
+      .comment-heading {
+        cursor: default;
+      }
+
+      details.comment[open] .comment-heading::after,
+      details.comment:not([open]) .comment-heading::after {
+        content: " ";
+      }
+    }
+
+    /* Styling the reply to comment form */
+
+    .reply-form textarea {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .d-none {
+      display: none;
+    }
+  </style>
 </head>
 
 <body class="template-color-1 nft-body-connect">
@@ -49,9 +248,14 @@ include 'inc/config.inc.php';
         <!-- product image area -->
 
         <div class="col-lg-7 col-md-12 col-sm-12">
+
+
           <div class="product-tab-wrapper rbt-sticky-top-adjust">
             <div class="pd-tab-inner">
+
+
               <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                   <span class="rn-pd-sm-thumbnail">
                     <img src="<?php echo $config['urls']['site'] ?>/assets/images/portfolio/sm/portfolio-01.jpg" alt="Nft_Profile" />
@@ -528,6 +732,7 @@ include 'inc/config.inc.php';
                 </div>
               </div>
             </div>
+
             <ul class="children">
               <li class="comment byuser ">
                 <div class="single-comment">
@@ -562,108 +767,263 @@ include 'inc/config.inc.php';
           </li>
           <!-- End Single Comment  -->
 
-          <!-- Start Single Comment  -->
-          <li class="comment parent">
-            <div class="single-comment">
-              <div class="comment-author comment-img">
-                <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
-                <div class="m-b-20">
-                  <div class="commenter">Craig E. Judge</div>
-                  <div class="time-spent"> August 20, at 8:44
-                    pm</div>
-                </div>
-              </div>
-              <div class="comment-text">
-                <p>A component that allows for easy creation of menu
-                  items, quickly
-                  creating paragraphs of “Lorem Ipsum” and
-                  pictures with custom
-                  sizes.</p>
-              </div>
-              <div class="reply-edit">
-                <div class="reply">
-                  <a class="comment-reply-link" href="#">
-                    <i class="rbt feather-corner-down-right"></i>
-                    Reply
-                  </a>
-                </div>
-              </div>
-            </div>
-            <ul class="children">
-              <li class="comment">
-                <div class="single-comment">
-                  <div class="comment-author comment-img">
-                    <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
-                    <div class="m-b-20">
-                      <div class="commenter"><a href="#">Child
-                          Comment</a>
-                      </div>
-                      <div class="time-spent"> August 20,
-                        at 8:44 pm
-                      </div>
-                    </div>
-                  </div>
-                  <div class="comment-text">
-                    <p>A component that allows for easy creation
-                      of menu items,
-                      quickly creating paragraphs of “Lorem
-                      Ipsum” and
-                      pictures with custom sizes.</p>
-                  </div>
-                  <div class="reply-edit">
-                    <div class="reply">
-                      <a class="comment-reply-link" href="#">
-                        <i class="rbt feather-corner-down-right"></i>
-                        Reply
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <ul class="children">
-                  <li class="comment">
-                    <div class="single-comment">
-                      <div class="comment-author comment-img">
-                        <img class="comment-avatar" src="<?php echo $config['urls']['site'] ?>/assets/images/blog/comment/comment-01.png" alt="Comment Image">
-                        <div class="m-b-20">
-                          <div class="commenter">
-                            <a href="#">Child
-                              Comment</a>
-                          </div>
-                          <div class="time-spent"> August
-                            20, at 8:44
-                            pm</div>
-                        </div>
-                      </div>
-                      <div class="comment-text">
-                        <p>A component that allows for easy
-                          creation of menu
-                          items,
-                          quickly creating paragraphs of
-                          “Lorem Ipsum” and
-                          pictures with custom sizes.</p>
-                      </div>
-                      <div class="reply-edit">
-                        <div class="reply">
-                          <a class="comment-reply-link" href="#">
-                            <i class="rbt feather-corner-down-right"></i>
-                            Reply
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <!-- End Single Comment  -->
-
-
         </ul>
         <!-- End Coment List  -->
       </div>
     </div>
   </div>
+
+
+  <div class="comment-thread">
+    <!-- Comment 1 start -->
+    <details open class="comment">
+
+      <summary>
+        <div class="comment-heading">
+          <div class="comment-voting">
+            <button type="button">
+              <span aria-hidden="true">&#9650;</span>
+              <span class="sr-only">Vote up</span>
+            </button>
+            <button type="button">
+              <span aria-hidden="true">&#9660;</span>
+              <span class="sr-only">Vote down</span>
+            </button>
+          </div>
+          <div class="comment-info">
+            <a href="#" class="comment-author">someguy14</a>
+            <p class="m-0">
+              22 points &bull; 4 days ago
+            </p>
+          </div>
+
+      </summary>
+
+      <div class="comment-body" style="">
+        <p>
+          This is really great! I fully agree with what you wrote, and this is sure to help me out in the future. Thank you for posting this.
+        </p>
+        <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Reply</button>
+        <button type="button">Flag</button>
+
+        <!-- Reply form start -->
+        <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
+          <textarea placeholder="Reply to comment" rows="4"></textarea>
+          <button type="submit">Submit</button>
+          <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Cancel</button>
+        </form>
+        <!-- Reply form end -->
+      </div>
+
+
+
+      <div class="replies">
+        <!-- Comment 2 start -->
+        <details open class="comment">
+          <a href="#comment-2" class="comment-border-link">
+            <span class="sr-only">Jump to comment-2</span>
+          </a>
+          <summary>
+            <div class="comment-heading">
+              <div class="comment-voting">
+                <button type="button">
+                  <span aria-hidden="true">&#9650;</span>
+                  <span class="sr-only">Vote up</span>
+                </button>
+                <button type="button">
+                  <span aria-hidden="true">&#9660;</span>
+                  <span class="sr-only">Vote down</span>
+                </button>
+              </div>
+              <div class="comment-info">
+                <a href="#" class="comment-author">randomperson81</a>
+                <p class="m-0">
+                  4 points &bull; 3 days ago
+                </p>
+              </div>
+            </div>
+          </summary>
+
+          <div class="comment-body">
+            <p>
+              Took the words right out of my mouth!
+            </p>
+            <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+            <button type="button">Flag</button>
+
+            <!-- Reply form start -->
+            <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+              <textarea placeholder="Reply to comment" rows="4"></textarea>
+              <button type="submit">Submit</button>
+              <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+            </form>
+            <!-- Reply form end -->
+          </div>
+
+          <!-- Comment 2 end -->
+          <div class="replies">
+            <!-- Comment 2 start -->
+            <details open class="comment">
+              <a href="#comment-2" class="comment-border-link">
+                <span class="sr-only">Jump to comment-2</span>
+              </a>
+              <summary>
+                <div class="comment-heading">
+                  <div class="comment-voting">
+                    <button type="button">
+                      <span aria-hidden="true">&#9650;</span>
+                      <span class="sr-only">Vote up</span>
+                    </button>
+                    <button type="button">
+                      <span aria-hidden="true">&#9660;</span>
+                      <span class="sr-only">Vote down</span>
+                    </button>
+                  </div>
+                  <div class="comment-info">
+                    <a href="#" class="comment-author">randomperson81</a>
+                    <p class="m-0">
+                      4 points &bull; 3 days ago
+                    </p>
+                  </div>
+                </div>
+              </summary>
+
+              <div class="comment-body">
+                <p>
+                  Took the words right out of my mouth!
+                </p>
+                <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+                <button type="button">Flag</button>
+
+                <!-- Reply form start -->
+                <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+                  <textarea placeholder="Reply to comment" rows="4"></textarea>
+                  <button type="submit">Submit</button>
+                  <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+                </form>
+                <!-- Reply form end -->
+              </div>
+            </details>
+            <!-- Comment 2 end -->
+
+
+          </div>
+        </details>
+
+      </div>
+    </details>
+    <details open class="comment">
+      <a href="#comment-2" class="comment-border-link">
+        <span class="sr-only">Jump to comment-2</span>
+      </a>
+      <summary>
+        <div class="comment-heading">
+          <div class="comment-voting">
+            <button type="button">
+              <span aria-hidden="true">&#9650;</span>
+              <span class="sr-only">Vote up</span>
+            </button>
+            <button type="button">
+              <span aria-hidden="true">&#9660;</span>
+              <span class="sr-only">Vote down</span>
+            </button>
+          </div>
+          <div class="comment-info">
+            <a href="#" class="comment-author">randomperson81</a>
+            <p class="m-0">
+              4 points &bull; 3 days ago
+            </p>
+          </div>
+        </div>
+      </summary>
+
+      <div class="comment-body">
+        <p>
+          Took the words right out of my mouth!
+        </p>
+        <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+        <button type="button">Flag</button>
+
+        <!-- Reply form start -->
+        <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+          <textarea placeholder="Reply to comment" rows="4"></textarea>
+          <button type="submit">Submit</button>
+          <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+        </form>
+        <!-- Reply form end -->
+      </div>
+
+      <!-- Comment 2 end -->
+      <div class="replies">
+        <!-- Comment 2 start -->
+        <details open class="comment">
+          <a href="#comment-2" class="comment-border-link">
+            <span class="sr-only">Jump to comment-2</span>
+          </a>
+          <summary>
+            <div class="comment-heading">
+              <div class="comment-voting">
+                <button type="button">
+                  <span aria-hidden="true">&#9650;</span>
+                  <span class="sr-only">Vote up</span>
+                </button>
+                <button type="button">
+                  <span aria-hidden="true">&#9660;</span>
+                  <span class="sr-only">Vote down</span>
+                </button>
+              </div>
+              <div class="comment-info">
+                <a href="#" class="comment-author">randomperson81</a>
+                <p class="m-0">
+                  4 points &bull; 3 days ago
+                </p>
+              </div>
+            </div>
+          </summary>
+
+          <div class="comment-body">
+            <p>
+              Took the words right out of my mouth!
+            </p>
+            <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+            <button type="button">Flag</button>
+
+            <!-- Reply form start -->
+            <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+              <textarea placeholder="Reply to comment" rows="4"></textarea>
+              <button type="submit">Submit</button>
+              <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+            </form>
+            <!-- Reply form end -->
+          </div>
+        </details>
+        <!-- Comment 2 end -->
+
+
+      </div>
+    </details>
+
+  </div>
+  </details>
+  <!-- Comment 1 end -->
+  </div>
+
+  <script>
+    document.addEventListener(
+      "click",
+      function(event) {
+        var target = event.target;
+        var replyForm;
+        if (target.matches("[data-toggle='reply-form']")) {
+          replyForm = document.getElementById(target.getAttribute("data-target"));
+          replyForm.classList.toggle("d-none");
+        }
+      },
+      false
+    );
+  </script>
+
+
   <!-- New items Start -->
   <div class="rn-new-items rn-section-gapTop">
     <div class="container">
