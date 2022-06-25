@@ -535,6 +535,16 @@ class IconicMultiSelect {
     }
   }
 
+  initAlreadyOptions(alreadyOptions = []) {
+    for (let i = 0; i < alreadyOptions.length; i++) {
+      const option = alreadyOptions[i];
+      this._handleOption(
+        this._multiselect.querySelector(`li[data-value="${option.value}"]`),
+        false
+      );
+    }
+  }
+
   _initSelectedList() {
     let hasItemsSelected = false;
 
@@ -551,7 +561,8 @@ class IconicMultiSelect {
       }
     }
 
-    if (hasItemsSelected) this._handleClearSelectionBtn();
+    if (this._options.length)
+      if (hasItemsSelected) this._handleClearSelectionBtn();
     this._handlePlaceholder();
   }
 

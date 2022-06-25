@@ -3,14 +3,14 @@ $arrDados = array(
 
     'collection' => 'itens',
     'order' => 'id',
-    'label' => 'itens',
+    'label' => 'art',
 
     'fields' => array(
         'id' => array(
             'label' => 'ID',
             'type' => 'hidden',
             'key' => 1,
-            'insert' => 0,
+            'insert' => 1,
             'edit' => 0,
             'value' => uniqid(),
         ),
@@ -22,15 +22,20 @@ $arrDados = array(
                 'Mnumber' => 3,
                 'type' => array('image/*'),
                 'folder' => 'profiles/' . $_SESSION['uId'] . '/itens',
+                'collection' => 'itens',
             ),
+            'validation' => 'Please, provide at least one valid image.',
+            'min_select' => 1,
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
         ),
 
         'name' => array(
-            'label' => 'Insert the name of your item',
+            'label' => 'Insert the name of your item.',
             'type' => 'textbox',
+            'Max_length' => 70,
+            'validation' => 'Please, provide a valid name.',
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
@@ -39,6 +44,8 @@ $arrDados = array(
         'description' => array(
             'label' => 'Insert the discription of your item',
             'type' => 'textarea',
+            'Max_length' => 500,
+            'validation' => 'Please, provide a valid description.',
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
@@ -50,19 +57,17 @@ $arrDados = array(
                 'min' => '0',
                 'max' => '10',
             ),
+            'min_select' => 3,
+            'validation' => 'Please, provide at least three valid tag.',
             'type' => 'tag_multiselect',
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
         ),
 
-        'catgories' => array(
-            'label' => 'Select the catgories of your item',
+        'categories' => array(
+            'label' => 'Select the categories of your item',
             'type' => 'multiselect',
-            'accept_in' => array(
-                'min' => '1',
-                'max' => '4',
-            ),
             'select_colletion' => array(
                 'collection' => 'categories',
                 'field' => 'label',
@@ -71,6 +76,8 @@ $arrDados = array(
                 'key' => 'id',
                 'max_selected_options' => 5,
             ),
+            'validation' => 'Please, provide at leat one valid category.',
+            'min_select' => 1,
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
@@ -80,7 +87,7 @@ $arrDados = array(
             'label' => 'Does this item belong to a collection?',
             'type' => 'multiselect',
             'select_colletion' => array(
-                'collection' => 'collection',
+                'collection' => 'collections',
                 'field' => 'name',
                 'filter' => array('user' => $_SESSION['uId']),
                 'to_save' => 'id',
@@ -111,12 +118,22 @@ $arrDados = array(
         'user' => array(
             'type' => 'hidden',
             'value' => '' . $_SESSION['uId'] . '',
+            'decode' => false,
             'insert' => 1,
+            'edit' => 0,
+        ),
+        'likes' => array(
+            'type' => 'hidden',
+            'value' => '[]',
+            'insert' => 1,
+            'edit' => 0,
         ),
         'date' => array(
             'type' => 'hidden',
             'value' => '' . time() . '',
             'insert' => 1,
+            'edit' => 0,
         ),
-    )
+
+    ),
 );

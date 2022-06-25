@@ -37,7 +37,9 @@ if (isset($_GET['code'])) {
             'avatar' => 'banner-06.png',
             'gender' => '',
             'Dad' => '',
-            'Following' => array()
+            'Following' => array(),
+            'date' => time(),
+            'active' => 1
         ]);
     }
     $bannerdir = $config['dirs']['site'] . '/assets/images/default/bg-image-9.jpg';

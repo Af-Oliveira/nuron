@@ -7,7 +7,7 @@ global $config;
 
 //? Config
 $rootURl = 'http://localhost:8080/rainbowit.net/html/nuron';
-#$rootURl = 'http://mysterious-tue-votes-summer.trycloudflare.com:8080/rainbowit.net/html/nuron';
+#$rootURl = 'http://produced-paypal-engagement-fast.trycloudflare.com:8080/rainbowit.net/html/nuron';
 $rootDir = 'C:\xampp\htdocs\rainbowit.net\html\nuron';
 
 $config = [

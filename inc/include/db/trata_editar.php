@@ -1,44 +1,46 @@
 <?php
-include '../../../inc/config.inc.php';
-$table = $_GET['tabela'];
+include '../../config.inc.php';
+$collection = $_GET['collection'];
+include '../../models/' . $collection . '.php';
 
-include '../../db/models/' . $table . '.php';
+$id = $_GET['id'];
+$newitem = array();
+$mongoCollection = $mongoClient->$collection;
 
-
-$strKey = $_POST['pkey'];
-
-$strNomeCampos = '';
+$item = $mongoCollection->findOne(
+    [
+        'id' => $id
+    ],
+);
 
 foreach ($arrDados['fields'] as $k => $v) {
-    if ($v['edit']) {
-        switch ($v['type']) {
-            case 'active':
-            case 'checkbox':
-                if (!isset($_POST[$k])) {
-                    $valorCheckbox = 0;
-                } else {
-                    $valorCheckbox = 1;
+    if ($v['insert']) {
+        if ($v['edit']) {
+            $value = $_POST[$k];
+
+
+            $isToDecode = isset($v['decode']) ? $v['decode'] : true;
+            if ($isToDecode == true) {
+                if (isJson($value)) {
+                    $value = json_decode($value);
                 }
-                $strNomeCampos .= "$k = '" . $valorCheckbox . "', ";
-                break;
-            case 'password':
-                if ($_POST[$k] != '') {
-                    $valorPassword = password_hash($_POST[$k], PASSWORD_DEFAULT);
-                    $strNomeCampos .= "$k = '" . $valorPassword . "', ";
-                }
-                break;
-            default:
-                if (isset($_POST[$k]))
-                    $strNomeCampos .= "$k = '" . $_POST[$k] . "', ";
-                break;
+            }
+
+            $newitem[$k] = $value;
+        } else {
+            $newitem[$k] = $item[$k];
         }
-    }
-}
+    };
+};
 
-$strNomeCampos = substr($strNomeCampos, 0, strlen($strNomeCampos) - 2);
 
-$query  = "UPDATE " . $arrDados['table'] . " SET $strNomeCampos WHERE $strKey";
-$res    = my_query($query);
-
-header('Location: ' . $arrConfig['url_admin'] . '/dashboard/tables_regular.php?tabela=' . $arrDados['table']);
+$mongoCollection->updateOne(
+    [
+        'id' => $id
+    ],
+    [
+        '$set' => $newitem
+    ]
+);
+header('Location: ' . $config['urls']['site']);
 exit();

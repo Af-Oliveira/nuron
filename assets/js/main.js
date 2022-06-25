@@ -1,3 +1,5 @@
+var rootUrl = "http://localhost:8080/rainbowit.net/html/nuron";
+
 var file;
 var iduser = $("#iduser") ? $("#iduser").html() : 0;
 (function ($) {
@@ -843,20 +845,20 @@ function ValidateImg(file) {
   }
 }
 
-function uploadFile(file, pasta) {
+async function uploadFile(file, pasta) {
   var formData = new FormData();
-
+  console.log("entrou no uploadFile");
   formData.append("file", file, file.name);
 
   if (ValidateImg(file)) {
     $.ajax({
-      url: `inc/uploadImg.php?pasta=${pasta}`,
+      url: `${rootUrl}/inc/uploadImg.php?pasta=${pasta}`,
       type: "POST",
       data: formData,
       processData: false,
       contentType: false,
       success: function (data) {
-        alert(data);
+        // alert(data);
       },
     });
     return file;
@@ -865,28 +867,37 @@ function uploadFile(file, pasta) {
   }
 }
 
-$("#submitEPI").on("submit", function (e) {
+$("#submitEPI").on("submit", async (e) => {
   e.preventDefault();
+});
+
+async function sEPI() {
   [banner] = nipa.files ? nipa.files : null;
   [avatar] = fatima.files ? fatima.files : null;
-
+  console.log("entrou no teste");
   if (avatar) {
-    avatar = uploadFile(avatar, `profiles/${iduser}/avatars`);
+    avatar = await uploadFile(avatar, `profiles/${iduser}/avatars`);
   }
 
   if (banner) {
-    banner = uploadFile(banner, `profiles/${iduser}/banners`);
+    banner = await uploadFile(banner, `profiles/${iduser}/banners`);
   }
 
   uploadEPI(avatar ? avatar.name : null, banner ? banner.name : null);
-});
+  swal({
+    title: "Saved",
+    text: "Profile Updated!",
+    icon: "success",
+    button: "Ok",
+  });
+}
 
-$("#submitIten").on("submit", function (e) {
+$("#submitIten").on("submit", async (e) => {
   e.preventDefault();
   [iten] = createfileImage.files ? createfileImage.files : null;
 
   if (iten) {
-    iten = uploadFile(avatar, `profiles/${iduser}/itens`);
+    iten = await uploadFile(avatar, `profiles/${iduser}/itens`);
   }
 
   uploadIten(iten ? iten.name : null);
@@ -905,6 +916,14 @@ function uploadIten(iten) {
     data: formData,
     processData: false,
     contentType: false,
+  });
+}
+async function sPI() {
+  data = $("#submitPI").serialize();
+  $.ajax({
+    url: `${rootUrl}/inc/handlers/TratarPI.php`,
+    type: "POST",
+    data: data,
     success: function () {
       swal({
         title: "Saved",
@@ -915,6 +934,9 @@ function uploadIten(iten) {
     },
   });
 }
+$("#submitPI").on("submit", function (e) {
+  e.preventDefault();
+});
 
 function uploadEPI(avatar, banner) {
   var formData = new FormData();
@@ -927,7 +949,7 @@ function uploadEPI(avatar, banner) {
   }
 
   $.ajax({
-    url: `inc/handlers/TratarEPI.php`,
+    url: `${rootUrl}/inc/handlers/TratarEPI.php`,
     type: "POST",
     data: formData,
     processData: false,
@@ -943,31 +965,20 @@ function uploadEPI(avatar, banner) {
   });
 }
 
-$("#submitPI").on("submit", function (e) {
-  e.preventDefault();
-  data = $("#submitPI").serialize();
-  $.ajax({
-    url: `inc/handlers/TratarPI.php`,
-    type: "POST",
-    data: data,
-    success: function () {
-      swal({
-        title: "Saved",
-        text: "Profile Updated!",
-        icon: "success",
-        button: "Ok",
-      });
-    },
-  });
-});
-
 async function getMongoData(collection, filter = "{}", config) {
-  const data = await axios.get(
+  console.log("SUS");
+
+  const resUrl =
     `${config}/inc/handlers/getMongoData.php?name=` +
-      collection +
-      "&filter=" +
-      encodeURIComponent(filter)
-  );
+    collection +
+    "&filter=" +
+    encodeURIComponent(filter);
+
+  console.log({
+    resUrl,
+  });
+
+  const data = await axios.get(resUrl);
 
   return data.data;
 }

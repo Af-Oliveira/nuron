@@ -1,20 +1,10 @@
-<?php
-$vars = isset($params) ?  $params : $_GET;
-$id = $vars['id'];
-$filter =  ['id' => $id];
-$mongoCollection = $mongoClient->itens;
-$resMongoQueryUser = $mongoCollection->findOne(
-    $filter
-);
-$data = $resMongoQueryUser;
-?>
 <script>
     var arrMyTagifys = new Map();
     var arrMySelects = new Map();
     var arrMyFiles = new Map();
-    var id = '<?= $id ?>';
-    var postData = <?php echo json_encode($data); ?>;
 </script>
+
+
 <?php
 function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
 {
@@ -24,18 +14,17 @@ function writeFieldForm($arrConfig, $dataField, $fieldName, $fieldValue = '')
     $filedetail = '';
     switch ($dataField['type']) {
 
-
         case 'textbox':
             $strReturn .= '<div class="col-md-12">
             <div class="input-box pb--20">
                 <label for="' . $fieldName . '" class="form-label">' . $dataField['label'] . '</label>
-                <input data-span="Vspan-' . $fieldName . '" class="input" type="text" id="' . $fieldName . '" name="' . $fieldName . '" value="' . $fieldValue . '" maxlength="' . $dataField['Max_length'] . '" style="border: solid 1px;"  required>
+                <input  data-span="Vspan-' . $fieldName . '" class="input" type="text" id="' . $fieldName . '" name="' . $fieldName . '" maxlength="' . $dataField['Max_length'] . '" style="border: solid 1px;" required>
             </div>
             <div style="
             display: flex;
             justify-content: space-between;">
 
-            <span style ="margin-top: -15px;padding-bottom: 10px ;" id="Vspan-' . $fieldName . '">' . strlen($fieldValue) . '/' . $dataField['Max_length'] . '</span>';
+            <span style ="margin-top: -15px;padding-bottom: 10px ;" id="Vspan-' . $fieldName . '">0/' . $dataField['Max_length'] . '</span>';
             if (isset($dataField['validation'])) {
                 $strReturn .= '<div class="d-none" style="text-decoration: underline;
 font-weight: 900;
@@ -52,13 +41,13 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             $strReturn .= '<div class="col-md-12">
                             <div class="input-box pb--20">
                                 <label for="' . $fieldName . '" class="form-label">' . $dataField['label'] . '</label>
-                                <textarea data-span="Vspan-' . $fieldName . '" class="textarea" id="' . $fieldName . '" style="border: solid 1px;" maxlength="' . $dataField['Max_length'] . '" name="' . $fieldName . '" value="" rows="3" required >' . $fieldValue . '</textarea>
+                                <textarea data-span="Vspan-' . $fieldName . '" id="' . $fieldName . '" class="textarea" style="border: solid 1px;" name="' . $fieldName . '" rows="3" required maxlength="' . $dataField['Max_length'] . '"></textarea>                              
                             </div>
                             <div style="
                             display: flex;
                             justify-content: space-between;">
 
-                            <span style ="margin-top: -15px;padding-bottom: 10px ;" id="Vspan-' . $fieldName . '">' . strlen($fieldValue) . '/' . $dataField['Max_length'] . '</span>';
+                            <span style ="margin-top: -15px;padding-bottom: 10px ;" id="Vspan-' . $fieldName . '">0/' . $dataField['Max_length'] . '</span>';
             if (isset($dataField['validation'])) {
                 $strReturn .= '<div class="d-none" style="text-decoration: underline;
     font-weight: 900;
@@ -75,10 +64,53 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             $strReturn .= '<div class="col-md-12">
                             <div class="input-box pb--20">
                                 <label for="' . $fieldName . '" class="form-label">' . $dataField['label'] . '</label>
-                                <input name="' . $fieldName . '_value" id="' . $fieldName . '_value" value="' . implode(', ', (array) $fieldValue) . '" placeholder="e.x tag1, tag2">
-                                <input name="' . $fieldName . '" id="' . $fieldName . '" value="' . implode(', ', (array)  $fieldValue) . '" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . ' type="hidden">
-                            </div>
-                        </div>';
+                                <input name="' . $fieldName . '_value" id="' . $fieldName . '_value" value="Tag1, Tag2" placeholder="e.x tag1, tag2">
+                                <input name="' . $fieldName . '" id="' . $fieldName . '" value="[]" type="hidden" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . ' >
+                            </div>';
+            if (isset($dataField['validation'])) {
+                $strReturn .= '<div class="d-none" style="text-decoration: underline;
+                            font-weight: 900;
+                            margin-top: -15px;
+                            padding-bottom: 10px;
+                            color: #ff0000a8;" id="v-' . $fieldName . '">
+                            ' . $dataField['validation'] . '
+                            </div>';
+            }
+            $strReturn .= ' </div>';
+            break;
+        case 'multiselect':
+            $select_colletion = json_encode($dataField['select_colletion']);
+            $strReturn .= '<div class="col-md-12">
+                <div class="mb--15">
+                <label class="form-label">' . $dataField['label'] . '</label>
+                    <div class="' . $fieldName . '_value"></div>
+                </div>
+                <input name="' . $fieldName . '" id="' . $fieldName . '" value="[]" type="hidden" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . ' >';
+            if (isset($dataField['validation'])) {
+                $strReturn .= '<div class="d-none" style="text-decoration: underline;
+                    font-weight: 900;
+                    margin-top: -15px;
+                    padding-bottom: 10px;
+                    color: #ff0000a8;" id="v-' . $fieldName . '">
+                    ' . $dataField['validation'] . '
+                    </div>';
+            }
+            $strReturn .= ' </div>';
+            break;
+        case 'active';
+            $strReturn .= '  <div class="col-md-12 col-sm-12">
+            <div class="input-box pb--20 rn-check-box">
+              <input
+                class="rn-check-box-input"
+                type="checkbox"
+                name="' . $fieldName . '"
+                id="' . $fieldName . '"
+      
+              />
+              <label class="rn-check-box-label" style="font-size: 20px" for="' . $fieldName . '" >
+               ' . $dataField['label'] . '
+              </label>
+            </div>';
             if (isset($dataField['validation'])) {
                 $strReturn .= '<div class="d-none" style="text-decoration: underline;
                 font-weight: 900;
@@ -90,48 +122,11 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             }
             $strReturn .= ' </div>';
             break;
-        case 'multiselect':
-            $select_colletion = json_encode($dataField['select_colletion']);
-            $strReturn .= '<div class="col-md-12">
-                <div class="mb--15">
-                <label class="form-label">' . $dataField['label'] . '</label>
-                    <div class="' . $fieldName . '_value"></div>
-                </div>
-                <input name="' . $fieldName . '" id="' . $fieldName . '" value="" type="hidden" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . '>
-            </div>';
-            if (isset($dataField['validation'])) {
-                $strReturn .= '<div class="d-none" style="text-decoration: underline;
-    font-weight: 900;
-    margin-top: -15px;
-    padding-bottom: 10px;
-    color: #ff0000a8;" id="v-' . $fieldName . '">
-    ' . $dataField['validation'] . '
-    </div>';
-            }
-            $strReturn .= ' </div>';
-            break;
-        case 'active';
-            $ck = ($fieldValue == "on" ? 'checked' : '');
-
-            $strReturn .= '  <div class="col-md-12 col-sm-12">
-            <div class="input-box pb--20 rn-check-box">
-              <input type="checkbox"
-                class="rn-check-box-input" ' . $ck . '
-                name="' . $fieldName . '"
-                id="' . $fieldName . '"
-    
-              />
-              <label class="rn-check-box-label" style="font-size: 20px" for="' . $fieldName . '">
-               ' . $dataField['label'] . '
-              </label>
-            </div>
-          </div>';
-            break;
         case 'file';
             $filedetail = json_encode($dataField['filedetail']);
 
             $strReturn .= '
-            <div class="upload-area">
+                     <div class="upload-area">
                         <div class="upload-formate mb--30">
                             <h6 class="title">
                                 Upload file
@@ -141,23 +136,22 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
                             </p>
                         </div>
                         <input type="file" name="' . $fieldName . '_value" class="filepond" id="' . $fieldName . '_value" value="">
-                        <input name="' . $fieldName . '" id="' . $fieldName . '" value="" type="hidden" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . '>
+                        <input name="' . $fieldName . '" id="' . $fieldName . '" value="[]" type="hidden" ' . (isset($dataField['min_select'])  ? 'min_select="' . $dataField['min_select'] . '" required' : '') . '>
                         <p class="text-center " style="margin: 0 0 5px;">Choose a File</p>
                     </div>';
             if (isset($dataField['validation'])) {
                 $strReturn .= '<div class="d-none" style="text-decoration: underline;
-            font-weight: 900;
-            margin-top: -5px;
-            padding-bottom: 10px;
-            color: #ff0000a8;" id="v-' . $fieldName . '">
-            ' . $dataField['validation'] . '
-            </div>';
+                        font-weight: 900;
+                        margin-top: -5px;
+                        padding-bottom: 10px;
+                        color: #ff0000a8;" id="v-' . $fieldName . '">
+                        ' . $dataField['validation'] . '
+                        </div>';
             }
-            $strReturn .= ' </div>';
             break;
         case 'hidden':
 
-            $strReturn .= '<input type="hidden" name="' . $fieldName . '" id="' . $fieldName . '" value="' . ($dataField['value']) . '" >';
+            $strReturn .= '<input type="hidden" name="' . $fieldName . '" id="' . $fieldName . '" value="' . ($dataField['value']) . '">';
             break;
     }
 
@@ -179,7 +173,9 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
 }
 ?>
 
-<form name="formInserir" id="formInserir" action="<?= $config['urls']['site'] . '/inc/include/db/trata_editar.php?collection=' . $arrDados['collection'] ?>&id=<?= $id ?>" method="post" class="row g-5" style="display: flex;
+
+
+<form name="formInserir" id="formInserir" action="<?= $config['urls']['site'] . '/inc/include/db/trata_inserir.php?collection=' . $arrDados['collection'] ?>" method="post" class="row g-5" style="display: flex;
     align-items: center;
     justify-content: center;">
     <div class="col-lg-4" id="filesinputs">
@@ -189,10 +185,8 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
     </div>
     <?php
     foreach ($arrDados['fields'] as $k => $v) {
-        if ($v['insert'] || $v['sort']) {
-            if ($v['edit']) {
-                writeFieldForm($config, $v, $k, $data['' . $k . '']);
-            }
+        if ($v['insert']) {
+            writeFieldForm($config, $v, $k);
         }
     }
     ?>
@@ -206,14 +200,15 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
         </div>
     </div>
 </form>
+<?php
+
+?>
 
 <script>
     window.onload = function() {
-
-
         if (arrMyFiles.size == 0) {
             const cenagamer = ` <div class="slider-thumbnail">
-            <img src="assets/images/slider/slider-1.png" alt="Slider Images" />
+            <img src="<?= $config['urls']['site'] ?>/assets/images/slider/slider-1.png" alt="Slider Images" />
           </div>`;
             $('#filesinputs').append(cenagamer);
         }
@@ -224,7 +219,6 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             let tagify = new Tagify(inputElm, {
                 keepInvalidTags: false,
                 maxTags: 10,
-
             })
 
             inputElm.addEventListener('change', () => console.log("CHANGED!"))
@@ -246,49 +240,6 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
                 }
             });
 
-        });
-
-        // ----- Init MySelects -----
-        arrMySelects.forEach(async (value, key) => {
-
-
-            let filter = JSON.stringify(value.filter);
-            let options = await getMongoData(value.collection, filter, '<?= $config['urls']['site'] ?>');
-
-
-            const myData = [];
-            options.forEach((element) => {
-                const object_option = {
-                    value: element[value.key],
-                    label: element[value.field],
-                };
-                myData.push(object_option);
-            });
-
-            var mySelect = new MultiSelect2('.' + key + '_value', {
-                value: [],
-                icon: 'fa fa-times',
-                multiple: true,
-                options: myData,
-                max_selected_options: value.max_selected_options ?? null,
-                selected_options: new Map(),
-                noOptions: value.missing ?? 'No options available',
-                onChange: value => {
-                    $(`#${key}`).val(JSON.stringify(value));
-                }
-            });
-
-
-            let arrV = [];
-
-            (postData[key]).forEach((element) => {
-                if (element)
-                    arrV.push(element);
-            });
-            mySelect._setValue(arrV, !0);
-
-            value.MultiSelect2 = mySelect;
-            arrMySelects.set(key, value);
         });
 
         // ----- count max lenght -----
@@ -316,18 +267,40 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             }
         });
 
-        // ----- Init MyFileponds -----
-        arrMyFiles.forEach(async (value, key) => {
-            let arrAlreadySelectedOptions = postData.images;
-
-            let arrImgs = [];
-            arrAlreadySelectedOptions.forEach((source) => {
-                if (source)
-                    arrImgs.push({
-                        source: `<?= $config['urls']['site'] . '/upload/profiles/' ?>${postData.user}/itens/${source}`,
-                    });
+        // ----- Init MySelects -----
+        arrMySelects.forEach(async (value, key) => {
+            let filter = JSON.stringify(value.filter);
+            let options = await getMongoData(value.collection, filter, '<?= $config['urls']['site'] ?>');
+            const myData = [];
+            options.forEach((element) => {
+                const object_option = {
+                    value: element[value.key],
+                    label: element[value.field],
+                };
+                myData.push(object_option);
             });
 
+            var mySelect = new MultiSelect2('.' + key + '_value', {
+                value: [],
+                icon: 'fa fa-times',
+                multiple: true,
+                options: myData,
+                max_selected_options: value.max_selected_options ?? null,
+                selected_options: new Map(),
+                noOptions: value.missing ?? 'No options available',
+                onChange: value => {
+
+                    $(`#${key}`).val(JSON.stringify(value));
+                }
+            });
+
+
+            value.MultiSelect2 = mySelect;
+            arrMySelects.set(key, value);
+        });
+
+        // ----- Init MyFileponds -----
+        arrMyFiles.forEach((value, key) => {
 
             FilePond.parse(document.body);
             const inputElement = document.querySelector(`#${key}_value`);
@@ -343,13 +316,13 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
                 labelFileTypeNotAllowed: 'Only images are allowed',
                 instantUpload: false,
                 allowProcess: false,
-                files: arrImgs
-            });
 
+            });
 
 
             pond.folder = value.folder;
             arrMyFiles.set(key, pond);
+
         });
 
 
@@ -358,7 +331,7 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
         })
 
         async function uploadFILES(i, maxCount) {
-
+            let toSubmit = false;
             arrMyFiles.forEach((value, key) => {
                 maxCount += (value.getFiles()).length;
             });

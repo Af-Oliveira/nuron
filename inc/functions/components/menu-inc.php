@@ -52,7 +52,7 @@ function rightmenu($mongoClient, $googleClient, $config)
     $filter,
     $options
   );
-
+  $resMongoQuery = $resMongoQuery->toArray();
 
   echo '  <div class="header-right">
   <div class="setting-option d-none d-lg-block">
@@ -77,14 +77,11 @@ function rightmenu($mongoClient, $googleClient, $config)
   </div>';
 
   foreach ($resMongoQuery as $key => $value) {
-
-
-
     if (isset($_SESSION['uId']) && $_SESSION['uId'] !== -1) {
 
       echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="   ' . getUrlFriendly($value['url'], $config, $mongoClient) . '  "><i class="' . $value['icon'] . '" style="scale: 1.3;width: inherit;height: 50%;"></i>';
+                  <a href="' . getUrlFriendly($value['url'], $config, $mongoClient) . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>';
       echo '</a>
                  </div>
               </div>';
@@ -99,7 +96,7 @@ function rightmenu($mongoClient, $googleClient, $config)
           <button class="hamberger-button">
               <i class="feather-menu"></i>
           </button>
-      </div>
+      </div> 
   </div>';
 }
 
@@ -188,11 +185,14 @@ function accmenu($mongoClient, $googleClient, $config)
       $filter
     );
 
-
     foreach ($resMongoQueryUser as $key => $value) {
 
-
-      echo '  <li><a href="  ' . getUrlFriendly($value['url'], $config, $mongoClient)   . '   ">' . $value['name'] . '</a></li> ';
+      if ($value['url'] == "author.php") {
+        $url = $value['url'] . '?id=' . $_SESSION['uId'];
+      } else {
+        $url = $value['url'];
+      }
+      echo '  <li><a href="  ' . getUrlFriendly($url, $config, $mongoClient)   . '   ">' . $value['name'] . '</a></li> ';
     };
     echo ' 
          
@@ -216,7 +216,6 @@ function menu($mongoClient, $googleClient, $config)
         <div class="header-left" style="flex-basis: 250%;">
           <div class="logo-thumbnail logo-custom-css">
             <a class="logo-light" href="' . getUrlFriendly("index.php", $config, $mongoClient) . '"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-white.png" alt="nft-logo"></a>
-            <a class="logo-dark" href="' . getUrlFriendly("index.php", $config, $mongoClient) . '"><img src="' . $config['urls']['site'] . '/assets/images/logo/logo-dark.png" alt="nft-logo"></a>
           </div>
           <div class="mainmenu-wrapper">
             <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">

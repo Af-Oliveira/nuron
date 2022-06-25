@@ -3,17 +3,17 @@ include 'inc/config.inc.php';
 
 $vars = isset($params) ?  $params : $_GET;
 
-$author = $vars['author'];
-$name = $vars['name'];
+$author = isset($vars['author']) ? $vars['author'] : null;
+$name = isset($vars['name']) ? $vars['name'] : null;
 $id = $vars['id'];
 
 
 $filter =  ['id' => $id];
 $mongoCollection = $mongoClient->itens;
-$resMongoQueryUser = $mongoCollection->findOne(
+$resMongoQueryitem = $mongoCollection->findOne(
   $filter
 );
-$data = $resMongoQueryUser;
+$data = $resMongoQueryitem;
 
 
 
@@ -26,6 +26,10 @@ $resMongoQueryUser = $mongoCollection->findOne(
   $filter
 );
 $artist = $resMongoQueryUser;
+
+
+clog($data);
+clog($artist);
 
 ?>
 <!DOCTYPE html>
@@ -551,7 +555,8 @@ $artist = $resMongoQueryUser;
 
                   <?php
                   foreach ($data['tags-regular'] as $key => $value) {
-                    echo '<a href=" ' . getUrlFriendly('explore.php?type=-1&tag=' . $value, $config, $mongoClient) . '" >' . $value . '</a>';
+
+                    echo '<a href=" ' . getUrlFriendly('explore.php?tag=' . $value . '&catg=all&type=art', $config, $mongoClient) . 'type=art" >' . $value . '</a>';
                   }
                   ?>
                 </div>
@@ -661,13 +666,14 @@ $artist = $resMongoQueryUser;
             <!-- Start Contact Form Area  -->
             <?php
             if ($_SESSION['uId'] != -1) {
+              $id = uniqid();
               echo '<div class="rn-comment-form pt--60">
 <div class="inner">
   <div class="section-title">
     <span class="subtitle">Have a Comment?</span>
     <h2 class="title">Leave a Reply</h2>
   </div>
-  <form onSubmit="sendComment(' . $id = uniqid() . '); return false;" class="mt--40" name="formsC">
+  <form onSubmit="sendComment(`' . $id . '`,0); return false;" class="mt--40" name="formsC">
     <div class="col-lg-12 col-md-12 col-12">
       <div class="rnform-group"><textarea id="comment-' . $id . '-R" name="comment" placeholder="Leave a Comment"></textarea>
       </div>
@@ -705,8 +711,8 @@ $artist = $resMongoQueryUser;
 
                 <ul class="category-list ">
                   <?php
-                  foreach ($data['catgories'] as $key => $value) {
-                    $filter =  ['catgories' => $value];
+                  foreach ($data['categories'] as $key => $value) {
+                    $filter =  ['categories' => $value];
                     $mongoCollection = $mongoClient->itens;
                     $resMongoQueryitem = $mongoCollection->find(
                       $filter
@@ -717,8 +723,8 @@ $artist = $resMongoQueryUser;
                     $resMongoQuerycat = $mongoCollection->findOne(
                       $filter
                     );
-                    $catgories = $resMongoQuerycat['label'];
-                    echo '    <li><a href=" ' . getUrlFriendly('explore.php?type=' . $value . '&tag=-1', $config, $mongoClient) . '"><span class="left-content">' . $catgories . '</span><span class="count-text">' . count($itens) . '</span></a></li>';
+                    $categories = $resMongoQuerycat['label'];
+                    echo '    <li><a href=" ' . getUrlFriendly('explore.php?tag=all&catg=' . $value . '&type=art', $config, $mongoClient) . '"><span class="left-content">' . $categories . '</span><span class="count-text">' . count($itens) . '</span></a></li>';
                   }
                   ?>
 
@@ -730,7 +736,7 @@ $artist = $resMongoQueryUser;
           <div class="row g-5 pt--60">
             <div class="col-xl-12 col-lg-12 col-md-12 col-12">
               <div class="rbt-single-widget widget_categories">
-                <h3 class="title">Categories</h3>
+                <h3 class="title">You Might Like ...</h3>
 
 
                 <div class="inner">
@@ -743,9 +749,9 @@ $artist = $resMongoQueryUser;
                       $tags[] = $value;
                     }
 
-                    //do a cicle to get the catgories in the item
+                    //do a cicle to get the categories in the item
                     $categories = array();
-                    foreach ($data['catgories'] as $key => $value) {
+                    foreach ($data['categories'] as $key => $value) {
 
                       $categories[] = $value;
                     }
@@ -761,7 +767,7 @@ $artist = $resMongoQueryUser;
                         }
                       }
 
-                      foreach ($value['catgories'] as $key => $cat) {
+                      foreach ($value['categories'] as $key => $cat) {
                         if (in_array($cat, $categories) == true) {
                           $isToPass = true;
                         }
@@ -800,11 +806,10 @@ $artist = $resMongoQueryUser;
         </div>
       </div>
 
-
-      <!-- blog details area end -->
-
       <!-- Start Footer Area -->
-
+      <?php
+      echo footer($mongoClient, $config);
+      ?>
       <!-- End Footer Area -->
       <div class="mouse-cursor cursor-outer"></div>
       <div class="mouse-cursor cursor-inner"></div>
