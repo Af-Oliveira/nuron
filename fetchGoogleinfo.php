@@ -36,8 +36,8 @@ if (isset($_GET['code'])) {
             'banner' => 'bg-image-9.jpg',
             'avatar' => 'banner-06.png',
             'gender' => '',
-            'Dad' => '',
             'Following' => array(),
+            'SocialMedia' => array(),
             'date' => time(),
             'active' => 1
         ]);

@@ -102,18 +102,13 @@ $arrDados = array(
         'private' => array(
             'label' => 'Is this item private?',
             'type' => 'active',
+            'value' => '1',
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
         ),
 
-        'NSFW' => array(
-            'label' => 'Mature content',
-            'type' => 'active',
-            'key' => 0,
-            'insert' => 1,
-            'edit' => 1,
-        ),
+
 
         'user' => array(
             'type' => 'hidden',

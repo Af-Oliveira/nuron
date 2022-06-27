@@ -2,21 +2,13 @@
 include 'inc/config.inc.php';
 
 $vars = isset($params) ?  $params : $_GET;
-
-$author = isset($vars['author']) ? $vars['author'] : null;
-$name = isset($vars['name']) ? $vars['name'] : null;
 $id = $vars['id'];
-
-
 $filter =  ['id' => $id];
 $mongoCollection = $mongoClient->itens;
 $resMongoQueryitem = $mongoCollection->findOne(
   $filter
 );
 $data = $resMongoQueryitem;
-
-
-
 $slide_big = ['v-pills-home-tab', 'v-pills-profile-tab', 'v-pills-messages-tab'];
 $slide_small = ['v-pills-home', 'v-pills-profile', 'v-pills-messages'];
 
@@ -367,7 +359,53 @@ clog($artist);
   echo menu($mongoClient, $googleClient, $config)
   ?>
   <!-- end page title area -->
+  <div class="product-share-wrapper">
+    <div class="share-btn share-btn-activation dropdown">
+      <button class="icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+        </svg>
+      </button>
 
+      <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+
+        <button type="button" class="btn-setting-text report-text" data-bs-toggle="modal" data-bs-target="#reportModal">
+          Report
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="rn-popup-modal report-modal-wrapper modal fade" id="reportModal" tabindex="-1" aria-hidden="true">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+      <i data-feather="x"></i>
+    </button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content report-content-wrapper">
+        <div class="modal-header report-modal-header">
+          <h5 class="modal-title">Why are you reporting?</h5>
+        </div>
+        <div class="modal-body">
+          <p>
+            Describe why you think this item should be removed from
+            marketplace
+          </p>
+          <div class="report-form-box">
+            <h6 class="title">Message</h6>
+            <textarea name="message" placeholder="Write issues"></textarea>
+            <div class="report-button">
+              <button type="button" class="btn btn-primary mr--10 w-auto">
+                Report
+              </button>
+              <button type="button" class="btn btn-primary-alta w-auto" data-bs-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- blog details area start -->
   <div class="rn-blog-area rn-blog-details-default rn-section-gapTop" style=" background-image: url(&quot;https://st.deviantart.net/eclipse/global/svg/p13-stage-dark_v2.svg&quot;);padding-top:45px">
     <div class="container">

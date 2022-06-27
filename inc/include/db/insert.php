@@ -41,7 +41,7 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             $strReturn .= '<div class="col-md-12">
                             <div class="input-box pb--20">
                                 <label for="' . $fieldName . '" class="form-label">' . $dataField['label'] . '</label>
-                                <textarea data-span="Vspan-' . $fieldName . '" id="' . $fieldName . '" class="textarea" style="border: solid 1px;" name="' . $fieldName . '" rows="3" required maxlength="' . $dataField['Max_length'] . '"></textarea>                              
+                                <textarea data-span="Vspan-' . $fieldName . '" id="' . $fieldName . '" class="textarea" style="border: solid 1px;" name="' . $fieldName . '" rows="3"  maxlength="' . $dataField['Max_length'] . '"></textarea>                              
                             </div>
                             <div style="
                             display: flex;

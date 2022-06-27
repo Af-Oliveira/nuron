@@ -1,3 +1,6 @@
+<?php
+include 'inc/config.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
