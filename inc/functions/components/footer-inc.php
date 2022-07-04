@@ -45,7 +45,7 @@ function footer($mongoClient, $config)
 
                 </div>
                 <p class="rn-footer-describe">
-                  Created with the collaboration of over 60 of the world´s best Nuron Artists.
+                Collect, Discover Digital Art and Explore Your favourite artists.
                 </p>
               </div>
               
@@ -91,6 +91,7 @@ function footer($mongoClient, $config)
                 </div>
                 
               </li>';
+    clog(getUrlFriendly("terms-condition.php", $config, $mongoClient));
   }
 
   $string .= '</ul>
@@ -110,8 +111,9 @@ function footer($mongoClient, $config)
             <div class="copyright-left">
               <span>©2022 ON-Art. All rights reserved.</span>
               <ul class="privacy">
-                <li><a href="' . getUrlFriendly('terms-condition.php', $config, $mongoClient) . '">Terms</a></li>
-                <li><a href="' . getUrlFriendly('privacy-policy.php', $config, $mongoClient) . '">Privacy Policy</a></li>
+              
+                <li><a href="' . getUrlFriendly('termscondition.php', $config, $mongoClient) . '">Terms</a></li>
+                <li><a href="' . getUrlFriendly('privacyPolicy.php', $config, $mongoClient) . '">Privacy Policy</a></li>
               </ul>
             </div>
           </div>

@@ -12,6 +12,13 @@ foreach ($arrDados['fields'] as $k => $v) {
     if ($v['insert']) {
         $value = $_POST[$k];
 
+        if ($v['type'] == "active") {
+            if ($value == "on") {
+                $value = "1";
+            } else {
+                $value = "0";
+            }
+        }
 
         $isToDecode = isset($v['decode']) ? $v['decode'] : true;
         if ($isToDecode == true) {

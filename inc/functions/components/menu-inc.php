@@ -54,34 +54,17 @@ function rightmenu($mongoClient, $googleClient, $config)
   );
   $resMongoQuery = $resMongoQuery->toArray();
 
-  echo '  <div class="header-right">
-  <div class="setting-option d-none d-lg-block">
-      <form class="search-form-wrapper" action="#">
-          <input type="search" placeholder="Search Here" aria-label="Search">
-          <div class="search-icon">
-              <button><i class="feather-search"></i></button>
-          </div>
-      </form>
-  </div>
-
-  <div class="setting-option rn-icon-list d-block d-lg-none">
-      <div class="icon-box search-mobile-icon">
-          <button><i class="feather-search"></i></button>
-      </div>
-      <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
-          <div class="rn-search-mobile form-group">
-              <button type="submit" class="search-button"><i class="feather-search"></i></button>
-              <input type="text" placeholder="Search ...">
-          </div>
-      </form>
-  </div>';
+  echo '  <div class="header-right">';
 
   foreach ($resMongoQuery as $key => $value) {
     if (isset($_SESSION['uId']) && $_SESSION['uId'] !== -1) {
 
       echo '    <div class="setting-option rn-icon-list notification-badge">
                 <div class="icon-box">
-                  <a href="' . getUrlFriendly($value['url'], $config, $mongoClient) . '"><i class="feather-plus-circle" style="scale: 1.3;width: inherit;height: 50%;"></i>';
+                  <a style="border-radius: 7px;
+                  color: white;
+                  min-width: 100px !important;;
+                  padding: 15px 34px;" class="btn btn-large btn-primary sal-animate" href="' . getUrlFriendly($value['url'], $config, $mongoClient) . '">Upload</i>';
       echo '</a>
                  </div>
               </div>';
@@ -109,8 +92,10 @@ function accmenu($mongoClient, $googleClient, $config)
   if (!count($_SESSION['arrSavedAccounts'])) {
     echo '<div class="setting-option rn-icon-list user-account">
     <div class="icon-box">
-    <a href="' . $googleClient->createAuthUrl() . '">
-    <img src="' . $config['urls']['site'] . '/assets/images/icons/boy-avater.png" alt="Images"></a>
+    <a style="border-radius: 7px;
+    color: white;
+    min-width: 100px !important;;
+    padding: 15px 34px;" class="btn btn-large btn-primary sal-animate" href="' . $googleClient->createAuthUrl() . '">Login</a>
 </div>
 </div>';
   } else {
@@ -118,8 +103,11 @@ function accmenu($mongoClient, $googleClient, $config)
       echo '
       <div class="setting-option rn-icon-list user-account">
       <div class="icon-box">
-        <a href="' . $googleClient->createAuthUrl() . '">
-        <img src="' . $config['urls']['site'] . '/assets/images/icons/boy-avater.png" alt="Images"></a>';
+
+        <a style="border-radius: 7px;
+        color: white;
+        min-width: 100px !important;
+        padding: 15px 34px;" class="btn btn-large btn-primary sal-animate" href="' . $googleClient->createAuthUrl() . '">Login</a>';
 
       $nome = 'Guest';
     } else {
@@ -136,7 +124,7 @@ function accmenu($mongoClient, $googleClient, $config)
       echo '<div class="setting-option rn-icon-list user-account">
       <div class="icon-box">';
 
-      echo '<a><img src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images"></a>';
+      echo '<a><img style="border: 2px solid white;" src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" alt="Images"></a>';
 
       $nome = $resMongoQueryUser['usernameF'] . ' ' . $resMongoQueryUser['usernameL'];
     }
@@ -160,9 +148,9 @@ function accmenu($mongoClient, $googleClient, $config)
         $filter
       );
       echo '<li class="single-product-list">
-          <div class="thumbnail">';
+          <div class="icon-box" style="padding-right: 5px;">';
 
-      echo '<a href="#"><img src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" style="width: 50px;border-radius: 100%;object-fit: cover;max-height: 50px;"></a>';
+      echo '<a href="#"><img style="border: 2px solid white;" src="' . $config['urls']['site'] . '/upload/profiles/' . $id . '/avatars/' . $resMongoQueryUser['avatar'] . '" style="width: 50px;border-radius: 100%;object-fit: cover;max-height: 50px;"></a>';
 
       echo '</div>
           <div class="content">
@@ -175,30 +163,30 @@ function accmenu($mongoClient, $googleClient, $config)
      </div>
       <div class="add-fund-button mt--20 pb--20">
         <a id="logout" href="' . $config['urls']['site'] . '/logout.php?add=1" class="btn btn-primary-alta w-100">Add a new account</a>
-      </div>
+      </div>';
+    if ($_SESSION['uId'] != -1) {
+      echo '  <ul class="list-inner">';
+      $filter =  ['type' => 'acc-menu'];
+      $mongoCollection = $mongoClient->menu;
+      $resMongoQueryUser = $mongoCollection->find(
 
-      <ul class="list-inner">';
-    $filter =  ['type' => 'acc-menu'];
-    $mongoCollection = $mongoClient->menu;
-    $resMongoQueryUser = $mongoCollection->find(
+        $filter
+      );
 
-      $filter
-    );
+      foreach ($resMongoQueryUser as $key => $value) {
 
-    foreach ($resMongoQueryUser as $key => $value) {
-
-      if ($value['url'] == "author.php") {
-        $url = $value['url'] . '?id=' . $_SESSION['uId'];
-      } else {
-        $url = $value['url'];
-      }
-      echo '  <li><a href="  ' . getUrlFriendly($url, $config, $mongoClient)   . '   ">' . $value['name'] . '</a></li> ';
-    };
-    echo ' 
+        if ($value['url'] == "author.php") {
+          $url = $value['url'] . '?id=' . $_SESSION['uId'];
+        } else {
+          $url = $value['url'];
+        }
+        echo '  <li><a href="  ' . getUrlFriendly($url, $config, $mongoClient)   . '   ">' . $value['name'] . '</a></li> ';
+      };
+      echo ' 
          
-      </ul>
-
-    </div>
+      </ul>';
+    }
+    echo '    </div>
   </div>
 </div>';
   }

@@ -7,7 +7,7 @@ include 'inc/config.inc.php';
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>404 || Nuron - NFT Marketplace Template</title>
+    <title>Privacy Policy || OnArt</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,31 +30,57 @@ include 'inc/config.inc.php';
     <link rel="stylesheet" href="<?php echo $config['urls']['site'] ?>/assets/css/style.css">
 </head>
 
-<body class="template-color-1 nft-body-connect">
-    <!-- start header area -->
-
+<body class="template-color-1 nft-body-connect" style="text-align: justify;">
+    <!-- Start Header -->
     <?php
-    echo menu($mongoClient, $googleClient, $config);
+    echo menu($mongoClient, $googleClient, $config)
     ?>
+    <!-- end page title area -->
 
-    <!-- ENd Header Area -->
-    <div class="rn-not-found-area rn-section-gapTop">
+    <!-- start Privacy area -->
+    <div class="rn-privacy-policy-area rn-section-gapTop">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="rn-not-found-wrapper">
-                        <h2 class="large-title">404</h2>
-                        <h3 class="title">Page not found!</h3>
-                        <p>The page you are looking for not available.</p>
-                        <a href="<?= getUrlFriendly('index.php', $config, $mongoClient) ?>" class="btn btn-primary btn-large">Go Back To Home</a>
+            <div class="row mb_dec--50">
+                <div class="offset-lg-2 col-lg-8 ">
+                    <div class="privacy-wrapper">
+                        <h4>Welcome to OnArt Privacy Policy</h4>
+                        <p class="about-disc mb--0">
+                            OnArt respects your privacy and is fully committed to protect your personal information and use it properly and in compliance with data privacy laws.
+                            Policy explains what information we collect and use pertaining to each of our Account holders through the Site, how we use that information, and what choices you have with respect to the information we collect about you.
+                            Please take a few moments to read this Privacy Policy before you access or use our Services. By using or accessing the OnArt Site, you acknowledge that you have read and fully understood this Privacy Policy and our Terms of Service and that they both apply to your use of the Services. If you do not read and fully understand this Privacy Policy, please do not use this site.
+
+
+                        </p>
+                        <h4>1-What information do we collect?</h4>
+                        <p class="about-disc mb--0">
+
+                            We collect Information in order to provide, operate and improve our Sites and Services, to administer your use of the Site or Services (including your Account), and to enable you to enjoy and easily navigate our Site and Services. Additionally, we collect your information to provide you with ongoing customer assistance and technical support, and to enhance our data security and fraud prevention capabilities.
+                        </p>
+
+                        <h4>1.1-Information you provide us.</h4>
+                        <p>When you register for our Services and create a OnArt account via the OnArt Sites (an "Account"), when you register for special services, we collect certain information such as your name and email. If you create your Account using your login credentials from a third party site or service, we'll be able to access and collect your name and email but we don't receive or store passwords. </li>
+
+                        <h4>1.2-Information collected through your use of the Site or Services. </h4>
+                        <p>When you are visiting or using our Site or Services, including when you browse the Site or a User Account, edit your Account and upload information and content, and/or download and use any Site feature or services, we are aware of it and will usually gather, collect and record such uses, sessions and related information.</p>
+
+
+
+                        <h4>2-How do we use such information?</h4>
+                        <p>2.1-We use your information for the following purposes: to provide and operate the Services; to enhance our data security and fraud prevention capabilities; To create aggregated statistical data and other aggregated and/or inferred information, which we may use to provide and improve our respective Services;.</li>
+                        <p>2.2-We will only use your Information for the purposes set out in Section 2 where you give us your permission and/or we are satisfied that:<br>
+                            a. our use of your Information is necessary to the performance of the website, or<br>
+                            b. our use of your Information is necessary to comply with a relevant legal or regulatory obligation that we have, or<br>
+                            c. our use of your Information is necessary to support legitimate interests that we have as a business (for example, to maintain and improve our Services), provided it is conducted at all times in a way that is proportionate, and that respects your privacy rights<br>
+                        </p>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+    <!-- end Privacy area -->
 
-
-    <!-- Start Footer Area -->
     <?php
     echo footer($mongoClient, $config);
     ?>
@@ -96,5 +122,6 @@ include 'inc/config.inc.php';
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/web3.min.js"></script>
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/maralis.js"></script>
     <script src="<?php echo $config['urls']['site'] ?>/assets/js/vendor/nft.js"></script>
+</body>
 
 </html>

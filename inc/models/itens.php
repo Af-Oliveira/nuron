@@ -102,7 +102,6 @@ $arrDados = array(
         'private' => array(
             'label' => 'Is this item private?',
             'type' => 'active',
-            'value' => '1',
             'key' => 0,
             'insert' => 1,
             'edit' => 1,
@@ -118,6 +117,12 @@ $arrDados = array(
             'edit' => 0,
         ),
         'likes' => array(
+            'type' => 'hidden',
+            'value' => '[]',
+            'insert' => 1,
+            'edit' => 0,
+        ),
+        'views' => array(
             'type' => 'hidden',
             'value' => '[]',
             'insert' => 1,
