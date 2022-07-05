@@ -27,7 +27,7 @@ function leftmenu($mongoClient, $config, $dad = "0")
     if (count($resMQ) > 0) {
 
       echo '  <li class="has-droupdown has-menu-child-item">
-        <a href="' . $value['name'] . '">' . $value['name'] . '</a>
+        <a href="' .  getUrlFriendly($value['url'], $config, $mongoClient) . '">' . $value['name'] . '</a>
         <ul class="submenu">';
 
 

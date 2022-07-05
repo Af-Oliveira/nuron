@@ -165,7 +165,8 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
     } else if (`{$dataField['type']}` == `multiselect`) {
         console.log(`{$select_colletion}`);
         arrMySelects.set(`{$fieldName}`, $select_colletion);    
-        $('#normalinputs').append(`$strReturn`);
+       
+        
     } else {
         $('#normalinputs').append(`$strReturn`);
     }

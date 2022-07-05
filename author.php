@@ -308,7 +308,7 @@ $url = $config['urls']['site'] . '/upload/profiles/' . $user['id'] . '/banners/'
               $CItem = $mongoCollection->findOne(
                 $filter,
               );
-
+              $edit = getUrlFriendly('edit_item.php?model=collections&id=' . $value['id'], $config, $mongoClient);
               echo '<div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                      <a href="' . getUrlFriendly('collections-details.php?id=' . $Search['id'], $config, $mongoClient) . '" class="rn-collection-inner-one">
                        <div class="collection-wrapper">
@@ -342,26 +342,49 @@ $url = $config['urls']['site'] . '/upload/profiles/' . $user['id'] . '/banners/'
                        </div>
 
                        <div style="position: relative;
-                       padding: 18px;  margin-top: -12px;
+                       padding: 18px;  margin-top: -18px;
                        background: var(--background-color-1);
                        border-radius: 5px;">
+
+                       <div class="product-share-wrapper" style="justify-content: left;">
                        <div class="thumbnail" style="display:flex">
-                       <div style="margin-right: 12px;width: 3em; height: 3em;">
-                         <a href="' . $author . '" class="avatar" data-tooltip="' . $user['name'] . '"><img style="border-radius: 100px;width: 100%;height: 100%; object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $user['id'] . '\avatars/' . $user['avatar'] . '" alt="Nft_Profile" /></a>
-                         
-                       </div>
-                       <ul style="display: inline;
-                       list-style: none;
-                       padding: 0px;
-                       margin: 0px;">
-                       <li style="
-                       padding: 0px;">  <a class="more-author-text" href="' . $author . '">Created by:</a>    </li>
-                       <li style="margin-top: -10px;
-                       padding: 0px;">   <a class="more-author-text" href="' . $author . '">' . $user['name'] . '</a> </li>
-                       </ul>
-                      
-                     </div>
-                     </div>
+                         <div style="margin-right: 12px;width: 3em; height: 3em;">
+                           <a href="' . $author . '" class="avatar" data-tooltip="' . $user['name'] . '"><img style="border-radius: 100px;width: 100%;height: 100%; object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $user['id'] . '\avatars/' . $user['avatar'] . '" alt="Nft_Profile" /></a>
+                           
+                         </div>
+                         <div style="display:flex">
+                         <ul style="display: inline;
+                         list-style: none;
+                         padding: 0px;
+                         margin: 0px;">
+                         <li style="
+                         padding: 0px;">  <a class="more-author-text" href="' . $author . '">Created by:</a>    </li>
+                         <li style="margin-top: -10px;
+                         padding: 0px;">   <a class="more-author-text" href="' . $author . '">' . $user['name'] . '</a> </li>
+                         </ul>
+                         </div>
+                       </div> </div>';
+
+              if ($user['id'] == $_SESSION['uId']) {
+                echo '
+                       <div " class="share-btn share-btn-activation dropdown">
+                         <button class="icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <svg viewBox="0 0 14 4" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN hOiKLt">
+                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z" fill="currentColor"></path>
+                           </svg>
+                         </button>
+       
+                         <div class="share-btn-setting dropdown-menu dropdown-menu-end">
+                           <a href="' . $edit . '" type="button" class="btn-setting-text share-text">
+                             Edit
+                           </a>
+       
+                         </div>
+                       </div>';
+              }
+              echo '
+                    
+                      </div>
 
                        </a>                   
                    </div>';
@@ -411,75 +434,7 @@ $url = $config['urls']['site'] . '/upload/profiles/' . $user['id'] . '/banners/'
         </div>
         <div class="tab-pane row g-5 d-flex fade" id="Liked" role="tabpanel" aria-labelledby="Subscriptions-tab">
           <!-- start single product -->
-          <?php
 
-          $mongoCollection = $mongoClient->itens;
-          $resMongoQueryitens = $mongoCollection->find();
-          $items = $resMongoQueryitens->ToArray();
-          clog($items);
-          foreach ($items as $key => $value) {
-            if (in_array($user['id'], (array) $value['likes'])) {
-              if ($value['private'] != "1") {
-
-                $filter =  ['id' => $value['user'], 'active' => 1];
-                $mongoCollection = $mongoClient->users;
-                $resMongoQueryuser = $mongoCollection->findOne(
-                  $filter
-                );
-
-                $url = getUrlFriendly('product-details.php?id=' . $value['id'], $config, $mongoClient);
-                $edit = getUrlFriendly('edit_item.php?model=itens&id=' . $value['id'], $config, $mongoClient);
-                $author = getUrlFriendly('author.php?id=' . $resMongoQueryuser['id'], $config, $mongoClient);
-                echo ' <div class="col-5 col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-      <div class="product-style-one no-overlay with-placeBid">
-        <div class="card-thumbnail" style="
-        height: 17.5em;">
-          <a href="' . $url . '">
-            <img style="width: 100%;
-            height: 100%;
-            object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $resMongoQueryuser['id'] . '\itens/' . $value['images'][0] . '" alt="NFT_portfolio" />
-          </a>
-  
-        </div>
-        <div class="product-share-wrapper">
-          <div class="thumbnail" style="display:flex">
-            <div style="margin-right: 12px;width: 3em; height: 3em;">
-              <a href="' . $author . '" class="avatar" data-tooltip="' . $resMongoQueryuser['name'] . '"><img style="border-radius: 100px;width: 100%;height: 100%; object-fit: cover;" src="' . $config['urls']['site'] . '/upload/profiles/' . $resMongoQueryuser['id'] . '\avatars/' . $resMongoQueryuser['avatar'] . '" alt="Nft_Profile" /></a>
-              
-            </div>
-            <div style="display:flex">
-            <ul style="display: inline;
-            list-style: none;
-            padding: 0px;
-            margin: 0px;">
-            <li style="
-            padding: 0px;">  <a class="more-author-text" href="' . $author . '">Created by:</a>    </li>
-            <li style="margin-top: -10px;
-            padding: 0px;">   <a class="more-author-text" href="' . $author . '">' . $resMongoQueryuser['name'] . '</a> </li>
-            </ul>
-            </div>
-          </div>';
-
-
-                echo '
-        </div>
-        <a href="' . $url . '"><span class="product-name">' . $value['name'] . '</span></a>
-  
-        <div class="bid-react-area">
-  
-          <div class="">
-            <svg viewBox="0 0 17 16" fill="none" width="16" height="16" class="sc-bdnxRM sc-hKFxyN kBvkOu">
-              <path d="M8.2112 14L12.1056 9.69231L14.1853 7.39185C15.2497 6.21455 15.3683 4.46116 14.4723 3.15121V3.15121C13.3207 1.46757 10.9637 1.15351 9.41139 2.47685L8.2112 3.5L6.95566 2.42966C5.40738 1.10976 3.06841 1.3603 1.83482 2.97819V2.97819C0.777858 4.36443 0.885104 6.31329 2.08779 7.57518L8.2112 14Z" stroke="currentColor" stroke-width="2"></path>
-            </svg>
-            <span class="number">' . count($value['likes']) . '</span>
-          </div>
-        </div>
-      </div>
-    </div>';
-              }
-            }
-          }
-          ?>
           <!-- end single product -->
         </div>
       </div>

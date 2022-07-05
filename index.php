@@ -126,7 +126,7 @@ include 'inc/config.inc.php';
                     if ($_SESSION['uId'] == -1) {
                       echo ' <a class="btn btn-large btn-primary" href="' . $googleClient->createAuthUrl() . '" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Get Started</a>';
                     } else {
-                      echo ' <a class="btn btn-large btn-primary" href="' . getUrlFriendly('about.php', $config, $mongoClient) . '>" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Get Started</a>';
+                      echo ' <a class="btn btn-large btn-primary" href="' . getUrlFriendly('about.php', $config, $mongoClient) . '" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Get Started</a>';
                     }
 
                     ?>
@@ -254,9 +254,7 @@ include 'inc/config.inc.php';
             </h3>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
-            <div class="view-more-btn text-start text-sm-end" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-              <a class="btn-transparent" href="<?= getUrlFriendly('Artists.php', $config, $mongoClient) ?>">VIEW ALL<i data-feather="arrow-right"></i></a>
-            </div>
+
           </div>
         </div>
         <div class="row g-5 mt--30 creator-list-wrapper">

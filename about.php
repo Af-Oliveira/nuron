@@ -8,7 +8,7 @@ include 'inc/config.inc.php';
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>About || Nuron - NFT Marketplace Template</title>
+    <title>About || OnArt</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -176,7 +176,7 @@ include 'inc/config.inc.php';
                                         if ($_SESSION['uId'] == -1) {
                                             echo ' <a class="btn btn-large btn-primary" href="' . $googleClient->createAuthUrl() . '" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Create</a>';
                                         } else {
-                                            echo ' <a class="btn btn-large btn-primary" href="' . getUrlFriendly('upload-variants.php', $config, $mongoClient) . '>" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Create</a>';
+                                            echo ' <a class="btn btn-large btn-primary" href="' . getUrlFriendly('upload-variants.php', $config, $mongoClient) . '" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">Create</a>';
                                         }
 
                                         ?>

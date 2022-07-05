@@ -8,6 +8,7 @@ $resMongoQueryUser = $mongoCollection->find(
 );
 $resMongoQueryUser = $resMongoQueryUser->toArray();
 
+
 foreach ($resMongoQueryUser as $key => $value) {
 
     $route->add($value['UrlF'], $value['url']);

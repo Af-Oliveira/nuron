@@ -13,6 +13,7 @@ $data = $resMongoQueryUser;
     var arrMySelects = new Map();
     var arrMyFiles = new Map();
     var id = '<?= $id ?>';
+
     var postData = <?php echo json_encode($data); ?>;
 </script>
 <?php
@@ -111,7 +112,7 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             $strReturn .= ' </div>';
             break;
         case 'active';
-            $ck = ($fieldValue == "on" ? 'checked' : '');
+            $ck = ($fieldValue == "1" ? 'checked' : '');
 
             $strReturn .= '  <div class="col-md-12 col-sm-12">
             <div class="input-box pb--20 rn-check-box">
@@ -213,7 +214,7 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
 
         if (arrMyFiles.size == 0) {
             const cenagamer = ` <div class="slider-thumbnail">
-            <img src="assets/images/slider/slider-1.png" alt="Slider Images" />
+            <img src="<?= $config['urls']['site'] ?>/assets/images/slider/slider-1.png" alt="Slider Images" />
           </div>`;
             $('#filesinputs').append(cenagamer);
         }
@@ -284,6 +285,7 @@ color: #ff0000a8;" id="v-' . $fieldName . '">
             (postData[key]).forEach((element) => {
                 if (element)
                     arrV.push(element);
+
             });
             mySelect._setValue(arrV, !0);
 

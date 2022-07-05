@@ -112,7 +112,7 @@ function footer($mongoClient, $config)
               <span>©2022 ON-Art. All rights reserved.</span>
               <ul class="privacy">
               
-                <li><a href="' . getUrlFriendly('termscondition.php', $config, $mongoClient) . '">Terms</a></li>
+                <li><a href="' . getUrlFriendly('terms-condition.php', $config, $mongoClient) . '">Terms</a></li>
                 <li><a href="' . getUrlFriendly('privacyPolicy.php', $config, $mongoClient) . '">Privacy Policy</a></li>
               </ul>
             </div>

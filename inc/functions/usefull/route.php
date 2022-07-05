@@ -100,6 +100,8 @@ class Route
         $reqUri = str_replace("/", '\\/', $reqUri);
 
         //now matching route with regex
+        clog($reqUri);
+        clog($route);
         if (preg_match("/$reqUri/", $route)) {
             include($file);
             exit();

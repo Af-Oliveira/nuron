@@ -31,6 +31,7 @@ $artist = $resMongoQueryUser;
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Collection Details || OnArt</title>
@@ -295,7 +296,7 @@ $artist = $resMongoQueryUser;
   </style>
 
   <body>
-    <div class="rn-blog-area rn-blog-details-default rn-section-gapTop" style=" background-image: url(&quot;https://st.deviantart.net/eclipse/global/svg/p13-stage-dark_v2.svg&quot;);padding-top:45px;padding-bottom:30px">
+    <div class="rn-blog-area rn-blog-details-default rn-section-gapTop" style=" background-image: url(&quot;https://st.deviantart.net/eclipse/global/svg/p13-stage-dark_v2.svg&quot;);padding-top:45px;padding-bottom:50px">
       <div class="container">
 
         <div class="catagory-collection">
@@ -365,7 +366,7 @@ $artist = $resMongoQueryUser;
                 </div>
                 <?php
                 $description = $data_C['description'];
-                if ($description != "") {
+                if ($discription != "") {
                   echo '  <div class="mt-2">
                   <div class="top-seller-wrapper">
                     <h7 class="title" style="font-weight: bold;font-size:18px">Collection description:</h7><br>
