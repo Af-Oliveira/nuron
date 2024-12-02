@@ -29,7 +29,7 @@ Nuron is an image gallery platform inspired by DeviantArt, where users can showc
 ## Clone the repository:  
    ```bash
    git clone https://github.com/Af-Oliveira/nuron.git
-
+  ```
 ## License
 
 Distributed under the MIT License. See LICENSE for more information.
