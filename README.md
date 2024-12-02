@@ -1,6 +1,6 @@
-# Nuron - Image Gallery Platform
+# Nuron/OnArt - Image Gallery Platform
 
-Nuron is an image gallery platform inspired by DeviantArt, where users can showcase, browse, and interact with visual content. Designed as part of the **Projeto de Aptidões Profissionais (PAP)** at Colégio de Gaia, this project serves as a hands-on experience aimed at bridging academic learning with real-world software development practices.
+Nuron/OnArt  is an image gallery platform inspired by DeviantArt, where users can showcase, browse, and interact with visual content. Designed as part of the **Projeto de Aptidões Profissionais (PAP)** at Colégio de Gaia, this project serves as a hands-on experience aimed at bridging academic learning with real-world software development practices.
 
 ## Technologies Used
 
